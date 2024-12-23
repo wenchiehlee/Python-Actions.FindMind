@@ -2,11 +2,10 @@
 # -*- coding: UTF-8 -*-
 import pandas as pd
 import requests
-import csv
+import csv  # Ensure the CSV module is imported
 import os
 from datetime import datetime
 from dotenv import load_dotenv
-import chardet  # For dynamic encoding detection
 
 # Force UTF-8 encoding for Python in Windows
 os.environ["PYTHONIOENCODING"] = "utf-8"
@@ -15,21 +14,7 @@ os.environ["PYTHONIOENCODING"] = "utf-8"
 load_dotenv()
 
 def fetch_and_save_stock_data(api_token, dataset, stock_id, start_date, end_date, output_file):
-    """
-    Fetch stock data from FinMind API and save it to a CSV file.
-
-    Parameters:
-    - api_token (str): API token for authentication.
-    - dataset (str): Dataset to query (e.g., "TaiwanStockPrice").
-    - stock_id (str): Stock ID to query.
-    - start_date (str): Start date for the data (YYYY-MM-DD).
-    - end_date (str): End date for the data (YYYY-MM-DD).
-    - output_file (str): Path to save the output CSV file.
-    """
-    # API URL
     url = "https://api.finmindtrade.com/api/v4/data"
-
-    # Parameters for the API call
     params = {
         "dataset": dataset,
         "data_id": stock_id,
@@ -37,9 +22,7 @@ def fetch_and_save_stock_data(api_token, dataset, stock_id, start_date, end_date
         "end_date": end_date,
         "token": api_token
     }
-
     try:
-        # Fetch data from FinMind API
         response = requests.get(url, params=params)
         response.raise_for_status()
         data = response.json()
@@ -55,11 +38,7 @@ def fetch_and_save_stock_data(api_token, dataset, stock_id, start_date, end_date
 
         with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow([
-                "日期", "股票代碼", "成交量", "成交金額", 
-                "開盤價", "最高價", "最低價", "收盤價", 
-                "漲跌幅", "交易筆數"
-            ])
+            writer.writerow(["日期", "股票代碼", "成交量", "成交金額", "開盤價", "最高價", "最低價", "收盤價", "漲跌幅", "交易筆數"])
             for record in records:
                 writer.writerow([
                     record.get("date"), record.get("stock_id"), record.get("Trading_Volume"),
@@ -67,31 +46,48 @@ def fetch_and_save_stock_data(api_token, dataset, stock_id, start_date, end_date
                     record.get("min"), record.get("close"), record.get("spread"),
                     record.get("Trading_turnover")
                 ])
-
         print(f"Data successfully written to {output_file}")
     except requests.RequestException as e:
         print(f"HTTP Request error: {e}")
     except ValueError as e:
         print(f"Error processing response: {e}")
 
-# Detect encoding of a file
-def detect_encoding(file_path):
-    with open(file_path, 'rb') as f:
-        result = chardet.detect(f.read())
-    return result['encoding']
-
-# Download Google Sheet and save as CSV file
 def download_google_sheet(url, output_file):
     response = requests.get(url)
     response.raise_for_status()
 
-    # Debugging content
-    print("Response sample (first 500 chars):")
-    print(response.text[:500])
+    # Decode raw content explicitly as UTF-8
+    raw_text = response.content.decode('utf-8')
+    #print("Raw Response Sample (First 500 Chars):")
+    #print(raw_text[:500])
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(response.text)
+        f.write(raw_text)
     print(f"Downloaded Google Sheet to {output_file}")
+
+    validate_saved_file(output_file)
+
+def validate_saved_file(file_path):
+    try:
+        with open(file_path, 'rb') as f:
+            raw_content = f.read(500)
+        #print("Saved File Content Sample (Bytes):", raw_content[:100])
+    except Exception as e:
+        print(f"Error reading saved file: {e}")
+
+def validate_and_process_csv(file_path):
+    try:
+        data = pd.read_csv(file_path, encoding="utf-8")
+        #print("Columns:", data.columns.tolist())
+        #print("First 5 rows:")
+        #print(data.head())
+
+        data.to_csv("cleaned_auction_data.csv", index=False, encoding="utf-8")
+        print("Saved cleaned data to 'cleaned_auction_data.csv'.")
+        return data
+    except Exception as e:
+        print(f"Error reading or processing CSV file: {e}")
+        return None
 
 def main():
     api_token = os.getenv("FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN")
@@ -105,37 +101,9 @@ def main():
     csv_file = "auction_data.csv"
 
     download_google_sheet(sheet_url, csv_file)
+    data = validate_and_process_csv(csv_file)
 
-    try:
-        data = pd.read_csv(csv_file, encoding="utf-8")
-
-        # Debug raw content
-        with open(csv_file, 'rb') as file:
-            raw_content = file.read(500)
-            print("Raw Content Sample (Bytes):", raw_content[:100])
-
-        # Map garbled columns
-        column_mapping = {
-            "è­å¸ä»£è": "證券代號",
-            "è­å¸åç¨±": "證券名稱",
-            "ç³è«æ¥æ": "申請日期",
-            "ä¸æ«å¯©è­°å§å¡æå¯©è­°æ¥æ": "上櫃審議委員會審議日期",
-            "æ«è²·è£äºæééä¸æ«æ¥æ": "櫃買董事會通過上櫃日期",
-            "æ«è²·åæä¸æ«å¥ç´æ¥ææè­æå±æ ¸åä¸æ«å¥ç´æ¥æ": "櫃買同意上櫃契約日期或證期局核准上櫃契約日期",
-            "ææ¨éå§æ¥(T-4)": "投標開始日(T-4)",
-            "ææ¨çµææ¥(T-2)": "投標結束日(T-2)",
-            "éæ¨æ¥æ(T)": "開標日期(T)",
-            "æ¥å¸æ¥(ä¸å¸ä¸æ«æ¥) T+7": "撥券日(上市上櫃日) T+7",
-            "DateStart": "DateStart",
-            "DateEnd+14": "DateEnd+14"
-        }
-        data.rename(columns=column_mapping, inplace=True)
-
-        # Save cleaned data for verification
-        data.to_csv("cleaned_auction_data.csv", index=False, encoding="utf-8")
-        print("Saved cleaned data to 'cleaned_auction_data.csv'.")
-    except Exception as e:
-        print(f"Error reading or processing CSV file: {e}")
+    if data is None:
         return
 
     dataset = "TaiwanStockPrice"
