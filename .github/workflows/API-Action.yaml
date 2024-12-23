@@ -1,4 +1,4 @@
-name: TWSE API On GitHub Action
+name: API On GitHub Action
 on:
   push:
     branches:
@@ -23,7 +23,7 @@ jobs:
       - name: Installing all necessary packages
         run: pip install -r requirements.txt
 
-      - name: Running TWSE-PERatio.py
+      - name: Running Python
         run: |
           python FindMind-fetch_and_save_stock_data.py
 
