@@ -118,7 +118,7 @@ def main():
                 end_date = datetime.strptime(date_end, "%Y/%m/%d").strftime("%Y-%m-%d")
                 file_name = f"[{stock_id}] {start_date}-{end_date}.csv"
                 fetch_and_save_stock_data(api_token, dataset, stock_id, start_date, end_date, file_name)
-                print(f"Saved {stock_id} data to {file_name}")
+                #print(f"Saved {stock_id} data to {file_name}")
             except Exception as e:
                 print(f"Error processing stock {stock_id}: {e}")
         else:
