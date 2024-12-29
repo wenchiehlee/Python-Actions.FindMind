@@ -30,7 +30,7 @@ jobs:
           python FindMind-fetch_and_save_stock_data.py
       - name: Running Python
         run: 
-          python andy's_work.py
+          python andys_work.py
 
       - name: Commit and Push The Results From Python Action
         run: |
