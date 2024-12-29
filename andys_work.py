@@ -1,49 +1,54 @@
 import os
 import pandas as pd
-from glob import glob
+import glob
 
-# 創建儲存資料的資料夾
-output_dir = "processed_data"
-os.makedirs(output_dir, exist_ok=True)
+# 建立一個儲存處理後資料的資料夾
+output_folder = "processed_data"
+os.makedirs(output_folder, exist_ok=True)
 
 # 讀取 cleaned_auction_data.csv
-auction_data = pd.read_csv("cleaned_auction_data.csv")
+auction_data_path = "cleaned_auction_data.csv"
+auction_data = pd.read_csv(auction_data_path)
 
-# 獲取所有證券代號
-security_ids = auction_data["證券代號"].unique()
-
-# 處理每個證券代號
-for security_id in security_ids:
-    # 搜尋符合的收盤價檔案
-    matching_files = glob(f"[{security_id}]*.csv")
-    if not matching_files:
-        print(f"警告: 找不到代號 {security_id} 的檔案，跳過...")
-        continue
-
-    # 假設只有一個符合的檔案
-    closing_price_file = matching_files[0]
-    try:
-        # 讀取收盤價資料
-        closing_prices = pd.read_csv(closing_price_file)
-
-        # 確保存在收盤價欄位
-        if "收盤價" not in closing_prices.columns:
-            print(f"錯誤: 檔案 {closing_price_file} 缺少 '收盤價' 欄位，跳過...")
+# 定義處理函數
+def process_auction_data(auction_data, output_folder):
+    # 將證券代號從第一列提取並去除空格
+    auction_data.columns = auction_data.columns.str.strip()
+    for index, row in auction_data.iterrows():
+        security_id = str(row["證券代號"]).strip()
+        # 搜尋對應的收盤價 csv 檔案
+        matching_files = glob.glob(f"*[{security_id}]*.csv")
+        
+        if not matching_files:
+            print(f"未找到對應的收盤價檔案: {security_id}")
+            continue
+        
+        closing_price_file = matching_files[0]
+        closing_price_data = pd.read_csv(closing_price_file)
+        
+        # 確保有收盤價資料
+        if "收盤價" not in closing_price_data.columns:
+            print(f"收盤價欄位不存在於檔案: {closing_price_file}")
             continue
 
-        # 以日期為索引對應收盤價
-        closing_prices.set_index("日期", inplace=True)
-        auction_data[f"{security_id}_收盤價"] = auction_data["開標日期(T)"].map(
-            lambda date: closing_prices.loc[date, "收盤價"] if date in closing_prices.index else None
-        )
+        # 選取需要的日期範圍
+        closing_prices = closing_price_data["收盤價"]
+        
+        if len(closing_prices) < len(auction_data):
+            print(f"收盤價資料不足: {closing_price_file}")
+            continue
 
-    except Exception as e:
-        print(f"處理檔案 {closing_price_file} 時發生錯誤: {e}")
+        # 替換 auction_data 中的行資料
+        auction_data.iloc[index, 1:-2] = closing_prices.values[:len(row) - 2]
 
-# 將處理後的資料儲存回新的 CSV
-output_file = os.path.join(output_dir, "cleaned_auction_data_with_prices.csv")
-auction_data.to_csv(output_file, index=False, encoding="utf-8")
-print(f"完成: 資料已儲存於 {output_file}")
+    # 儲存處理後的資料
+    output_file_path = os.path.join(output_folder, "cleaned_auction_data_processed.csv")
+    auction_data.to_csv(output_file_path, index=False)
+    print(f"處理完成的檔案已儲存在 {output_file_path}")
+
+# 執行處理函數
+process_auction_data(auction_data, output_folder)
+
 
 
 
