@@ -23,11 +23,14 @@ jobs:
       - name: Installing all necessary packages
         run: pip install -r requirements.txt
 
-      - name: Running Python
-        env:
-          FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN: ${{ secrets.FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN }}
-        run: |
-          python FindMind-fetch_and_save_stock_data.py
+      #- name: Running Python
+      #  env:
+      #    FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN: ${{ secrets.FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN }}
+      #  run: |
+      #    python FindMind-fetch_and_save_stock_data.py
+
+      - name: running Python
+        run: python andy's_work.py
 
       - name: Commit and Push The Results From Python Action
         run: |
