@@ -1,45 +1,55 @@
-import os
 import pandas as pd
+import os
 
-def find_price_file(security_code):
-    """Locate the CSV file containing the closing price for the given security code."""
-    for file_name in os.listdir('.'):  # Assumes all relevant files are in the current directory
-        if file_name.startswith(f"[{security_code}]") and file_name.endswith(".csv"):
-            return file_name
-    return None
+def update_auction_data(auction_file, stock_data_folder):
+    # 讀取 "cleaned_auction_data.csv"
+    auction_data = pd.read_csv(auction_file, encoding='utf-8', sep='\t')
+    
+    # 確認欄位名稱正確
+    if '證券代號' not in auction_data.columns:
+        raise ValueError("CSV 欄位名稱與預期不符，請確認文件格式。")
+    
+    # 逐一處理證券代號
+    for index, row in auction_data.iterrows():
+        stock_code = row['證券代號']
+        start_date = row['DateStart']
+        end_date = row['DateEnd+14']
 
-def update_cleaned_data():
-    # Load cleaned auction data
-    auction_file = 'cleaned_auction_data.csv'
-    auction_data = pd.read_csv(auction_file, delimiter='\t')
-
-    # Iterate through the securities in the file
-    for _, row in auction_data.iterrows():
-        security_code = row['證券代號']
-        price_file = find_price_file(security_code)
-
-        if not price_file:
-            print(f"Price file for {security_code} not found.")
+        # 找到對應的股票數據文件
+        stock_file_pattern = f"[{stock_code}]"
+        stock_files = [f for f in os.listdir(stock_data_folder) if f.startswith(stock_file_pattern) and f.endswith('.csv')]
+        
+        if not stock_files:
+            print(f"未找到證券代號 {stock_code} 的對應數據文件，跳過...")
             continue
 
-        # Load the price file and ensure it contains '收盤價'
-        price_data = pd.read_csv(price_file)
-        if '收盤價' not in price_data.columns:
-            print(f"Closing price ('收盤價') column missing in file {price_file}.")
+        stock_file_path = os.path.join(stock_data_folder, stock_files[0])
+        stock_data = pd.read_csv(stock_file_path, encoding='utf-8')
+        
+        # 確保存在 "收盤價" 欄位
+        if '收盤價' not in stock_data.columns:
+            raise ValueError(f"文件 {stock_file_path} 中缺少 '收盤價' 欄位。")
+        
+        # 選取日期範圍內的收盤價
+        stock_data['日期'] = pd.to_datetime(stock_data['日期'], format='%Y-%m-%d')
+        mask = (stock_data['日期'] >= pd.to_datetime(start_date)) & (stock_data['日期'] <= pd.to_datetime(end_date))
+        filtered_prices = stock_data.loc[mask, '收盤價'].reset_index(drop=True)
+        
+        # 確保有足夠的數據替換
+        if len(filtered_prices) < 8:
+            print(f"證券代號 {stock_code} 的收盤價數據不足，跳過...")
             continue
+        
+        # 替換第 3 到第 10 行的數據
+        auction_data.loc[index, auction_data.columns[3:11]] = filtered_prices[:8].values
 
-        # Replace 3rd to 10th rows with closing prices
-        date_columns = ['投標開始日(T-4)', '投標結束日(T-2)', '開標日期(T)', '撥券日(上市上櫃日)', 'T+7', 'DateStart', 'DateEnd+14']
-        for col in date_columns:
-            if col in auction_data.columns:
-                try:
-                    auction_data.at[_, col] = price_data.loc[price_data['日期'] == row[col], '收盤價'].values[0]
-                except (KeyError, IndexError):
-                    print(f"Closing price not found for {security_code} on {row[col]}.")
+    # 保存更新後的文件
+    updated_file_path = auction_file.replace('.csv', '_updated.csv')
+    auction_data.to_csv(updated_file_path, index=False, encoding='utf-8')
+    print(f"已更新文件並保存為 {updated_file_path}")
 
-    # Save the updated file
-    auction_data.to_csv('cleaned_auction_data_updated.csv', index=False)
-    print("Updated data saved to cleaned_auction_data_updated.csv")
-
+# 主程式
 if __name__ == "__main__":
-    update_cleaned_data()
+    auction_csv_path = "cleaned_auction_data.csv"
+    stock_data_directory = "./stock_data"
+    update_auction_data(auction_csv_path, stock_data_directory)
