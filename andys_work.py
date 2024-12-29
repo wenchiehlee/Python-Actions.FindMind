@@ -40,4 +40,4 @@ def update_auction_data(auction_file, data_folder):
     print(f"已更新 {auction_file} 的資料")
 
 # 使用範例
-update_auction_data("cleaned_auction_data.csv", "./data_folder")
+update_auction_data("cleaned_auction_data.csv", "data_folder")
