@@ -1,4 +1,4 @@
-import os
+"""import os
 import pandas as pd
 
 def update_auction_data():
@@ -58,7 +58,7 @@ def update_auction_data():
     print(f"更新後的檔案已儲存至 {output_file}")
 
 if __name__ == "__main__":
-    update_auction_data()
+    update_auction_data()"""
 
 
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
 
 
 
-"""import os
+import os
 import pandas as pd
 
 # 設定資料夾名稱
@@ -131,4 +131,4 @@ for index, row in auction_data.iterrows():
 # 將更新後的資料存入新檔案
 updated_file_path = os.path.join(output_folder, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(updated_file_path, index=False, encoding="utf-8")
-print(f"已將更新後的資料儲存至 {updated_file_path}")"""
+print(f"已將更新後的資料儲存至 {updated_file_path}")
