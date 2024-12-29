@@ -1,65 +1,68 @@
 import os
 import pandas as pd
 
-def update_auction_data():
-    # 設定檔案名稱與資料夾名稱
-    input_csv = 'cleaned_auction_data.csv'
-    output_folder = 'updated_auction_data'
-    os.makedirs(output_folder, exist_ok=True)
-    
-    # 讀取 cleaned_auction_data.csv
-    try:
-        auction_data = pd.read_csv(input_csv)
-    except FileNotFoundError:
-        print(f"Error: File {input_csv} not found.")
-        return
-    
-    # 定義要更新的欄位
-    date_columns = [
-        "申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期",
-        "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)",
-        "開標日期(T)", "撥券日(上市上櫃日) T+7"
-    ]
-    
-    # 搜尋證券代號對應的檔案
-    for index, row in auction_data.iterrows():
-        security_id = row['證券代號']
-        security_files = [
-            f for f in os.listdir('.') if f.startswith(f"[{security_id}]") and f.endswith('.csv')
-        ]
-        if not security_files:
-            print(f"Warning: No files found for security ID {security_id}.")
-            continue
+# 定義目錄名稱
+output_dir = "updated_auction_data"
+os.makedirs(output_dir, exist_ok=True)
 
-        # 使用第一個找到的檔案
-        security_file = security_files[0]
+# 讀取 cleaned_auction_data.csv
+auction_data_path = "cleaned_auction_data.csv"
+auction_data = pd.read_csv(auction_data_path)
+
+# 指定需要更新的欄位
+date_columns = [
+    "申請日期", 
+    "上櫃審議委員會審議日期", 
+    "櫃買董事會通過上櫃日期", 
+    "櫃買同意上櫃契約日期", 
+    "投標開始日(T-4)", 
+    "投標結束日(T-2)", 
+    "開標日期(T)", 
+    "撥券日(上市上櫃日) T+7"
+]
+
+# 確保所有必要欄位存在
+for column in date_columns:
+    if column not in auction_data.columns:
+        raise KeyError(f"Missing column '{column}' in auction data!")
+
+# 更新每一列
+for idx, row in auction_data.iterrows():
+    security_id = row["證券代號"]
+    matching_csv = None
+
+    # 搜尋對應的收盤價檔案
+    for file in os.listdir("."):
+        if file.startswith(f"[{security_id}]") and file.endswith(".csv"):
+            matching_csv = file
+            break
+    
+    if not matching_csv:
+        print(f"Warning: No closing price file found for security ID {security_id}. Skipping row {idx}.")
+        continue
+
+    # 讀取收盤價檔案
+    closing_price_data = pd.read_csv(matching_csv)
+    if "收盤價" not in closing_price_data.columns or "日期" not in closing_price_data.columns:
+        print(f"Error: File '{matching_csv}' does not contain '收盤價' or '日期'. Skipping row {idx}.")
+        continue
+
+    # 將日期欄位對應至收盤價
+    for column in date_columns:
         try:
-            security_data = pd.read_csv(security_file)
-        except Exception as e:
-            print(f"Error reading file {security_file}: {e}")
-            continue
-        
-        # 確保有收盤價欄位
-        if '收盤價' not in security_data.columns:
-            print(f"Warning: '收盤價' column not found in {security_file}.")
-            continue
-        
-        # 更新 auction_data 的相關欄位
-        for column in date_columns:
-            try:
-                auction_data.at[index, column] = security_data['收盤價'].iloc[0]  # 假設使用第一個收盤價
-            except KeyError:
-                print(f"KeyError when accessing column {column} or '收盤價' in {security_file}.")
-            except IndexError:
-                print(f"IndexError: No data in '收盤價' column for {security_file}.")
-    
-    # 輸出結果
-    output_path = os.path.join(output_folder, 'cleaned_auction_data_updated.csv')
-    auction_data.to_csv(output_path, index=False, encoding='utf-8')
-    print(f"Updated data saved to {output_path}.")
+            target_date = row[column]
+            closing_price = closing_price_data.loc[closing_price_data["日期"] == target_date, "收盤價"]
+            if not closing_price.empty:
+                auction_data.at[idx, column] = closing_price.values[0]
+            else:
+                print(f"Warning: No closing price found for date '{target_date}' in file '{matching_csv}'.")
+        except KeyError as e:
+            print(f"KeyError: {e}. Skipping column '{column}' for row {idx}.")
 
-if __name__ == "__main__":
-    update_auction_data()
+# 儲存更新後的資料
+output_path = os.path.join(output_dir, "cleaned_auction_data_updated.csv")
+auction_data.to_csv(output_path, index=False, encoding="utf-8-sig")
+print(f"Updated data saved to '{output_path}'.")
 
 
 
