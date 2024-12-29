@@ -104,9 +104,9 @@ for index, row in auction_data.iterrows():
         continue
     
     # 使用收盤價更新第3到10行
-    auction_data.loc[index, auction_data.columns[2:10]] = closing_data["收盤價"].iloc[:8].values"""
+    auction_data.loc[index, auction_data.columns[2:10]] = closing_data["收盤價"].iloc[:8].values
 
 # 將更新後的資料存入新檔案
 updated_file_path = os.path.join(output_folder, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(updated_file_path, index=False, encoding="utf-8")
-print(f"已將更新後的資料儲存至 {updated_file_path}")
+print(f"已將更新後的資料儲存至 {updated_file_path}")"""
