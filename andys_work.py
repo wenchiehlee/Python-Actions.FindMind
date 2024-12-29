@@ -11,8 +11,8 @@ auction_data = pd.read_csv(auction_data_path)
 
 # 更新收盤價的邏輯
 for index, row in auction_data.iterrows():
-    if index < 2 or index > 9:  # 只處理第3到10行（從0開始計算）
-        continue
+   # if index < 2 or index > 9:  # 只處理第3到10行（從0開始計算）
+        #continue
     
     # 取得證券代號，假設第一列名為 "證券代號"
     security_id = row["證券代號"]
