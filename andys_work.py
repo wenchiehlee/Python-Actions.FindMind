@@ -1,49 +1,43 @@
 import os
 import pandas as pd
 
-# 設定資料夾名稱
-output_folder = "processed_data"
+# 建立資料夾來儲存結果
+output_folder = "auction_adjusted_data"
 os.makedirs(output_folder, exist_ok=True)
 
-# 讀取主要的 auction data
-auction_file = "cleaned_auction_data.csv"
-auction_data = pd.read_csv(auction_file, sep="\t", encoding="utf-8")
+# 讀取 cleaned_auction_data.csv
+cleaned_auction_data = pd.read_csv("cleaned_auction_data.csv", sep="\t")
+security_columns = cleaned_auction_data.columns[:7]  # 保留日期欄之前的欄位
 
-# 去除第一列的 DateStart 和 DateEnd+14
-columns_to_update = auction_data.columns[7:-2]  # 忽略起始和結尾的非必要欄位
-
-# 處理每個證券代號
-for index, row in auction_data.iterrows():
-    security_id = str(row["證券代號"])
+# 替換收盤價
+for _, row in cleaned_auction_data.iterrows():
+    security_id = str(row['證券代號']).strip()
+    price_csv_pattern = f"{security_id}"  # 模糊匹配 csv 檔案名
+    price_csv = None
     
-    # 搜尋對應的收盤價 CSV
+    # 搜尋該證券的收盤價 CSV
     for file in os.listdir("."):
-        if file.startswith(f"[{security_id}]") and file.endswith(".csv"):
-            price_file = file
+        if file.startswith(price_csv_pattern) and file.endswith(".csv"):
+            price_csv = file
             break
-    else:
-        print(f"未找到證券代號 {security_id} 的收盤價檔案，跳過...")
-        continue
 
+    if not price_csv:
+        print(f"未找到符合的收盤價檔案: {security_id}")
+        continue
+    
     # 讀取收盤價資料
-    price_data = pd.read_csv(price_file, encoding="utf-8")
-    if "收盤價" not in price_data.columns:
-        print(f"檔案 {price_file} 中不包含 '收盤價' 欄位，跳過...")
+    price_data = pd.read_csv(price_csv)
+    if '收盤價' not in price_data.columns:
+        print(f"檔案 {price_csv} 中未包含 '收盤價' 欄位")
         continue
-
-    # 使用收盤價更新 auction data
-    for col in columns_to_update:
-        auction_date = row[col]
-        closing_price = price_data.loc[price_data["日期"] == auction_date, "收盤價"]
-        if not closing_price.empty:
-            auction_data.at[index, col] = closing_price.values[0]
-        else:
-            print(f"無法找到 {auction_date} 對應的收盤價，留空...")
+    
+    # 將收盤價替換到主要資料中
+    cleaned_auction_data.loc[_, '投標開始日(T-4)':] = price_data['收盤價'].values[:len(row['投標開始日(T-4)':])]
 
 # 儲存結果
-output_file = os.path.join(output_folder, "updated_auction_data.csv")
-auction_data.to_csv(output_file, index=False, encoding="utf-8")
-print(f"已儲存至 {output_file}")
+output_path = os.path.join(output_folder, "cleaned_auction_data_updated.csv")
+cleaned_auction_data.to_csv(output_path, index=False)
+print(f"更新後的檔案已儲存至: {output_path}")
 
 
 
