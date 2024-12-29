@@ -5,12 +5,16 @@ import pandas as pd
 output_folder = "auction_adjusted_data"
 os.makedirs(output_folder, exist_ok=True)
 
-# 讀取 cleaned_auction_data.csv
+# 讀取 cleaned_auction_data.csv 並檢查欄位名稱
 cleaned_auction_data = pd.read_csv("cleaned_auction_data.csv", sep="\t")
-security_columns = cleaned_auction_data.columns[:7]  # 保留日期欄之前的欄位
+print("讀取資料成功，欄位名稱為：", cleaned_auction_data.columns.tolist())
+
+# 確保 '證券代號' 欄位存在
+if '證券代號' not in cleaned_auction_data.columns:
+    raise KeyError("無法找到欄位 '證券代號'，請檢查 CSV 檔案中的列標題")
 
 # 替換收盤價
-for _, row in cleaned_auction_data.iterrows():
+for index, row in cleaned_auction_data.iterrows():
     security_id = str(row['證券代號']).strip()
     price_csv_pattern = f"{security_id}"  # 模糊匹配 csv 檔案名
     price_csv = None
@@ -31,13 +35,14 @@ for _, row in cleaned_auction_data.iterrows():
         print(f"檔案 {price_csv} 中未包含 '收盤價' 欄位")
         continue
     
-    # 將收盤價替換到主要資料中
-    cleaned_auction_data.loc[_, '投標開始日(T-4)':] = price_data['收盤價'].values[:len(row['投標開始日(T-4)':])]
-
-# 儲存結果
-output_path = os.path.join(output_folder, "cleaned_auction_data_updated.csv")
-cleaned_auction_data.to_csv(output_path, index=False)
-print(f"更新後的檔案已儲存至: {output_path}")
+    # 更新收盤價到主要資料
+    date_columns = cleaned_auction_data.columns[7:]  # 僅更新日期相關欄位
+    if len(price_data['收盤價']) < len(date_columns):
+        print(f"警告: 收盤價資料不足，無法完全覆蓋日期相關欄位（證券代號: {security_id}）")
+        continue
+    
+    for i, col in enumerate(date_columns):
+      
 
 
 
