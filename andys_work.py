@@ -1,7 +1,5 @@
 import os
 import pandas as pd
-import glob
-import re
 
 def update_auction_data(auction_file, output_folder):
     # 確保輸出資料夾存在
@@ -19,14 +17,17 @@ def update_auction_data(auction_file, output_folder):
     if not all(col in auction_data.columns for col in columns_to_update):
         raise KeyError("The required columns are missing in the auction data file.")
 
+    # 列出當前目錄下的所有檔案
+    all_files = os.listdir('.')
+    print(f"目前目錄下的檔案有：{all_files}")
+
     for index, row in auction_data.iterrows():
         security_id = row["證券代號"]
         if pd.isna(security_id):
             continue  # 跳過缺少證券代號的行
 
-        # 使用正規表達式搜索對應的收盤價檔案
-        price_files = glob.glob(f"[{security_id}]*.csv")
-        matching_files = [file for file in price_files if re.match(fr"\[{security_id}\]", os.path.basename(file))]
+        # 搜尋對應的收盤價檔案
+        matching_files = [file for file in all_files if file.startswith(f"[{security_id}]") and file.endswith('.csv')]
         if not matching_files:
             print(f"收盤價檔案未找到: {security_id}")
             continue
@@ -62,6 +63,7 @@ if __name__ == "__main__":
     auction_file = "cleaned_auction_data.csv"
     output_folder = "updated_data"
     update_auction_data(auction_file, output_folder)
+
 
 
 
