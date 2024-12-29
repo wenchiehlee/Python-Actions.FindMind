@@ -1,68 +1,68 @@
 import os
 import pandas as pd
 
-def update_auction_data(auction_file, output_folder):
+def update_cleaned_auction_data():
+    # 確認工作目錄中存在的 CSV 檔案
+    file_list = [f for f in os.listdir('.') if f.endswith('.csv')]
+    auction_data_file = "cleaned_auction_data.csv"
+
     # 確保輸出資料夾存在
+    output_folder = "processed_data"
     os.makedirs(output_folder, exist_ok=True)
+    
+    if auction_data_file not in file_list:
+        print(f"Error: {auction_data_file} not found.")
+        return
 
     # 讀取 cleaned_auction_data.csv
-    auction_data = pd.read_csv(auction_file, encoding='utf-8')
-    columns_to_update = [
-        "申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期", 
-        "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)", 
-        "開標日期(T)", "撥券日(上市上櫃日) T+7"
-    ]
+    auction_data = pd.read_csv(auction_data_file, sep="\t")
+    auction_data_columns = ["申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期",
+                            "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)",
+                            "開標日期(T)", "撥券日(上市上櫃日) T+7"]
     
-    # 確保所需的列存在
-    if not all(col in auction_data.columns for col in columns_to_update):
-        raise KeyError("The required columns are missing in the auction data file.")
+    # 檢查是否有必要的列
+    for col in auction_data_columns:
+        if col not in auction_data.columns:
+            print(f"Error: Missing column '{col}' in auction data.")
+            return
 
-    # 列出當前目錄下的所有檔案
-    all_files = os.listdir('.')
-    print(f"目前目錄下的檔案有：{all_files}")
+    updated_data = auction_data.copy()
 
     for index, row in auction_data.iterrows():
-        security_id = row["證券代號"]
-        if pd.isna(security_id):
-            continue  # 跳過缺少證券代號的行
+        security_id = str(row["證券代號"]).strip()
+        related_file = next((f for f in file_list if f.startswith(f"[{security_id}]")), None)
 
-        # 搜尋對應的收盤價檔案
-        matching_files = [file for file in all_files if file.startswith(f"[{security_id}]") and file.endswith('.csv')]
-        if not matching_files:
-            print(f"收盤價檔案未找到: {security_id}")
-            continue
+        if related_file:
+            try:
+                # 讀取對應的收盤價檔案
+                closing_data = pd.read_csv(related_file)
+                if "收盤價" not in closing_data.columns:
+                    print(f"Error: Column '收盤價' not found in {related_file}.")
+                    continue
+                
+                # 更新相關日期列為對應收盤價
+                for col in auction_data_columns:
+                    date_value = row[col]
+                    closing_price_row = closing_data.loc[closing_data["日期"] == date_value]
+                    
+                    if not closing_price_row.empty:
+                        updated_data.at[index, col] = closing_price_row.iloc[0]["收盤價"]
+                    else:
+                        print(f"Warning: Date {date_value} not found in {related_file}.")
 
-        # 讀取收盤價檔案
-        price_file = matching_files[0]
-        price_data = pd.read_csv(price_file, encoding='utf-8')
-        if "收盤價" not in price_data.columns or "日期" not in price_data.columns:
-            print(f"收盤價檔案格式錯誤: {price_file}")
-            continue
+            except Exception as e:
+                print(f"Error processing {related_file}: {e}")
+        else:
+            print(f"Warning: No related file found for security ID {security_id}.")
 
-        # 確保日期和收盤價的資料一致
-        price_data.dropna(subset=["日期", "收盤價"], inplace=True)
-        price_mapping = price_data.set_index("日期")["收盤價"].to_dict()
-
-        # 更新日期列為收盤價
-        for col in columns_to_update:
-            original_date = row[col]
-            if pd.isna(original_date):
-                auction_data.at[index, col] = None
-            elif str(original_date) in price_mapping:
-                auction_data.at[index, col] = price_mapping[str(original_date)]
-            else:
-                print(f"日期 {original_date} 在檔案 {price_file} 中未找到收盤價")
-                auction_data.at[index, col] = None
-
-    # 儲存更新後的資料
-    output_path = os.path.join(output_folder, "updated_auction_data.csv")
-    auction_data.to_csv(output_path, index=False, encoding='utf-8')
-    print(f"更新後的資料已儲存至: {output_path}")
+    # 將更新後的資料存檔
+    output_file = os.path.join(output_folder, "cleaned_auction_data_updated.csv")
+    updated_data.to_csv(output_file, index=False, sep="\t")
+    print(f"Updated auction data saved to {output_file}.")
 
 if __name__ == "__main__":
-    auction_file = "cleaned_auction_data.csv"
-    output_folder = "updated_data"
-    update_auction_data(auction_file, output_folder)
+    update_cleaned_auction_data()
+
 
 
 
