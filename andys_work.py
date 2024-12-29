@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import glob
+import re
 
 def update_auction_data(auction_file, output_folder):
     # 確保輸出資料夾存在
@@ -23,28 +24,34 @@ def update_auction_data(auction_file, output_folder):
         if pd.isna(security_id):
             continue  # 跳過缺少證券代號的行
 
-        # 搜尋對應的收盤價檔案
+        # 使用正規表達式搜索對應的收盤價檔案
         price_files = glob.glob(f"[{security_id}]*.csv")
-        if not price_files:
+        matching_files = [file for file in price_files if re.match(fr"\[{security_id}\]", os.path.basename(file))]
+        if not matching_files:
             print(f"收盤價檔案未找到: {security_id}")
             continue
 
         # 讀取收盤價檔案
-        price_data = pd.read_csv(price_files[0], encoding='utf-8')
+        price_file = matching_files[0]
+        price_data = pd.read_csv(price_file, encoding='utf-8')
         if "收盤價" not in price_data.columns or "日期" not in price_data.columns:
-            print(f"收盤價檔案格式錯誤: {price_files[0]}")
+            print(f"收盤價檔案格式錯誤: {price_file}")
             continue
 
-        # 建立日期到收盤價的對應
+        # 確保日期和收盤價的資料一致
+        price_data.dropna(subset=["日期", "收盤價"], inplace=True)
         price_mapping = price_data.set_index("日期")["收盤價"].to_dict()
 
         # 更新日期列為收盤價
         for col in columns_to_update:
             original_date = row[col]
-            if pd.isna(original_date) or original_date not in price_mapping:
+            if pd.isna(original_date):
                 auction_data.at[index, col] = None
+            elif str(original_date) in price_mapping:
+                auction_data.at[index, col] = price_mapping[str(original_date)]
             else:
-                auction_data.at[index, col] = price_mapping[original_date]
+                print(f"日期 {original_date} 在檔案 {price_file} 中未找到收盤價")
+                auction_data.at[index, col] = None
 
     # 儲存更新後的資料
     output_path = os.path.join(output_folder, "updated_auction_data.csv")
@@ -55,6 +62,7 @@ if __name__ == "__main__":
     auction_file = "cleaned_auction_data.csv"
     output_folder = "updated_data"
     update_auction_data(auction_file, output_folder)
+
 
 
 
