@@ -1,50 +1,56 @@
 import os
 import pandas as pd
+from glob import glob
 
-# 創建資料夾來保存結果
-output_folder = "processed_auction_data"
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
+# 創建資料夾來存儲結果
+output_folder = "updated_auction_data"
+os.makedirs(output_folder, exist_ok=True)
 
 # 讀取 cleaned_auction_data.csv
-auction_data_file = "cleaned_auction_data.csv"
-auction_data = pd.read_csv(auction_data_file, encoding='utf-8')
+auction_data_path = "/mnt/data/cleaned_auction_data.csv"
+auction_data = pd.read_csv(auction_data_path)
 
-# 確認日期相關欄位
-columns_to_update = auction_data.columns.difference(["DateStart", "DateEnd+14"])
+# 確保第一列標題正確
+columns = [
+    "證券代號", "證券名稱", "申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期",
+    "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)", "開標日期(T)", 
+    "撥券日(上市上櫃日) T+7", "DateStart", "DateEnd+14"
+]
+auction_data.columns = columns
 
-# 處理每個證券代號的數據
+# 遍歷證券代號，匹配收盤價資料
 for security_id in auction_data["證券代號"].unique():
-    # 找到對應的收盤價檔案
-    price_file = None
-    for file in os.listdir("."):
-        if file.startswith(str(security_id)) and file.endswith(".csv"):
-            price_file = file
-            break
+    # 查找符合該證券代號的CSV檔案
+    price_file_pattern = f"/mnt/data/{security_id}*.csv"
+    price_files = glob(price_file_pattern)
     
-    if price_file:
-        # 讀取對應的收盤價數據
-        price_data = pd.read_csv(price_file, encoding='utf-8')
-        
-        # 確保包含收盤價的欄位，並匹配日期
-        if "收盤價" in price_data.columns:
-            for col in columns_to_update:
-                if col in auction_data.columns and col in price_data.columns:
-                    auction_data.loc[auction_data["證券代號"] == security_id, col] = \
-                        auction_data.loc[auction_data["證券代號"] == security_id, col].map(
-                            lambda x: price_data.loc[price_data["日期"] == x, "收盤價"].values[0]
-                            if x in price_data["日期"].values else x
-                        )
-        else:
-            print(f"收盤價欄位在檔案 {price_file} 中不存在，跳過該檔案")
-    else:
-        print(f"未找到對應證券代號 {security_id} 的收盤價檔案，跳過")
+    if not price_files:
+        print(f"無法找到證券代號 {security_id} 的收盤價資料檔案。")
+        continue
+    
+    # 假設每個證券代號只有一個相關檔案
+    price_file = price_files[0]
+    price_data = pd.read_csv(price_file)
 
-# 儲存結果到新的 CSV 文件中
-output_file = os.path.join(output_folder, "updated_cleaned_auction_data.csv")
-auction_data.to_csv(output_file, index=False, encoding='utf-8')
+    # 確認有 "收盤價" 欄位
+    if "收盤價" not in price_data.columns:
+        print(f"{price_file} 缺少 '收盤價' 欄位，跳過。")
+        continue
 
-print(f"處理完成，結果儲存在 {output_file}")
+    # 替換 auction_data 中的日期資料為該證券代號的收盤價
+    relevant_rows = auction_data["證券代號"] == security_id
+    for date_column in columns[2:-2]:  # 忽略 DateStart 和 DateEnd+14
+        if date_column in auction_data.columns and date_column in price_data.columns:
+            auction_data.loc[relevant_rows, date_column] = price_data.set_index("日期").loc[
+                auction_data.loc[relevant_rows, date_column], "收盤價"
+            ].values
+
+# 儲存結果至新的CSV檔案
+output_path = os.path.join(output_folder, "cleaned_auction_data_updated.csv")
+auction_data.to_csv(output_path, index=False, encoding="utf-8-sig")
+
+print(f"已更新的資料存儲於 {output_path}")
+
 
 
 
