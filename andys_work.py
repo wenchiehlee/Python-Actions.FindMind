@@ -6,7 +6,7 @@ output_dir = "processed_data"
 os.makedirs(output_dir, exist_ok=True)
 
 # Load cleaned auction data
-auction_data_file = "/mnt/data/cleaned_auction_data.csv"
+auction_data_file = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(auction_data_file)
 
 # Iterate over each security in the auction data
