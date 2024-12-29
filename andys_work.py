@@ -42,6 +42,13 @@ for index, row in cleaned_auction_data.iterrows():
         continue
     
     for i, col in enumerate(date_columns):
+        cleaned_auction_data.at[index, col] = price_data['收盤價'].iloc[i]
+
+# 儲存結果
+output_path = os.path.join(output_folder, "cleaned_auction_data_updated.csv")
+cleaned_auction_data.to_csv(output_path, index=False)
+print(f"更新後的檔案已儲存至: {output_path}")
+
       
 
 
