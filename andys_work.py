@@ -7,7 +7,7 @@ output_folder = "updated_auction_data"
 os.makedirs(output_folder, exist_ok=True)
 
 # 讀取 cleaned_auction_data.csv
-auction_data_path = "/mnt/data/cleaned_auction_data.csv"
+auction_data_path = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(auction_data_path)
 
 # 確保第一列標題正確
