@@ -90,7 +90,7 @@ def validate_and_process_csv(file_path):
         return None
 
 def main():
-    api_token = os.getenv("FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN")
+    api_token = os.getenv("FINDMIND_GMAIL_TOKEN")
     if not api_token:
         print("Error: API token is not set in environment variables.")
         return
