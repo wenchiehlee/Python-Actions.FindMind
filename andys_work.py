@@ -141,7 +141,3 @@ auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
 print(f"已完成資料處理並儲存至 {output_path}")
 
 
-# 將更新後的資料存入新檔案
-updated_file_path = os.path.join(output_folder, "updated_cleaned_auction_data.csv")
-auction_data.to_csv(updated_file_path, index=False, encoding="utf-8")
-print(f"已將更新後的資料儲存至 {updated_file_path}")
