@@ -28,6 +28,9 @@ jobs:
           FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN: ${{ secrets.FINDMIND_WENCHIEHLEE1020_GMAIL_TOKEN }}
         run: |
           python FindMind-fetch_and_save_stock_data.py
+      - name: Running Python
+        run: 
+          python andys_work.py
 
       - name: Commit and Push The Results From Python Action
         run: |
