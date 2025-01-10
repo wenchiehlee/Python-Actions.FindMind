@@ -1,4 +1,4 @@
-name: API On GitHub Action
+name: API On GitHub Actions
 on:
   push:
     branches:
