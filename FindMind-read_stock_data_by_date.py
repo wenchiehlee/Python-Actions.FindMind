@@ -82,11 +82,8 @@ print(f"已完成資料處理並儲存至 {output_path}")"""
 
 
 
-
-
 import os
 import pandas as pd
-from pandas.tseries.offsets import BDay
 import re
 
 # 創建輸出資料夾名稱
@@ -143,7 +140,8 @@ def get_security_stats(security_id):
                     start_date = pd.to_datetime(match.group(2), errors='coerce')
                     end_date = pd.to_datetime(match.group(3), errors='coerce')
                     if start_date and end_date:
-                        working_days = pd.date_range(start=start_date, end=end_date, freq=BDay).shape[0]
+                        # 使用 'B' 表示工作日頻率
+                        working_days = pd.date_range(start=start_date, end=end_date, freq='B').shape[0]
                     else:
                         working_days = "無資料"
                 else:
@@ -180,6 +178,3 @@ output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
 
 print(f"已完成資料處理並儲存至 {output_path}")
-
-
-
