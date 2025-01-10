@@ -85,13 +85,14 @@ print(f"已完成資料處理並儲存至 {output_path}")"""
 import os
 import pandas as pd
 import re
+from workalendar.asia import Taiwan  # 使用 workalendar 計算台灣的工作日
 
 # 創建輸出資料夾名稱
 output_dir = "auction_data_processed"
 os.makedirs(output_dir, exist_ok=True)
 
 # 讀取 cleaned_auction_data.csv 檔案
-cleaned_auction_data_path = "cleaned_auction_data.csv"
+cleaned_auction_data_path = "cleaned_auction_data (1).csv"
 auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 
 # 定義需要處理的日期欄位，包含新增的 DateStart 和 DateEnd+14
@@ -103,6 +104,9 @@ date_columns = [
 
 # 獲取所有文件列表
 all_files = os.listdir()
+
+# 初始化台灣工作日計算
+cal = Taiwan()
 
 # 定義函數以獲取收盤價
 def get_closing_price(security_id, date):
@@ -140,8 +144,8 @@ def get_security_stats(security_id):
                     start_date = pd.to_datetime(match.group(2), errors='coerce')
                     end_date = pd.to_datetime(match.group(3), errors='coerce')
                     if start_date and end_date:
-                        # 使用 'B' 表示工作日頻率
-                        working_days = pd.date_range(start=start_date, end=end_date, freq='B').shape[0]
+                        # 使用 workalendar 計算台灣的工作天數
+                        working_days = len(cal.get_working_days_delta(start_date, end_date))
                     else:
                         working_days = "無資料"
                 else:
@@ -153,8 +157,8 @@ def get_security_stats(security_id):
     return "無資料", "無資料"
 
 # 更新資料中的日期欄位並添加新列
-auction_data["資料總數"] = "無資料"  # 初始化資料總數欄位
-auction_data["總工作天數"] = "無資料"  # 初始化總工作天數欄位
+auction_data.insert(auction_data.columns.get_loc("DateEnd+14") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd+14 後面
+auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")  # 總工作天數插入到 資料總數 後面
 
 for index, row in auction_data.iterrows():
     security_id = row["證券代號"]
