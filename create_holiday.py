@@ -45,7 +45,7 @@ def find_missing_dates(security_id, start_date, end_date):
 missing_dates_data = []
 
 # 讀取 cleaned_auction_data.csv 檔案
-cleaned_auction_data_path = "cleaned_auction_data (1).csv"
+cleaned_auction_data_path = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 
 for index, row in auction_data.iterrows():
