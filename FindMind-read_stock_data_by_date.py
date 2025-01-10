@@ -92,7 +92,7 @@ output_dir = "auction_data_processed"
 os.makedirs(output_dir, exist_ok=True)
 
 # 讀取 cleaned_auction_data.csv 檔案
-cleaned_auction_data_path = "cleaned_auction_data (1).csv"
+cleaned_auction_data_path = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 
 # 定義需要處理的日期欄位，包含新增的 DateStart 和 DateEnd+14
