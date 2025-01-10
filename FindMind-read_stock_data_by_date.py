@@ -78,10 +78,6 @@ print(f"已完成資料處理並儲存至 {output_path}")"""
 
 
 
-
-
-
-
 import os
 import pandas as pd
 import re
@@ -145,7 +141,7 @@ def get_security_stats(security_id):
                     end_date = pd.to_datetime(match.group(3), errors='coerce')
                     if start_date and end_date:
                         # 使用 workalendar 計算台灣的工作天數
-                        working_days = len(cal.get_working_days_delta(start_date, end_date))
+                        working_days = cal.get_working_days_delta(start_date, end_date)
                     else:
                         working_days = "無資料"
                 else:
@@ -182,3 +178,4 @@ output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
 
 print(f"已完成資料處理並儲存至 {output_path}")
+
