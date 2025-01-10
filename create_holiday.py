@@ -1,51 +1,72 @@
 import os
 import pandas as pd
-from workalendar.asia import Taiwan
-from datetime import datetime
 import re
+from workalendar.asia import Taiwan
+from datetime import datetime, timedelta
 
-# 初始化台灣工作日
+# 初始化台灣工作日計算
 cal = Taiwan()
 
-# 讀取 cleaned_auction_data.csv 檔案
-cleaned_auction_data_path = "cleaned_auction_data.csv"
-auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
+# 創建輸出資料夾名稱
+output_dir = "auction_data_processed"
+os.makedirs(output_dir, exist_ok=True)
+
+# 定義要輸出的缺失日期 CSV
+missing_dates_output_path = os.path.join(output_dir, "missing_dates.csv")
 
 # 獲取所有文件列表
 all_files = os.listdir()
 
-# 定義函數以獲取證券代號的國定假日
-def get_public_holidays(security_id):
-    holidays = []
+# 定義函數以找出缺失日期
+def find_missing_dates(security_id, start_date, end_date):
+    for file_name in all_files:
+        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
+            try:
+                # 讀取證券資料
+                price_data = pd.read_csv(file_name, encoding='utf-8')
+                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
+                
+                # 獲取日期範圍內的所有工作日
+                date_range = pd.date_range(start=start_date, end=end_date, freq='B')
+                all_working_days = [d.date() for d in date_range if cal.is_working_day(d)]
+
+                # 已存在的日期
+                existing_dates = set(price_data['日期'].dropna())
+
+                # 找出缺失的日期
+                missing_dates = [d for d in all_working_days if d not in existing_dates]
+                return missing_dates
+            except Exception as e:
+                print(f"Error processing file {file_name}: {e}")
+                return []
+    return []
+
+# 構建缺失日期 CSV 的初始結構
+missing_dates_data = []
+
+# 讀取 cleaned_auction_data.csv 檔案
+cleaned_auction_data_path = "cleaned_auction_data (1).csv"
+auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
+
+for index, row in auction_data.iterrows():
+    security_id = row["證券代號"]
+    
+    # 提取證券檔案中的日期跨度
     for file_name in all_files:
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
             match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
             if match:
-                start_date = datetime.strptime(match.group(2), "%Y-%m-%d").date()
-                end_date = datetime.strptime(match.group(3), "%Y-%m-%d").date()
+                start_date = pd.to_datetime(match.group(2), errors='coerce').date()
+                end_date = pd.to_datetime(match.group(3), errors='coerce').date()
                 
-                # 獲取指定日期範圍內的國定假日
-                holidays = cal.holidays(start_date, end_date)
-                return [holiday[0].strftime("%Y-%m-%d") for holiday in holidays]  # 只提取日期部分
-    return []
+                # 找出缺失日期
+                missing_dates = find_missing_dates(security_id, start_date, end_date)
+                if missing_dates:
+                    # 加入缺失日期到輸出結構
+                    missing_dates_data.append([security_id] + missing_dates)
 
-# 準備生成新 CSV 資料
-holiday_data = []
+# 生成缺失日期的 CSV 檔案
+missing_dates_df = pd.DataFrame(missing_dates_data)
+missing_dates_df.to_csv(missing_dates_output_path, index=False, header=False, encoding='utf-8-sig')
 
-for index, row in auction_data.iterrows():
-    security_id = row["證券代號"]
-    holidays = get_public_holidays(security_id)
-    
-    # 第一列為證券代號，後續列為該證券影響期間的國定假日
-    holiday_data.append([security_id] + holidays)
-
-# 將資料寫入新的 CSV 檔案
-output_dir = "auction_data_processed"
-os.makedirs(output_dir, exist_ok=True)
-
-output_file_path = os.path.join(output_dir, "security_holidays.csv")
-with open(output_file_path, mode='w', encoding='utf-8-sig') as f:
-    for record in holiday_data:
-        f.write(",".join(record) + "\n")
-
-print(f"已生成包含證券代號和國定假日的檔案，存儲於：{output_file_path}")
+print(f"缺失日期已儲存至 {missing_dates_output_path}")
