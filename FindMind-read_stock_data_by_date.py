@@ -90,26 +90,30 @@ for index, row in auction_data.iterrows():
     security_id = row["證券代號"]
     
     # 更新日期欄位
+for index, row in auction_data.iterrows():
+    security_id = row["證券代號"]
+    
+    # 更新日期欄位
     for column in date_columns:
         if pd.notna(row[column]):  # 確保日期欄位不為空
-            closing_price = get_closing_price(security_id, row[column])
+            date_value = row[column]
+            print(f"處理列: {column}, 日期: {date_value}")
+            
+            closing_price = get_closing_price(security_id, date_value)
             if closing_price is not None:
                 auction_data.at[index, column] = closing_price
+                print(f"更新 {column} 為收盤價: {closing_price}")
             else:
                 # 判斷是否為假日
-                date_obj = pd.to_datetime(row[column], errors='coerce').date()
+                date_obj = pd.to_datetime(date_value, errors='coerce').date()
                 if date_obj in custom_holidays_set:
                     auction_data.at[index, column] = "holiday"
+                    print(f"更新 {column} 為 holiday")
                 else:
-                    auction_data.at[index, column] = "無資料"  # 非假日且無資料
-
-    # 獲取資料總數和總工作天數
-    total_rows, working_days = get_security_stats(security_id)
-    auction_data.at[index, "資料總數"] = total_rows
-    auction_data.at[index, "總工作天數"] = working_days
+                    auction_data.at[index, column] = "無資料"
+                    print(f"更新 {column} 為 無資料")
 
 # 儲存更新的資料至新的檔案中
 output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
-
 print(f"已完成資料處理並儲存至 {output_path}")
