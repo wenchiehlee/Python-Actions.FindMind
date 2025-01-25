@@ -24,28 +24,6 @@ all_files = os.listdir()
 # 初始化台灣工作日計算
 cal = Taiwan()
 
-# 讀取 holidays.csv 檔案
-holidays_path = "holidays.csv"
-if os.path.exists(holidays_path):
-    try:
-        # 嘗試讀取 holidays.csv
-        custom_holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
-        # 使用 pd.to_datetime 處理各種可能的日期格式，並自動轉換為標準格式
-        custom_holidays["日期"] = pd.to_datetime(custom_holidays["日期"], errors="coerce").dt.date
-        
-        # 去除無法解析的行（例如 "invalid_date" 或空值）
-        custom_holidays = custom_holidays.dropna()
-        
-        # 構建假日集合
-        custom_holidays_set = set(custom_holidays["日期"])
-        print(f"成功讀取 holidays.csv，共 {len(custom_holidays_set)} 個假日")
-    except Exception as e:
-        print(f"讀取 holidays.csv 時出錯: {e}")
-        custom_holidays_set = set()
-else:
-    print("找不到 holidays.csv，將不考慮額外假日")
-    custom_holidays_set = set()
-
 # 定義函數以獲取收盤價
 def get_closing_price(security_id, date):
     for file_name in all_files:
@@ -102,30 +80,21 @@ for index, row in auction_data.iterrows():
     security_id = row["證券代號"]
     
     # 更新日期欄位
-for index, row in auction_data.iterrows():
-    security_id = row["證券代號"]
-    
-    # 更新日期欄位
     for column in date_columns:
         if pd.notna(row[column]):  # 確保日期欄位不為空
-            date_value = row[column]
-            print(f"處理列: {column}, 日期: {date_value}")
-            
-            closing_price = get_closing_price(security_id, date_value)
+            closing_price = get_closing_price(security_id, row[column])
             if closing_price is not None:
                 auction_data.at[index, column] = closing_price
-                print(f"更新 {column} 為收盤價: {closing_price}")
             else:
-                # 判斷是否為假日
-                date_obj = pd.to_datetime(date_value, errors='coerce').date()
-                if date_obj in custom_holidays_set:
-                    auction_data.at[index, column] = "holiday"
-                    print(f"更新 {column} 為 holiday")
-                else:
-                    auction_data.at[index, column] = "無資料"
-                    print(f"更新 {column} 為 無資料")
+                auction_data.at[index, column] = "無資料"  # 未找到任何可用收盤價
+    
+    # 獲取資料總數和總工作天數
+    total_rows, working_days = get_security_stats(security_id)
+    auction_data.at[index, "資料總數"] = total_rows
+    auction_data.at[index, "總工作天數"] = working_days
 
 # 儲存更新的資料至新的檔案中
 output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
+
 print(f"已完成資料處理並儲存至 {output_path}")
