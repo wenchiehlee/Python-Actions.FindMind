@@ -27,9 +27,21 @@ cal = Taiwan()
 # 讀取 holidays.csv 檔案
 holidays_path = "holidays.csv"
 if os.path.exists(holidays_path):
-    custom_holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
-    custom_holidays["日期"] = pd.to_datetime(custom_holidays["日期"], errors="coerce").dt.date
-    custom_holidays_set = set(custom_holidays["日期"].dropna())
+    try:
+        # 嘗試讀取 holidays.csv
+        custom_holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
+        # 使用 pd.to_datetime 處理各種可能的日期格式，並自動轉換為標準格式
+        custom_holidays["日期"] = pd.to_datetime(custom_holidays["日期"], errors="coerce").dt.date
+        
+        # 去除無法解析的行（例如 "invalid_date" 或空值）
+        custom_holidays = custom_holidays.dropna()
+        
+        # 構建假日集合
+        custom_holidays_set = set(custom_holidays["日期"])
+        print(f"成功讀取 holidays.csv，共 {len(custom_holidays_set)} 個假日")
+    except Exception as e:
+        print(f"讀取 holidays.csv 時出錯: {e}")
+        custom_holidays_set = set()
 else:
     print("找不到 holidays.csv，將不考慮額外假日")
     custom_holidays_set = set()
