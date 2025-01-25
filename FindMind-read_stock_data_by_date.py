@@ -140,10 +140,6 @@ def get_security_stats(security_id):
                 return "無資料", "無資料"
     return "無資料", "無資料"
 
-# 更新資料中的日期欄位並添加新列
-auction_data.insert(auction_data.columns.get_loc("DateEnd+14") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd+14 後面
-auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")  # 總工作天數插入到 資料總數 後面
-
 for index, row in auction_data.iterrows():
     security_id = row["證券代號"]
     
