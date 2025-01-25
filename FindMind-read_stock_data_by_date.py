@@ -24,26 +24,21 @@ all_files = os.listdir()
 # 初始化台灣工作日計算
 cal = Taiwan()
 
-# 定義函數以獲取收盤價
-def get_closing_price(security_id, date):
-    for file_name in all_files:
-        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
-            file_path = file_name
-            try:
-                price_data = pd.read_csv(file_path, encoding='utf-8')
-                # 確保日期格式一致 (YYYY-MM-DD)
-                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
-                date_obj = pd.to_datetime(date, errors='coerce').date()
-                
-                # 搜尋當天資料
-                for offset in range(0, 3):  # 試圖搜尋當天及往後1~2天
-                    search_date = date_obj + pd.Timedelta(days=offset)
-                    closing_price_row = price_data.loc[price_data['日期'] == search_date]
-                    if not closing_price_row.empty:
-                        return closing_price_row['收盤價'].values[0]
-            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError):
-                continue
-    return None
+# 讀取 holidays.csv
+holidays_path = "holidays.csv"
+if os.path.exists(holidays_path):
+    try:
+        holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
+        holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
+        holidays = holidays.dropna()  # 去掉無效日期
+        holidays_set = set(holidays["日期"])  # 建立假日集合
+        print(f"成功讀取 holidays.csv，共 {len(holidays_set)} 個假日")
+    except Exception as e:
+        print(f"讀取 holidays.csv 時發生錯誤: {e}")
+        holidays_set = set()
+else:
+    print("找不到 holidays.csv，將不考慮假日")
+    holidays_set = set()
 
 # 定義函數以計算資料總數與總工作天數
 def get_security_stats(security_id):
@@ -57,11 +52,15 @@ def get_security_stats(security_id):
                 # 2. 提取日期跨度，計算總工作天數
                 match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
                 if match:
-                    start_date = pd.to_datetime(match.group(2), errors='coerce')
-                    end_date = pd.to_datetime(match.group(3), errors='coerce')
+                    start_date = pd.to_datetime(match.group(2), errors='coerce').date()
+                    end_date = pd.to_datetime(match.group(3), errors='coerce').date()
                     if start_date and end_date:
-                        # 使用 workalendar 計算台灣的工作天數
+                        # 計算期間內的工作天數
                         working_days = cal.get_working_days_delta(start_date, end_date)
+                        
+                        # 從總工作天數中扣除假日數量
+                        holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
+                        working_days -= len(holidays_in_range)
                     else:
                         working_days = "無資料"
                 else:
@@ -78,15 +77,6 @@ auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作
 
 for index, row in auction_data.iterrows():
     security_id = row["證券代號"]
-    
-    # 更新日期欄位
-    for column in date_columns:
-        if pd.notna(row[column]):  # 確保日期欄位不為空
-            closing_price = get_closing_price(security_id, row[column])
-            if closing_price is not None:
-                auction_data.at[index, column] = closing_price
-            else:
-                auction_data.at[index, column] = "無資料"  # 未找到任何可用收盤價
     
     # 獲取資料總數和總工作天數
     total_rows, working_days = get_security_stats(security_id)
