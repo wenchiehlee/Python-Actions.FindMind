@@ -119,6 +119,12 @@ def get_security_stats(security_id):
                         valid_missing_dates = [d for d in missing_dates if d not in holidays_set]
                         print(f"證券代號: {security_id}, 有效缺失日期數量: {len(valid_missing_dates)}, 有效缺失日期: {valid_missing_dates}")
                         working_days -= len(valid_missing_dates)  # 只扣除有效缺失日期
+                        holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
+                        valid_holidays = [d for d in holidays_in_range if d in price_data['日期'].values]
+
+                        # 調試打印
+                        print(f"證券代號: {security_id}, 假日範圍內所有假日: {holidays_in_range}")
+                        print(f"證券代號: {security_id}, 假日範圍內出現在交易記錄的假日 (有效假日): {valid_holidays}")
 
                         # 打印更新後的工作天數
                         print(f"證券代號: {security_id}, 更新後的總工作天數: {working_days}")
@@ -137,12 +143,7 @@ def get_security_stats(security_id):
 
 
 
-holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
-valid_holidays = [d for d in holidays_in_range if d in price_data['日期'].values]
 
-# 調試打印
-print(f"證券代號: {security_id}, 假日範圍內所有假日: {holidays_in_range}")
-print(f"證券代號: {security_id}, 假日範圍內出現在交易記錄的假日 (有效假日): {valid_holidays}")
 
 
 
