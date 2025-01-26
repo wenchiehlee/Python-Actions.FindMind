@@ -19,7 +19,6 @@ date_columns = [
     "開標日期(T)", "撥券日(上市上櫃日) T+7", "DateStart", "DateEnd+14"
 ]
 
-
 # 獲取所有文件列表
 all_files = os.listdir()
 
@@ -42,17 +41,9 @@ if os.path.exists(holidays_path):
         # 建立 DataFrame
         holidays = pd.DataFrame(holidays_list, columns=["日期"])
 
-        # 調試：查看文件原始內容
-        print("holidays.csv 原始內容：")
-        print(holidays.head())
-
         # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
         holidays["日期"] = holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
         holidays["日期"] = holidays["日期"].str.strip()  # 去除空格
-
-        # 調試：查看提取日期後的內容
-        print("提取日期後的內容：")
-        print(holidays["日期"].head())
 
         # 將日期轉換為標準格式
         holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
@@ -62,37 +53,12 @@ if os.path.exists(holidays_path):
         holidays_set = set(holidays["日期"])  # 建立假日集合
 
         print(f"成功讀取 holidays.csv，共 {len(holidays_set)} 個假日")
-        print("解析後的假日日期：", list(holidays_set)[:5])  # 調試：打印部分解析出的日期
     except Exception as e:
         print(f"讀取 holidays.csv 時發生錯誤: {e}")
         holidays_set = set()
 else:
     print("找不到 holidays.csv，將不考慮假日")
     holidays_set = set()
-
-
-
-
-# 定義函數以獲取收盤價
-def get_closing_price(security_id, date):
-    for file_name in all_files:
-        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
-            file_path = file_name
-            try:
-                price_data = pd.read_csv(file_path, encoding='utf-8')
-                # 確保日期格式一致 (YYYY-MM-DD)
-                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
-                date_obj = pd.to_datetime(date, errors='coerce').date()
-                
-                # 搜尋當天資料
-                for offset in range(0, 3):  # 試圖搜尋當天及往後1~2天
-                    search_date = date_obj + pd.Timedelta(days=offset)
-                    closing_price_row = price_data.loc[price_data['日期'] == search_date]
-                    if not closing_price_row.empty:
-                        return closing_price_row['收盤價'].values[0]
-            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError):
-                continue
-    return None
 
 # 定義函數以計算資料總數與總工作天數
 def get_security_stats(security_id):
@@ -151,4 +117,3 @@ output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
 
 print(f"已完成資料處理並儲存至 {output_path}")
-
