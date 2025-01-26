@@ -19,6 +19,7 @@ date_columns = [
     "開標日期(T)", "撥券日(上市上櫃日) T+7", "DateStart", "DateEnd+14"
 ]
 
+
 # 獲取所有文件列表
 all_files = os.listdir()
 
