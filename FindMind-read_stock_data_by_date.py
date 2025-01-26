@@ -97,36 +97,31 @@ def get_security_stats(security_id):
                 print(f"證券代號: {security_id}, 原始檔案日期範圍: {price_data['日期'].min()} ~ {price_data['日期'].max()}")
                 print(f"證券代號: {security_id}, 檔案行數 (資料總數): {total_rows}")
 
-                # 檢查是否存在日期缺失
-                all_dates = pd.date_range(price_data['日期'].min(), price_data['日期'].max(), freq="B").date
-                missing_dates = [d for d in all_dates if d not in price_data['日期'].values]
-                print(f"證券代號: {security_id}, 缺失日期: {missing_dates}")
-
-                # 2. 提取日期跨度，計算總工作天數
+                # 2. 提取日期跨度
                 match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
                 if match:
                     start_date = pd.to_datetime(match.group(2), errors='coerce').date()
                     end_date = pd.to_datetime(match.group(3), errors='coerce').date()
                     if start_date and end_date:
-                        # 計算期間內的工作天數
+                        # 3. 計算期間內的完整工作日數
                         working_days = cal.get_working_days_delta(start_date, end_date)
+                        print(f"證券代號: {security_id}, 原始計算的工作天數: {working_days}")
 
-                        # 從總工作天數中扣除假日數量
+                        # 4. 從總工作天數中扣除假日數量
                         holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
                         print(f"證券代號: {security_id}, 假日數量: {len(holidays_in_range)}, 假日列表: {holidays_in_range}")
+                        working_days -= len(holidays_in_range)
 
-                        # 避免重複扣除缺失日期與假日
-                        unique_holidays = [d for d in holidays_in_range if d not in missing_dates]
-                        print(f"證券代號: {security_id}, 扣除的有效假日數量: {len(unique_holidays)}, 有效假日: {unique_holidays}")
+                        # 5. 計算缺失日期
+                        all_dates = pd.date_range(start_date, end_date, freq="B").date
+                        missing_dates = [d for d in all_dates if d not in price_data['日期'].values]
+                        print(f"證券代號: {security_id}, 缺失日期: {missing_dates}")
 
-                        # 更新工作天數
-                        working_days -= len(unique_holidays)
-                        working_days -= len(missing_dates)  # 扣除缺失日期
+                        # 6. 扣除缺失日期（避免重複扣除假日）
+                        unique_missing_dates = [d for d in missing_dates if d not in holidays_in_range]
+                        print(f"證券代號: {security_id}, 有效缺失日期數量: {len(unique_missing_dates)}, 有效缺失日期: {unique_missing_dates}")
+                        working_days -= len(unique_missing_dates)
 
-                        # 如果出現不合理情況，記錄錯誤
-                        if working_days < total_rows:
-                            print(f"錯誤: 證券代號 {security_id} 的總工作天數 ({working_days}) 小於資料總數 ({total_rows})，可能是數據有誤")
-                        
                         # 打印更新後的工作天數
                         print(f"證券代號: {security_id}, 更新後的總工作天數: {working_days}")
                     else:
@@ -140,6 +135,7 @@ def get_security_stats(security_id):
                 print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 
 
