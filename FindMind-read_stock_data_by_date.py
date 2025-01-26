@@ -137,6 +137,12 @@ def get_security_stats(security_id):
 
 
 
+holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
+valid_holidays = [d for d in holidays_in_range if d in price_data['日期'].values]
+
+# 調試打印
+print(f"證券代號: {security_id}, 假日範圍內所有假日: {holidays_in_range}")
+print(f"證券代號: {security_id}, 假日範圍內出現在交易記錄的假日 (有效假日): {valid_holidays}")
 
 
 
