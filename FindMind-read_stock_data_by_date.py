@@ -81,6 +81,7 @@ def get_closing_price(security_id, date):
                 continue
     return None
 
+
 def get_security_stats(security_id):
     for file_name in all_files:
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
@@ -109,13 +110,18 @@ def get_security_stats(security_id):
                     if start_date and end_date:
                         # 計算期間內的工作天數
                         working_days = cal.get_working_days_delta(start_date, end_date)
-                        
-                        # 從總工作天數中扣除假日
+
+                        # 從總工作天數中扣除假日數量
                         holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
                         print(f"證券代號: {security_id}, 假日數量: {len(holidays_in_range)}, 假日列表: {holidays_in_range}")
-                        
-                        working_days -= len(holidays_in_range)
 
+                        # 避免重複扣除缺失日期與假日
+                        unique_holidays = [d for d in holidays_in_range if d not in missing_dates]
+                        print(f"證券代號: {security_id}, 扣除的有效假日數量: {len(unique_holidays)}, 有效假日: {unique_holidays}")
+
+                        working_days -= len(unique_holidays)
+                        working_days -= len(missing_dates)  # 扣除缺失日期
+                        
                         # 確保工作天數不小於資料總數
                         if total_rows > working_days:
                             print(f"警告: 證券代號 {security_id} 的資料總數大於計算出的總工作天數，將修正為資料總數")
@@ -131,6 +137,7 @@ def get_security_stats(security_id):
                 print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 
 
