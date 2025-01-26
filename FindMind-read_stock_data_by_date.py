@@ -93,7 +93,7 @@ def get_security_stats(security_id):
                 # 確保日期欄位格式一致
                 price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
 
-                # 調試：打印證券檔案日期範圍和行數
+                # 打印原始檔案日期範圍和行數
                 print(f"證券代號: {security_id}, 原始檔案日期範圍: {price_data['日期'].min()} ~ {price_data['日期'].max()}")
                 print(f"證券代號: {security_id}, 檔案行數 (資料總數): {total_rows}")
 
@@ -103,24 +103,22 @@ def get_security_stats(security_id):
                     start_date = pd.to_datetime(match.group(2), errors='coerce').date()
                     end_date = pd.to_datetime(match.group(3), errors='coerce').date()
                     if start_date and end_date:
-                        # 3. 計算期間內的完整工作日數
+                        # 3. 計算期間內完整的工作日數
                         working_days = cal.get_working_days_delta(start_date, end_date)
                         print(f"證券代號: {security_id}, 原始計算的工作天數: {working_days}")
 
-                        # 4. 從總工作天數中扣除假日數量
+                        # 4. 計算有效假日
                         holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
-                        print(f"證券代號: {security_id}, 假日數量: {len(holidays_in_range)}, 假日列表: {holidays_in_range}")
-                        working_days -= len(holidays_in_range)
+                        valid_holidays = [d for d in holidays_in_range if d in price_data['日期'].values]
+                        print(f"證券代號: {security_id}, 假日數量: {len(valid_holidays)}, 有效假日: {valid_holidays}")
+                        working_days -= len(valid_holidays)  # 只扣除有效假日
 
-                        # 5. 計算缺失日期
+                        # 5. 計算有效缺失日期
                         all_dates = pd.date_range(start_date, end_date, freq="B").date
                         missing_dates = [d for d in all_dates if d not in price_data['日期'].values]
-                        print(f"證券代號: {security_id}, 缺失日期: {missing_dates}")
-
-                        # 6. 扣除缺失日期（避免重複扣除假日）
-                        unique_missing_dates = [d for d in missing_dates if d not in holidays_in_range]
-                        print(f"證券代號: {security_id}, 有效缺失日期數量: {len(unique_missing_dates)}, 有效缺失日期: {unique_missing_dates}")
-                        working_days -= len(unique_missing_dates)
+                        valid_missing_dates = [d for d in missing_dates if d not in holidays_set]
+                        print(f"證券代號: {security_id}, 有效缺失日期數量: {len(valid_missing_dates)}, 有效缺失日期: {valid_missing_dates}")
+                        working_days -= len(valid_missing_dates)  # 只扣除有效缺失日期
 
                         # 打印更新後的工作天數
                         print(f"證券代號: {security_id}, 更新後的總工作天數: {working_days}")
@@ -135,6 +133,7 @@ def get_security_stats(security_id):
                 print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 
 
