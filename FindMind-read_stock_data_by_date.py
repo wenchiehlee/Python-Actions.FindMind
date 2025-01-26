@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import re
 from workalendar.asia import Taiwan  # 使用 workalendar 計算台灣的工作日
+import csv
 
 # 創建輸出資料夾名稱
 output_dir = "auction_data_processed"
@@ -24,33 +25,41 @@ all_files = os.listdir()
 # 初始化台灣工作日計算
 cal = Taiwan()
 
-
 # 讀取 holidays.csv，並處理格式
 holidays_path = "holidays.csv"
 if os.path.exists(holidays_path):
     try:
-        # 嘗試讀取假日資料
-        holidays = pd.read_csv(holidays_path, header=None, names=["日期"], encoding="utf-8")
-        
+        holidays_list = []
+        with open(holidays_path, "r", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                # 提取每行的第一部分（逗號前的日期）
+                date_part = row[0].strip() if len(row) > 0 else None
+                if date_part:
+                    holidays_list.append(date_part)
+
+        # 建立 DataFrame
+        holidays = pd.DataFrame(holidays_list, columns=["日期"])
+
         # 調試：查看文件原始內容
         print("holidays.csv 原始內容：")
         print(holidays.head())
-        
-        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD），並移除多餘空格
+
+        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
         holidays["日期"] = holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
-        holidays["日期"] = holidays["日期"].str.strip()  # 去除左右空格和不可見字符
-        
-        # 調試：查看清理後的日期內容
+        holidays["日期"] = holidays["日期"].str.strip()  # 去除空格
+
+        # 調試：查看提取日期後的內容
         print("提取日期後的內容：")
         print(holidays["日期"].head())
-        
-        # 轉換為標準日期格式
+
+        # 將日期轉換為標準格式
         holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
-        
+
         # 移除無效日期
         holidays = holidays.dropna()  # 移除轉換失敗的行
         holidays_set = set(holidays["日期"])  # 建立假日集合
-        
+
         print(f"成功讀取 holidays.csv，共 {len(holidays_set)} 個假日")
         print("解析後的假日日期：", list(holidays_set)[:5])  # 調試：打印部分解析出的日期
     except Exception as e:
