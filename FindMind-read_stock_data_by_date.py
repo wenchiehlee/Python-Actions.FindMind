@@ -24,17 +24,23 @@ all_files = os.listdir()
 # 初始化台灣工作日計算
 cal = Taiwan()
 
+import re
+
 # 讀取 holidays.csv，並處理格式
 holidays_path = "holidays.csv"
 if os.path.exists(holidays_path):
     try:
         # 嘗試讀取假日資料
-        holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
-        holidays["日期"] = holidays["日期"].str.split(",").str[0]  # 移除逗號後的註釋
-        holidays["日期"] = holidays["日期"].str.strip()  # 去除左右空格
-        holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date  # 轉換為標準日期
+        holidays = pd.read_csv(holidays_path, header=None, names=["日期"], encoding="utf-8")
+        
+        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
+        holidays["日期"] = holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
+        
+        # 轉換為標準日期格式，並刪除無效的日期
+        holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
         holidays = holidays.dropna()  # 移除無效日期
         holidays_set = set(holidays["日期"])  # 建立假日集合
+        
         print(f"成功讀取 holidays.csv，共 {len(holidays_set)} 個假日")
         print("解析後的假日日期：", list(holidays_set)[:5])  # 調試：打印部分解析出的日期
     except Exception as e:
@@ -43,6 +49,7 @@ if os.path.exists(holidays_path):
 else:
     print("找不到 holidays.csv，將不考慮假日")
     holidays_set = set()
+
 
 
 # 定義函數以獲取收盤價
