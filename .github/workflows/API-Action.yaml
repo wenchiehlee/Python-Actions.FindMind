@@ -23,18 +23,18 @@ jobs:
       - name: Installing all necessary packages
         run: pip install -r requirements.txt
 
-      - name: Running Python1
-        env:
-          FINDMIND_GMAIL_TOKEN: ${{ secrets.FINDMIND_GMAIL_TOKEN }}
-        run: |
-          python FindMind-fetch_and_save_stock_data.py
+      #- name: Running Python1
+      #  env:
+      #    FINDMIND_GMAIL_TOKEN: ${{ secrets.FINDMIND_GMAIL_TOKEN }}
+      #  run: |
+      #    python FindMind-fetch_and_save_stock_data.py
       - name: Running Python2
         run: 
           python FindMind-read_stock_data_by_date.py
 
-      - name: Running Python3
-        run:
-          python create_holiday.py
+      #- name: Running Python3
+      #  run:
+      #    python create_holiday.py
 
       - name: Commit and Push The Results From Python Action
         run: |

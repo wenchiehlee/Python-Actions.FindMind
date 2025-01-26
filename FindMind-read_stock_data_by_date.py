@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import re
 from workalendar.asia import Taiwan  # 使用 workalendar 計算台灣的工作日
+import csv
 
 # 創建輸出資料夾名稱
 output_dir = "auction_data_processed"
@@ -28,12 +29,29 @@ cal = Taiwan()
 holidays_path = "holidays.csv"
 if os.path.exists(holidays_path):
     try:
-        holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
-        # 提取假日日期部分，忽略後面的註釋文字
-        holidays["日期"] = holidays["日期"].str.split(",").str[0]
+        holidays_list = []
+        with open(holidays_path, "r", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                # 提取每行的第一部分（逗號前的日期）
+                date_part = row[0].strip() if len(row) > 0 else None
+                if date_part:
+                    holidays_list.append(date_part)
+
+        # 建立 DataFrame
+        holidays = pd.DataFrame(holidays_list, columns=["日期"])
+
+        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
+        holidays["日期"] = holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
+        holidays["日期"] = holidays["日期"].str.strip()  # 去除空格
+
+        # 將日期轉換為標準格式
         holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
-        holidays = holidays.dropna()  # 去掉無效日期
+
+        # 移除無效日期
+        holidays = holidays.dropna()  # 移除轉換失敗的行
         holidays_set = set(holidays["日期"])  # 建立假日集合
+
         print(f"成功讀取 holidays.csv，共 {len(holidays_set)} 個假日")
     except Exception as e:
         print(f"讀取 holidays.csv 時發生錯誤: {e}")
@@ -41,27 +59,6 @@ if os.path.exists(holidays_path):
 else:
     print("找不到 holidays.csv，將不考慮假日")
     holidays_set = set()
-
-# 定義函數以獲取收盤價
-def get_closing_price(security_id, date):
-    for file_name in all_files:
-        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
-            file_path = file_name
-            try:
-                price_data = pd.read_csv(file_path, encoding='utf-8')
-                # 確保日期格式一致 (YYYY-MM-DD)
-                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
-                date_obj = pd.to_datetime(date, errors='coerce').date()
-                
-                # 搜尋當天資料
-                for offset in range(0, 3):  # 試圖搜尋當天及往後1~2天
-                    search_date = date_obj + pd.Timedelta(days=offset)
-                    closing_price_row = price_data.loc[price_data['日期'] == search_date]
-                    if not closing_price_row.empty:
-                        return closing_price_row['收盤價'].values[0]
-            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError):
-                continue
-    return None
 
 # 定義函數以計算資料總數與總工作天數
 def get_security_stats(security_id):
@@ -120,4 +117,3 @@ output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
 auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
 
 print(f"已完成資料處理並儲存至 {output_path}")
-
