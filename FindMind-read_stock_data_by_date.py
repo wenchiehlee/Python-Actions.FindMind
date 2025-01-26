@@ -3,6 +3,7 @@ import pandas as pd
 import re
 from workalendar.asia import Taiwan  # 使用 workalendar 計算台灣的工作日
 import csv
+from datetime import timedelta, date
 
 # 創建輸出資料夾名稱
 output_dir = "auction_data_processed"
@@ -60,114 +61,45 @@ else:
     print("找不到 holidays.csv，將不考慮假日")
     holidays_set = set()
 
-# 定義函數以獲取收盤價
-def get_closing_price(security_id, date):
-    for file_name in all_files:
-        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
-            file_path = file_name
-            try:
-                price_data = pd.read_csv(file_path, encoding='utf-8')
-                # 確保日期格式一致 (YYYY-MM-DD)
-                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
-                date_obj = pd.to_datetime(date, errors='coerce').date()
-                
-                # 搜尋當天資料
-                for offset in range(0, 3):  # 試圖搜尋當天及往後1~2天
-                    search_date = date_obj + pd.Timedelta(days=offset)
-                    closing_price_row = price_data.loc[price_data['日期'] == search_date]
-                    if not closing_price_row.empty:
-                        return closing_price_row['收盤價'].values[0]
-            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError):
-                continue
-    return None
+# 計算總工作天數的函數
+def calculate_working_days(start_date, end_date):
+    """
+    計算總工作天數，排除國定假日和自訂假日（holidays.csv）
+    """
+    total_working_days = 0
 
+    current_date = start_date
+    while current_date <= end_date:
+        # 檢查是否為台灣的國定假日或自訂假日
+        if not cal.is_holiday(current_date) and current_date not in holidays_set:
+            total_working_days += 1
+        current_date += timedelta(days=1)
 
-def get_security_stats(security_id):
-    for file_name in all_files:
-        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
-            try:
-                # 1. 讀取證券檔案
-                price_data = pd.read_csv(file_name, encoding='utf-8')
-                total_rows = price_data.shape[0]  # 資料總數（行數）
-
-                # 確保日期欄位格式一致
-                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
-
-                # 打印原始檔案日期範圍和行數
-                print(f"證券代號: {security_id}, 原始檔案日期範圍: {price_data['日期'].min()} ~ {price_data['日期'].max()}")
-                print(f"證券代號: {security_id}, 檔案行數 (資料總數): {total_rows}")
-
-                # 2. 提取日期跨度
-                match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
-                if match:
-                    start_date = pd.to_datetime(match.group(2), errors='coerce').date()
-                    end_date = pd.to_datetime(match.group(3), errors='coerce').date()
-                    if start_date and end_date:
-                        # 3. 計算期間內完整的工作日數
-                        working_days = cal.get_working_days_delta(start_date, end_date)
-                        print(f"證券代號: {security_id}, 原始計算的工作天數: {working_days}")
-
-                        # 4. 計算有效假日
-                        holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
-                        valid_holidays = [d for d in holidays_in_range if d in price_data['日期'].values]
-                        print(f"證券代號: {security_id}, 假日數量: {len(valid_holidays)}, 有效假日: {valid_holidays}")
-                        working_days -= len(valid_holidays)  # 只扣除有效假日
-
-                        # 5. 計算有效缺失日期
-                        all_dates = pd.date_range(start_date, end_date, freq="B").date
-                        missing_dates = [d for d in all_dates if d not in price_data['日期'].values]
-                        valid_missing_dates = [d for d in missing_dates if d not in holidays_set]
-                        print(f"證券代號: {security_id}, 有效缺失日期數量: {len(valid_missing_dates)}, 有效缺失日期: {valid_missing_dates}")
-                        working_days -= len(valid_missing_dates)  # 只扣除有效缺失日期
-                        holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
-                        valid_holidays = [d for d in holidays_in_range if d in price_data['日期'].values]
-
-                        # 調試打印
-                        print(f"證券代號: {security_id}, 假日範圍內所有假日: {holidays_in_range}")
-                        print(f"證券代號: {security_id}, 假日範圍內出現在交易記錄的假日 (有效假日): {valid_holidays}")
-
-                        # 打印更新後的工作天數
-                        print(f"證券代號: {security_id}, 更新後的總工作天數: {working_days}")
-                    else:
-                        working_days = "無資料"
-                else:
-                    working_days = "無資料"
-
-                # 返回資料總數和總工作天數
-                return total_rows, working_days
-            except (FileNotFoundError, pd.errors.EmptyDataError) as e:
-                print(f"讀取證券檔案錯誤: {e}")
-                return "無資料", "無資料"
-    return "無資料", "無資料"
-
-
-
-
-
-
-
-
+    return total_working_days
 
 # 更新資料中的日期欄位並添加新列
 auction_data.insert(auction_data.columns.get_loc("DateEnd+14") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd+14 後面
 auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")  # 總工作天數插入到 資料總數 後面
 
+# 主迴圈處理每一筆資料
 for index, row in auction_data.iterrows():
     security_id = row["證券代號"]
     
-    # 更新日期欄位
-    for column in date_columns:
-        if pd.notna(row[column]):  # 確保日期欄位不為空
-            closing_price = get_closing_price(security_id, row[column])
-            if closing_price is not None:
-                auction_data.at[index, column] = closing_price
-            else:
-                auction_data.at[index, column] = "無資料"  # 未找到任何可用收盤價
-    
-    # 獲取資料總數和總工作天數
-    total_rows, working_days = get_security_stats(security_id)
-    auction_data.at[index, "資料總數"] = total_rows
-    auction_data.at[index, "總工作天數"] = working_days
+    # 提取日期範圍
+    for file_name in all_files:
+        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
+            match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
+            if match:
+                start_date = pd.to_datetime(match.group(2), errors='coerce').date()
+                end_date = pd.to_datetime(match.group(3), errors='coerce').date()
+
+                if start_date and end_date:
+                    # 計算總工作天數
+                    working_days = calculate_working_days(start_date, end_date)
+                    auction_data.at[index, "總工作天數"] = working_days
+                    print(f"證券代號: {security_id}, 總工作天數: {working_days}")
+                else:
+                    auction_data.at[index, "總工作天數"] = "無資料"
 
 # 儲存更新的資料至新的檔案中
 output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
