@@ -3,6 +3,7 @@ import pandas as pd
 import re
 from workalendar.asia import Taiwan  # 使用 workalendar 計算台灣的工作日
 import csv
+from datetime import timedelta
 
 # 創建輸出資料夾名稱
 output_dir = "auction_data_processed"
@@ -82,6 +83,7 @@ def get_closing_price(security_id, date):
     return None
 
 
+
 def get_security_stats(security_id):
     """
     計算資料總數與總工作天數
@@ -133,6 +135,7 @@ def get_security_stats(security_id):
                 print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 
 
