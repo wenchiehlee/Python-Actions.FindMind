@@ -24,7 +24,6 @@ all_files = os.listdir()
 # 初始化台灣工作日計算
 cal = Taiwan()
 
-import re
 
 # 讀取 holidays.csv，並處理格式
 holidays_path = "holidays.csv"
@@ -33,8 +32,16 @@ if os.path.exists(holidays_path):
         # 嘗試讀取假日資料
         holidays = pd.read_csv(holidays_path, header=None, names=["日期"], encoding="utf-8")
         
+        # 調試：查看文件原始內容
+        print("holidays.csv 原始內容：")
+        print(holidays.head())
+        
         # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
         holidays["日期"] = holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
+        
+        # 調試：查看提取出的日期部分
+        print("提取日期後的內容：")
+        print(holidays["日期"].head())
         
         # 轉換為標準日期格式，並刪除無效的日期
         holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
@@ -49,6 +56,7 @@ if os.path.exists(holidays_path):
 else:
     print("找不到 holidays.csv，將不考慮假日")
     holidays_set = set()
+
 
 
 
