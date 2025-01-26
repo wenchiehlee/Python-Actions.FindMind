@@ -104,15 +104,43 @@ missing_dates_output_path = os.path.join(output_dir, "missing_dates.csv")
 # 獲取所有文件列表
 all_files = os.listdir()
 
+
 # 讀取 holidays.csv 內的假日
 holidays_path = "holidays.csv"
+# 檢查是否有 holidays.csv 文件
 if os.path.exists(holidays_path):
-    custom_holidays = pd.read_csv(holidays_path, header=None, names=["日期"])
-    custom_holidays["日期"] = pd.to_datetime(custom_holidays["日期"], errors="coerce").dt.date
-    custom_holidays_set = set(custom_holidays["日期"].dropna())
+    try:
+        # 初始化列表來儲存假日日期
+        holidays_list = []
+        with open(holidays_path, "r", encoding="utf-8") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                # 提取每行的第一部分（逗號前的日期）
+                date_part = row[0].strip() if len(row) > 0 else None
+                if date_part:
+                    holidays_list.append(date_part)
+
+        # 建立 DataFrame
+        custom_holidays = pd.DataFrame(holidays_list, columns=["日期"])
+
+        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
+        custom_holidays["日期"] = custom_holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
+        custom_holidays["日期"] = custom_holidays["日期"].str.strip()  # 去除空格
+
+        # 將日期轉換為標準格式
+        custom_holidays["日期"] = pd.to_datetime(custom_holidays["日期"], errors="coerce").dt.date
+
+        # 移除無效日期
+        custom_holidays_set = set(custom_holidays["日期"].dropna())
+
+        print(f"成功讀取 holidays.csv，共 {len(custom_holidays_set)} 個假日")
+    except Exception as e:
+        print(f"讀取 holidays.csv 時發生錯誤: {e}")
+        custom_holidays_set = set()
 else:
     print("找不到 holidays.csv，將不考慮額外假日")
     custom_holidays_set = set()
+
 
 # 定義函數以找出缺失日期
 def find_missing_dates(security_id, start_date, end_date):
