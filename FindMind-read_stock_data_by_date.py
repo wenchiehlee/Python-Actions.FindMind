@@ -81,14 +81,25 @@ def get_closing_price(security_id, date):
                 continue
     return None
 
-# 定義函數以計算資料總數與總工作天數
 def get_security_stats(security_id):
     for file_name in all_files:
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
             try:
-                # 1. 計算資料總數
+                # 1. 讀取證券檔案
                 price_data = pd.read_csv(file_name, encoding='utf-8')
                 total_rows = price_data.shape[0]  # 資料總數（行數）
+
+                # 確保日期欄位格式一致
+                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
+
+                # 調試：打印證券檔案日期範圍和行數
+                print(f"證券代號: {security_id}, 原始檔案日期範圍: {price_data['日期'].min()} ~ {price_data['日期'].max()}")
+                print(f"證券代號: {security_id}, 檔案行數 (資料總數): {total_rows}")
+
+                # 檢查是否存在日期缺失
+                all_dates = pd.date_range(price_data['日期'].min(), price_data['日期'].max(), freq="B").date
+                missing_dates = [d for d in all_dates if d not in price_data['日期'].values]
+                print(f"證券代號: {security_id}, 缺失日期: {missing_dates}")
 
                 # 2. 提取日期跨度，計算總工作天數
                 match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
@@ -99,25 +110,28 @@ def get_security_stats(security_id):
                         # 計算期間內的工作天數
                         working_days = cal.get_working_days_delta(start_date, end_date)
                         
-                        # 從總工作天數中扣除假日數量
+                        # 從總工作天數中扣除假日
                         holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
-                        print(f"證券代號: {security_id}, 日期範圍: {start_date} ~ {end_date}")
-                        print(f"期間內假日數量: {len(holidays_in_range)} (假日: {holidays_in_range})")
+                        print(f"證券代號: {security_id}, 假日數量: {len(holidays_in_range)}, 假日列表: {holidays_in_range}")
                         
                         working_days -= len(holidays_in_range)
+
+                        # 確保工作天數不小於資料總數
+                        if total_rows > working_days:
+                            print(f"警告: 證券代號 {security_id} 的資料總數大於計算出的總工作天數，將修正為資料總數")
+                            working_days = total_rows
                     else:
                         working_days = "無資料"
                 else:
                     working_days = "無資料"
 
-                # 調試：打印資料總數與總工作天數
-                print(f"證券代號: {security_id}, 資料總數: {total_rows}, 總工作天數: {working_days}")
-
+                # 返回資料總數和總工作天數
                 return total_rows, working_days
             except (FileNotFoundError, pd.errors.EmptyDataError) as e:
                 print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 
 # 更新資料中的日期欄位並添加新列
