@@ -122,12 +122,11 @@ def get_security_stats(security_id):
                         # 更新工作天數
                         working_days -= len(unique_holidays)
                         working_days -= len(missing_dates)  # 扣除缺失日期
-                        
-                        # 確保總工作天數 >= 資料總數
-                        if working_days < total_rows:
-                            print(f"警告: 證券代號 {security_id} 的總工作天數小於資料總數，將調整為資料總數")
-                            working_days = total_rows
 
+                        # 如果出現不合理情況，記錄錯誤
+                        if working_days < total_rows:
+                            print(f"錯誤: 證券代號 {security_id} 的總工作天數 ({working_days}) 小於資料總數 ({total_rows})，可能是數據有誤")
+                        
                         # 打印更新後的工作天數
                         print(f"證券代號: {security_id}, 更新後的總工作天數: {working_days}")
                     else:
@@ -141,6 +140,7 @@ def get_security_stats(security_id):
                 print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 
 
