@@ -32,9 +32,9 @@ jobs:
         run: 
           python FindMind-read_stock_data_by_date.py
 
-      #- name: Running Python3
-      #  run:
-      #    python create_holiday.py
+      - name: Running Python3
+        run:
+          python create_holiday.py
 
       - name: Commit and Push The Results From Python Action
         run: |
