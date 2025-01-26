@@ -60,6 +60,27 @@ else:
     print("找不到 holidays.csv，將不考慮假日")
     holidays_set = set()
 
+# 定義函數以獲取收盤價
+def get_closing_price(security_id, date):
+    for file_name in all_files:
+        if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
+            file_path = file_name
+            try:
+                price_data = pd.read_csv(file_path, encoding='utf-8')
+                # 確保日期格式一致 (YYYY-MM-DD)
+                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
+                date_obj = pd.to_datetime(date, errors='coerce').date()
+                
+                # 搜尋當天資料
+                for offset in range(0, 3):  # 試圖搜尋當天及往後1~2天
+                    search_date = date_obj + pd.Timedelta(days=offset)
+                    closing_price_row = price_data.loc[price_data['日期'] == search_date]
+                    if not closing_price_row.empty:
+                        return closing_price_row['收盤價'].values[0]
+            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError):
+                continue
+    return None
+
 # 定義函數以計算資料總數與總工作天數
 def get_security_stats(security_id):
     for file_name in all_files:
