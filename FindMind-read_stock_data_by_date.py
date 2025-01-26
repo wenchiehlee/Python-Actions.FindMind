@@ -116,9 +116,7 @@ def get_security_stats(security_id):
                         current_date = start_date
                         while current_date <= end_date:
                             # 如果不是國定假日且不在自訂假日中，則計算為工作天
-                            if security_id == 7713:
-                                print(working_days,"\0",cal.is_holiday(current_date))
-                            if not cal.is_holiday(current_date) and current_date not in holidays_set:
+                            if not cal.is_holiday(current_date) and current_date not in holidays_set and not cal.is_working_day(current_date):
                                 working_days += 1
                             current_date += timedelta(days=1)
 
