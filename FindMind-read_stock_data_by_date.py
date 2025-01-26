@@ -36,16 +36,19 @@ if os.path.exists(holidays_path):
         print("holidays.csv 原始內容：")
         print(holidays.head())
         
-        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD）
+        # 使用正則表達式提取日期部分（格式為 YYYY-MM-DD），並移除多餘空格
         holidays["日期"] = holidays["日期"].str.extract(r"(\d{4}-\d{2}-\d{2})", expand=False)
+        holidays["日期"] = holidays["日期"].str.strip()  # 去除左右空格和不可見字符
         
-        # 調試：查看提取出的日期部分
+        # 調試：查看清理後的日期內容
         print("提取日期後的內容：")
         print(holidays["日期"].head())
         
-        # 轉換為標準日期格式，並刪除無效的日期
+        # 轉換為標準日期格式
         holidays["日期"] = pd.to_datetime(holidays["日期"], errors="coerce").dt.date
-        holidays = holidays.dropna()  # 移除無效日期
+        
+        # 移除無效日期
+        holidays = holidays.dropna()  # 移除轉換失敗的行
         holidays_set = set(holidays["日期"])  # 建立假日集合
         
         print(f"成功讀取 holidays.csv，共 {len(holidays_set)} 個假日")
