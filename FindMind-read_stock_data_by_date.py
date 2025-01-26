@@ -119,13 +119,12 @@ def get_security_stats(security_id):
                         unique_holidays = [d for d in holidays_in_range if d not in missing_dates]
                         print(f"證券代號: {security_id}, 扣除的有效假日數量: {len(unique_holidays)}, 有效假日: {unique_holidays}")
 
+                        # 更新工作天數
                         working_days -= len(unique_holidays)
                         working_days -= len(missing_dates)  # 扣除缺失日期
                         
-                        # 確保工作天數不小於資料總數
-                        if total_rows > working_days:
-                            print(f"警告: 證券代號 {security_id} 的資料總數大於計算出的總工作天數，將修正為資料總數")
-                            working_days = total_rows
+                        # 打印更新後的工作天數
+                        print(f"證券代號: {security_id}, 更新後的總工作天數: {working_days}")
                     else:
                         working_days = "無資料"
                 else:
