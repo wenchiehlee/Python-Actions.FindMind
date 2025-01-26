@@ -101,16 +101,24 @@ def get_security_stats(security_id):
                         
                         # 從總工作天數中扣除假日數量
                         holidays_in_range = [d for d in holidays_set if start_date <= d <= end_date]
+                        print(f"證券代號: {security_id}, 日期範圍: {start_date} ~ {end_date}")
+                        print(f"期間內假日數量: {len(holidays_in_range)} (假日: {holidays_in_range})")
+                        
                         working_days -= len(holidays_in_range)
                     else:
                         working_days = "無資料"
                 else:
                     working_days = "無資料"
 
+                # 調試：打印資料總數與總工作天數
+                print(f"證券代號: {security_id}, 資料總數: {total_rows}, 總工作天數: {working_days}")
+
                 return total_rows, working_days
-            except (FileNotFoundError, pd.errors.EmptyDataError):
+            except (FileNotFoundError, pd.errors.EmptyDataError) as e:
+                print(f"讀取證券檔案錯誤: {e}")
                 return "無資料", "無資料"
     return "無資料", "無資料"
+
 
 # 更新資料中的日期欄位並添加新列
 auction_data.insert(auction_data.columns.get_loc("DateEnd+14") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd+14 後面
