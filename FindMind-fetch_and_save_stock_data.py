@@ -108,7 +108,7 @@ def main():
 
     dataset = "TaiwanStockPrice"
     for index, row in data.iterrows():
-        stock_id = row.get("證券代號")
+        stock_id = row.get("股票代號")
         date_start = row.get("DateStart")
         date_end = row.get("DateEnd+14")
 
