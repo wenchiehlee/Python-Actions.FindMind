@@ -87,7 +87,7 @@ def get_closing_price(security_id, date):
 def get_security_stats(security_id):
     """
     計算資料總數與總工作天數
-    :param security_id: 證券代號
+    :param security_id: 股票代號
     :return: (total_rows, working_days)
     """
     for file_name in all_files:
@@ -101,8 +101,8 @@ def get_security_stats(security_id):
                 price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
 
                 # 打印原始檔案日期範圍和行數
-                print(f"證券代號: {security_id}, 原始檔案日期範圍: {price_data['日期'].min()} ~ {price_data['日期'].max()}")
-                print(f"證券代號: {security_id}, 檔案行數 (資料總數): {total_rows}")
+                print(f"股票代號: {security_id}, 原始檔案日期範圍: {price_data['日期'].min()} ~ {price_data['日期'].max()}")
+                print(f"股票代號: {security_id}, 檔案行數 (資料總數): {total_rows}")
 
                 # 2. 提取日期跨度
                 match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
@@ -121,14 +121,14 @@ def get_security_stats(security_id):
                             current_date += timedelta(days=1)
 
                         # 打印總工作天數
-                        print(f"證券代號: {security_id}, 總工作天數: {working_days}")
+                        print(f"股票代號: {security_id}, 總工作天數: {working_days}")
 
                         return total_rows, working_days
                     else:
-                        print(f"證券代號: {security_id}, 無效的日期範圍")
+                        print(f"股票代號: {security_id}, 無效的日期範圍")
                         return total_rows, "無資料"
                 else:
-                    print(f"證券代號: {security_id}, 無法提取日期範圍")
+                    print(f"股票代號: {security_id}, 無法提取日期範圍")
                     return total_rows, "無資料"
 
             except (FileNotFoundError, pd.errors.EmptyDataError) as e:
@@ -151,7 +151,7 @@ auction_data.insert(auction_data.columns.get_loc("DateEnd+14") + 1, "資料總�
 auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")  # 總工作天數插入到 資料總數 後面
 
 for index, row in auction_data.iterrows():
-    security_id = row["證券代號"]
+    security_id = row["股票代號"]
     
     # 更新日期欄位
     for column in date_columns:
