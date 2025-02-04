@@ -1,4 +1,4 @@
-# FindMind
+# Python-Actions.FindMind, Python-Actions.FindMind2
 WorkingSpace for FindMind
 
 Schemas of overall system
