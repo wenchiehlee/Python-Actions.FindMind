@@ -17,7 +17,7 @@ auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 date_columns = [
     "申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期",
     "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)",
-    "開標日期(T)", "撥券日(上市上櫃日) T+7", "DateStart", "DateEnd+14"
+    "開標日期(T)", "撥券日(上市上櫃日) T+7", "DateStart", "DateEnd"
 ]
 
 # 獲取所有文件列表
