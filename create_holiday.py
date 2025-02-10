@@ -175,7 +175,7 @@ cleaned_auction_data_path = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 
 for index, row in auction_data.iterrows():
-    security_id = row["證券代號"]
+    security_id = row["股票代號"]
     
     # 提取證券檔案中的日期跨度
     for file_name in all_files:
