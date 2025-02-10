@@ -13,7 +13,7 @@ os.makedirs(output_dir, exist_ok=True)
 cleaned_auction_data_path = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 
-# 定義需要處理的日期欄位，包含新增的 DateStart 和 DateEnd+14
+# 定義需要處理的日期欄位，包含新增的 DateStart 和 DateEnd
 date_columns = [
     "申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期",
     "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)",
@@ -147,7 +147,7 @@ def get_security_stats(security_id):
 
 
 # 更新資料中的日期欄位並添加新列
-auction_data.insert(auction_data.columns.get_loc("DateEnd+14") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd+14 後面
+auction_data.insert(auction_data.columns.get_loc("DateEnd") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd後面
 auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")  # 總工作天數插入到 資料總數 後面
 
 for index, row in auction_data.iterrows():
