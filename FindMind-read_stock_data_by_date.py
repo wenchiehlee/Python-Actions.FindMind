@@ -14,11 +14,14 @@ cleaned_auction_data_path = "cleaned_auction_data.csv"
 auction_data = pd.read_csv(cleaned_auction_data_path, encoding='utf-8')
 
 # 定義需要處理的日期欄位，包含新增的 DateStart 和 DateEnd
-date_columns = [
-    "申請日期", "上櫃審議委員會審議日期", "櫃買董事會通過上櫃日期",
-    "櫃買同意上櫃契約日期", "投標開始日(T-4)", "投標結束日(T-2)",
-    "開標日期(T)", "撥券日(上市上櫃日) T+7", "DateStart", "DateEnd"
-]
+columns = auction_data.columns.tolist()
+
+# 確認 DateStart 和 DateEnd 的位置
+start_index = columns.index("DateStart")
+end_index = columns.index("DateEnd")
+
+# 擷取 DateStart 和 DateEnd 之間的所有欄位名稱
+date_columns = columns[start_index:end_index + 1]
 
 # 獲取所有文件列表
 all_files = os.listdir()
