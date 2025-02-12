@@ -19,7 +19,7 @@ start_index = columns.index("DateStart")
 end_index = columns.index("DateEnd")
 
 # 擷取 DateStart 和 DateEnd 之間的所有欄位名稱
-date_columns_raw = columns[start_index + 1:end_index]
+date_columns_raw = columns[start_index:end_index+1]
 
 # 分析欄位名稱，標記是否有偏移量
 date_columns = {}
