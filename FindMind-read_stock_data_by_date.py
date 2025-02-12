@@ -18,20 +18,26 @@ columns = auction_data.columns.tolist()
 start_index = columns.index("DateStart")
 end_index = columns.index("DateEnd")
 
-# 擷取 DateStart 和 DateEnd 之間的所有欄位名稱
-date_columns_raw = columns[start_index:end_index+1]
 
-# 分析欄位名稱，標記是否有偏移量
+date_columns_raw = columns[start_index:end_index + 1]
+
+# 修正：正確辨識偏移格式，並檢查基礎欄位是否存在
 date_columns = {}
 for col in date_columns_raw:
     match = re.match(r"(.+?)([+-]\d+)$", col.strip())
+    
     if match:
         base_name = match.group(1).strip()
         offset = int(match.group(2))
-        date_columns[col] = {'base': base_name, 'offset': offset}
+        
+        # 檢查基礎欄位是否存在於資料中
+        if base_name in auction_data.columns:
+            date_columns[col] = {'base': base_name, 'offset': offset}
+        else:
+            # 若基礎欄位不存在，視為完整欄位名稱，無偏移
+            date_columns[col] = {'base': col, 'offset': 0}
     else:
         date_columns[col] = {'base': col, 'offset': 0}
-
 print(date_columns,"<<AAAAAAAAAAAAAAA")
 
 # 獲取所有文件列表
