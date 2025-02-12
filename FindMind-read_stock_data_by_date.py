@@ -32,6 +32,8 @@ for col in date_columns_raw:
     else:
         date_columns[col] = {'base': col, 'offset': 0}
 
+print(date_columns,"<<AAAAAAAAAAAAAAA")
+
 # 獲取所有文件列表
 all_files = os.listdir()
 
