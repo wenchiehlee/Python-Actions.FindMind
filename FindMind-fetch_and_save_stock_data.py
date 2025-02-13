@@ -97,7 +97,7 @@ def main():
 
     print("API Token loaded successfully.")
 
-    sheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSINLlSv4NcCszvA5XOPsuYCxZEk9_tBnhgLvyDkcG73QgFObITFtaZRQ492wlS53NPBlQi0AfPHMVh/pub?output=csv"
+    sheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSINLlSv4NcCszvA5XOPsuYCxZEk9_tBnhgLvyDkcG73QgFObITFtaZRQ492wlS53NPBlQi0AfPHMVh/pub?gid=1407177187&single=true&output=csv"
     csv_file = "auction_data.csv"
 
     download_google_sheet(sheet_url, csv_file)
