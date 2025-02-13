@@ -110,7 +110,7 @@ def main():
     for index, row in data.iterrows():
         stock_id = row.get("股票代號")
         date_start = row.get("DateStart")
-        date_end = row.get("DateEnd+14")
+        date_end = row.get("DateEnd")
 
         if pd.notna(stock_id) and pd.notna(date_start) and pd.notna(date_end):
             try:
