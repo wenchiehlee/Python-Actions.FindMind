@@ -159,27 +159,7 @@ for index, row in auction_data.iterrows():
         else:
             auction_data.at[index, col] = "無資料"
 
-
-
-
-
-
-
-# 更新資料中的日期欄位並添加新列
-auction_data.insert(auction_data.columns.get_loc("DateEnd") + 1, "資料總數", "無資料")  # 資料總數插入到 DateEnd 後面
-auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")  # 總工作天數插入到 資料總數 後面
-
-for index, row in auction_data.iterrows():
-    security_id = row["股票代號"]
     
-    # 更新日期欄位
-    for column in date_columns:
-        if pd.notna(row[column]):  # 確保日期欄位不為空
-            closing_price = get_closing_price(security_id, row[column])
-            if closing_price is not None:
-                auction_data.at[index, column] = closing_price
-            else:
-                auction_data.at[index, column] = "無資料"  # 未找到任何可用收盤價
     
     # 獲取資料總數和總工作天數
     total_rows, working_days = get_security_stats(security_id)
