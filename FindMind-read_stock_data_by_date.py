@@ -128,7 +128,7 @@ def get_security_stats(security_id):
                                 working_days += 1
                             current_date += timedelta(days=1)
 
-                        print(f"股票代號: {security_id}, 總工作天數: {working_days}")
+                        print(f"股票代號: {security_id}, 資料總數: {total_rows}/總工作天數: {working_days}")
                         return total_rows, working_days
                     else:
                         return total_rows, "無資料"
