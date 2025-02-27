@@ -23,16 +23,16 @@ jobs:
       - name: Installing all necessary packages
         run: pip install -r requirements.txt
 
-      - name: Running Python1
+      - name: Running Python1 (Get stock data from FindMind and save to CSV)
         env:
           FINDMIND_GMAIL_TOKEN: ${{ secrets.FINDMIND_GMAIL_TOKEN }}
         run: |
           python FindMind-fetch_and_save_stock_data.py
-      - name: Running Python2
+      - name: Running Python2 (from CSV pick data by date)
         run: 
           python FindMind-read_stock_data_by_date.py
 
-      - name: Running Python3
+      - name: Running Python3 (check the missing date by holiday.csv to check complete or not)
         run:
           python create_holiday.py
 
