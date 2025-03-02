@@ -1,0 +1,15 @@
+日期,股票代碼,類型,值,名稱
+2024-09-30,7715,Revenue,399341000.0,營業收入
+2024-09-30,7715,CostOfGoodsSold,312697000.0,營業成本
+2024-09-30,7715,OperatingExpenses,42314000.0,營業費用
+2024-09-30,7715,OperatingIncome,44330000.0,營業利益（損失）
+2024-09-30,7715,TotalNonoperatingIncomeAndExpense,-6572000.0,營業外收入及支出
+2024-09-30,7715,PreTaxIncome,37758000.0,稅前淨利（淨損）
+2024-09-30,7715,TAX,7724000.0,所得稅費用（利益）
+2024-09-30,7715,IncomeFromContinuingOperations,30034000.0,繼續營業單位本期淨利（淨損）
+2024-09-30,7715,IncomeAfterTaxes,30034000.0,本期淨利（淨損）
+2024-09-30,7715,OtherComprehensiveIncome,-180000.0,其他綜合損益（淨額）
+2024-09-30,7715,TotalConsolidatedProfitForThePeriod,29854000.0,本期綜合損益總額
+2024-09-30,7715,EPS,1.03,基本每股盈餘（元）
+2024-09-30,7715,GrossProfit,86644000.0,營業毛利（毛損）
+2024-09-30,7715,EquityAttributableToOwnersOfParent,30034000.0,淨利（淨損）歸屬於母公司業主
