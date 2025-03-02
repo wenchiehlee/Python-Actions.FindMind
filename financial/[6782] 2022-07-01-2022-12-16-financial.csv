@@ -1,0 +1,16 @@
+日期,股票代碼,類型,值,名稱
+2022-09-30,6782,Revenue,716629000.0,營業收入
+2022-09-30,6782,CostOfGoodsSold,372634000.0,營業成本
+2022-09-30,6782,OperatingExpenses,140675000.0,營業費用
+2022-09-30,6782,OperatingIncome,203320000.0,營業利益（損失）
+2022-09-30,6782,TotalNonoperatingIncomeAndExpense,17679000.0,營業外收入及支出
+2022-09-30,6782,PreTaxIncome,220999000.0,稅前淨利（淨損）
+2022-09-30,6782,TAX,37553000.0,所得稅費用（利益）
+2022-09-30,6782,IncomeFromContinuingOperations,183446000.0,繼續營業單位本期淨利（淨損）
+2022-09-30,6782,IncomeAfterTaxes,183446000.0,本期淨利（淨損）
+2022-09-30,6782,OtherComprehensiveIncome,40354000.0,其他綜合損益（淨額）
+2022-09-30,6782,TotalConsolidatedProfitForThePeriod,223800000.0,本期綜合損益總額
+2022-09-30,6782,EquityAttributableToOwnersOfParent,224932000.0,綜合損益總額歸屬於母公司業主
+2022-09-30,6782,EPS,3.37,基本每股盈餘（元）
+2022-09-30,6782,GrossProfit,343995000.0,營業毛利（毛損）淨額
+2022-09-30,6782,NoncontrollingInterests,-1132000.0,淨利（淨損）歸屬於非控制權益
