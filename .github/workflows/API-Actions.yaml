@@ -42,6 +42,7 @@ jobs:
          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
          git add *.csv
          git add *.log
+         git add auction_data_processed/*.csv
          git add dividend/*.csv
          git add company-profile/*.csv
          git add PER_PBR/*.csv
