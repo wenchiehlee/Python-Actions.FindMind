@@ -30,7 +30,7 @@ jobs:
           python FindMind-fetch_and_save_stock_data.py
       - name: Running Python2
         run: 
-          python FindMind-read_stock_data_by_date.py
+          python FindMind-read_stock_data_by_date.py >output.log 2>&1
 
       - name: Running Python3
         run:
@@ -40,7 +40,11 @@ jobs:
         run: |
          git config --global user.name "github-actions[bot]"
          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-         git add -A
-         git add *.csv 
+         git add *.csv
+         git add *.log
+         git add dividend/*.csv
+         git add company-profile/*.csv
+         git add PER_PBR/*.csv
+         git add financial/*.csv
          git commit -m "⬆️ GitHub Actions Results added" || true
          git push || true
