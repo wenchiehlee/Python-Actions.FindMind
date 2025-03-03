@@ -1,0 +1,15 @@
+日期,股票代碼,類型,值,名稱
+2020-06-30,6754,OperatingExpenses,126978000.0,營業費用
+2020-06-30,6754,TAX,44597000.0,所得稅費用（利益）
+2020-06-30,6754,EPS,0.98,基本每股盈餘（元）
+2020-06-30,6754,PreTaxIncome,103164000.0,稅前淨利（淨損）
+2020-06-30,6754,IncomeFromContinuingOperations,58567000.0,繼續營業單位本期淨利（淨損）
+2020-06-30,6754,IncomeAfterTaxes,58567000.0,本期淨利（淨損）
+2020-06-30,6754,TotalConsolidatedProfitForThePeriod,43153000.0,本期綜合損益總額
+2020-06-30,6754,Revenue,811723000.0,營業收入
+2020-06-30,6754,CostOfGoodsSold,593040000.0,營業成本
+2020-06-30,6754,GrossProfit,218683000.0,營業毛利（毛損）淨額
+2020-06-30,6754,OperatingIncome,91705000.0,營業利益（損失）
+2020-06-30,6754,TotalNonoperatingIncomeAndExpense,11459000.0,營業外收入及支出
+2020-06-30,6754,OtherComprehensiveIncome,-15414000.0,其他綜合損益（淨額）
+2020-06-30,6754,EquityAttributableToOwnersOfParent,58567000.0,淨利（淨損）歸屬於母公司業主

@@ -111,7 +111,7 @@ Processing stock 7704 for period 2024-05-29 to 2025-01-03
 文件 [7704] 2024-05-29-2025-01-03.csv 已包含結束日期 2025-01-03 的數據，跳過 API 請求
 Data successfully written to dividend/[7704] 2024-05-29-2025-01-03-dividend.csv
 文件 PER_PBR/[7704] 2024-05-29-2025-01-03-PER_PBR.csv 已包含結束日期 2025-01-03 的數據，跳過 API 請求
-HTTP Request error: 502 Server Error: Bad Gateway for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=7704&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to company-profile/[7704] 2024-05-29-2025-01-03-company-profile.csv
 Data successfully written to financial/[7704] 2024-05-29-2025-01-03-financial.csv
 Processed row 16 of 281
 Processing stock 6885 for period 2024-07-08 to 2025-01-03
@@ -502,7 +502,7 @@ Processed row 71 of 281
 Processing stock 6526 for period 2022-12-07 to 2023-11-08
 文件 [6526] 2022-12-07-2023-11-08.csv 已包含結束日期 2023-11-08 的數據，跳過 API 請求
 Data successfully written to dividend/[6526] 2022-12-07-2023-11-08-dividend.csv
-Data successfully written to PER_PBR/[6526] 2022-12-07-2023-11-08-PER_PBR.csv
+文件 PER_PBR/[6526] 2022-12-07-2023-11-08-PER_PBR.csv 已包含結束日期 2023-11-08 的數據，跳過 API 請求
 Data successfully written to company-profile/[6526] 2022-12-07-2023-11-08-company-profile.csv
 Data successfully written to financial/[6526] 2022-12-07-2023-11-08-financial.csv
 Processed row 72 of 281
@@ -516,77 +516,77 @@ Processed row 73 of 281
 Processing stock 6870 for period 2023-04-07 to 2023-10-04
 文件 [6870] 2023-04-07-2023-10-04.csv 已包含結束日期 2023-10-04 的數據，跳過 API 請求
 Data successfully written to dividend/[6870] 2023-04-07-2023-10-04-dividend.csv
-Data successfully written to PER_PBR/[6870] 2023-04-07-2023-10-04-PER_PBR.csv
+文件 PER_PBR/[6870] 2023-04-07-2023-10-04-PER_PBR.csv 已包含結束日期 2023-10-04 的數據，跳過 API 請求
 Data successfully written to company-profile/[6870] 2023-04-07-2023-10-04-company-profile.csv
 Data successfully written to financial/[6870] 2023-04-07-2023-10-04-financial.csv
 Processed row 74 of 281
 Processing stock 6895 for period 2023-03-10 to 2023-09-11
 文件 [6895] 2023-03-10-2023-09-11.csv 已包含結束日期 2023-09-11 的數據，跳過 API 請求
 Data successfully written to dividend/[6895] 2023-03-10-2023-09-11-dividend.csv
-Data successfully written to PER_PBR/[6895] 2023-03-10-2023-09-11-PER_PBR.csv
+文件 PER_PBR/[6895] 2023-03-10-2023-09-11-PER_PBR.csv 已包含結束日期 2023-09-11 的數據，跳過 API 請求
 Data successfully written to company-profile/[6895] 2023-03-10-2023-09-11-company-profile.csv
 Data successfully written to financial/[6895] 2023-03-10-2023-09-11-financial.csv
 Processed row 75 of 281
 Processing stock 2073 for period 2022-10-11 to 2023-07-11
 文件 [2073] 2022-10-11-2023-07-11.csv 已包含結束日期 2023-07-11 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[2073] 2022-10-11-2023-07-11-PER_PBR.csv
+文件 PER_PBR/[2073] 2022-10-11-2023-07-11-PER_PBR.csv 已包含結束日期 2023-07-11 的數據，跳過 API 請求
 Data successfully written to company-profile/[2073] 2022-10-11-2023-07-11-company-profile.csv
 Data successfully written to financial/[2073] 2022-10-11-2023-07-11-financial.csv
 Processed row 76 of 281
 Processing stock 6877 for period 2022-10-06 to 2023-07-06
 文件 [6877] 2022-10-06-2023-07-06.csv 已包含結束日期 2023-07-06 的數據，跳過 API 請求
 Data successfully written to dividend/[6877] 2022-10-06-2023-07-06-dividend.csv
-Data successfully written to PER_PBR/[6877] 2022-10-06-2023-07-06-PER_PBR.csv
+文件 PER_PBR/[6877] 2022-10-06-2023-07-06-PER_PBR.csv 已包含結束日期 2023-07-06 的數據，跳過 API 請求
 Data successfully written to company-profile/[6877] 2022-10-06-2023-07-06-company-profile.csv
 Data successfully written to financial/[6877] 2022-10-06-2023-07-06-financial.csv
 Processed row 77 of 281
 Processing stock 6657 for period 2022-11-30 to 2023-06-30
 文件 [6657] 2022-11-30-2023-06-30.csv 已包含結束日期 2023-06-30 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6657] 2022-11-30-2023-06-30-PER_PBR.csv
+文件 PER_PBR/[6657] 2022-11-30-2023-06-30-PER_PBR.csv 已包含結束日期 2023-06-30 的數據，跳過 API 請求
 Data successfully written to company-profile/[6657] 2022-11-30-2023-06-30-company-profile.csv
-Data successfully written to financial/[6657] 2022-11-30-2023-06-30-financial.csv
+文件 financial/[6657] 2022-11-30-2023-06-30-financial.csv 已包含結束日期 2023-06-30 的數據，跳過 API 請求
 Processed row 78 of 281
 Processing stock 6821 for period 2022-10-28 to 2023-06-09
 文件 [6821] 2022-10-28-2023-06-09.csv 已包含結束日期 2023-06-09 的數據，跳過 API 請求
 Data successfully written to dividend/[6821] 2022-10-28-2023-06-09-dividend.csv
-Data successfully written to PER_PBR/[6821] 2022-10-28-2023-06-09-PER_PBR.csv
+文件 PER_PBR/[6821] 2022-10-28-2023-06-09-PER_PBR.csv 已包含結束日期 2023-06-09 的數據，跳過 API 請求
 Data successfully written to company-profile/[6821] 2022-10-28-2023-06-09-company-profile.csv
 Data successfully written to financial/[6821] 2022-10-28-2023-06-09-financial.csv
 Processed row 79 of 281
 Processing stock 6584 for period 2022-09-12 to 2023-06-07
 文件 [6584] 2022-09-12-2023-06-07.csv 已包含結束日期 2023-06-07 的數據，跳過 API 請求
 Data successfully written to dividend/[6584] 2022-09-12-2023-06-07-dividend.csv
-Data successfully written to PER_PBR/[6584] 2022-09-12-2023-06-07-PER_PBR.csv
+文件 PER_PBR/[6584] 2022-09-12-2023-06-07-PER_PBR.csv 已包含結束日期 2023-06-07 的數據，跳過 API 請求
 Data successfully written to company-profile/[6584] 2022-09-12-2023-06-07-company-profile.csv
 Data successfully written to financial/[6584] 2022-09-12-2023-06-07-financial.csv
 Processed row 80 of 281
 Processing stock 6846 for period 2022-10-06 to 2023-06-02
 文件 [6846] 2022-10-06-2023-06-02.csv 已包含結束日期 2023-06-02 的數據，跳過 API 請求
 Data successfully written to dividend/[6846] 2022-10-06-2023-06-02-dividend.csv
-Data successfully written to PER_PBR/[6846] 2022-10-06-2023-06-02-PER_PBR.csv
+文件 PER_PBR/[6846] 2022-10-06-2023-06-02-PER_PBR.csv 已包含結束日期 2023-06-02 的數據，跳過 API 請求
 Data successfully written to company-profile/[6846] 2022-10-06-2023-06-02-company-profile.csv
 Data successfully written to financial/[6846] 2022-10-06-2023-06-02-financial.csv
 Processed row 81 of 281
 Processing stock 6861 for period 2022-07-05 to 2023-04-14
 文件 [6861] 2022-07-05-2023-04-14.csv 已包含結束日期 2023-04-14 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6861] 2022-07-05-2023-04-14-PER_PBR.csv
+文件 PER_PBR/[6861] 2022-07-05-2023-04-14-PER_PBR.csv 已包含結束日期 2023-04-14 的數據，跳過 API 請求
 Data successfully written to company-profile/[6861] 2022-07-05-2023-04-14-company-profile.csv
 Data successfully written to financial/[6861] 2022-07-05-2023-04-14-financial.csv
 Processed row 82 of 281
 Processing stock 6840 for period 2022-08-11 to 2023-04-13
 文件 [6840] 2022-08-11-2023-04-13.csv 已包含結束日期 2023-04-13 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6840] 2022-08-11-2023-04-13-PER_PBR.csv
+文件 PER_PBR/[6840] 2022-08-11-2023-04-13-PER_PBR.csv 已包含結束日期 2023-04-13 的數據，跳過 API 請求
 Data successfully written to company-profile/[6840] 2022-08-11-2023-04-13-company-profile.csv
 Data successfully written to financial/[6840] 2022-08-11-2023-04-13-financial.csv
 Processed row 83 of 281
 Processing stock 6606 for period 2022-09-12 to 2023-04-13
 文件 [6606] 2022-09-12-2023-04-13.csv 已包含結束日期 2023-04-13 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6606] 2022-09-12-2023-04-13-PER_PBR.csv
+文件 PER_PBR/[6606] 2022-09-12-2023-04-13-PER_PBR.csv 已包含結束日期 2023-04-13 的數據，跳過 API 請求
 Data successfully written to company-profile/[6606] 2022-09-12-2023-04-13-company-profile.csv
 Data successfully written to financial/[6606] 2022-09-12-2023-04-13-financial.csv
 Processed row 84 of 281
@@ -600,14 +600,14 @@ Processed row 85 of 281
 Processing stock 6753 for period 2022-09-07 to 2023-03-30
 文件 [6753] 2022-09-07-2023-03-30.csv 已包含結束日期 2023-03-30 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6753] 2022-09-07-2023-03-30-PER_PBR.csv
+文件 PER_PBR/[6753] 2022-09-07-2023-03-30-PER_PBR.csv 已包含結束日期 2023-03-30 的數據，跳過 API 請求
 Data successfully written to company-profile/[6753] 2022-09-07-2023-03-30-company-profile.csv
 Data successfully written to financial/[6753] 2022-09-07-2023-03-30-financial.csv
 Processed row 86 of 281
 Processing stock 6865 for period 2022-08-17 to 2023-01-31
 文件 [6865] 2022-08-17-2023-01-31.csv 已包含結束日期 2023-01-31 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6865] 2022-08-17-2023-01-31-PER_PBR.csv
+文件 PER_PBR/[6865] 2022-08-17-2023-01-31-PER_PBR.csv 已包含結束日期 2023-01-31 的數據，跳過 API 請求
 Data successfully written to company-profile/[6865] 2022-08-17-2023-01-31-company-profile.csv
 Data successfully written to financial/[6865] 2022-08-17-2023-01-31-financial.csv
 Processed row 87 of 281
@@ -621,231 +621,231 @@ Processed row 88 of 281
 Processing stock 8227 for period 2022-07-01 to 2023-01-09
 文件 [8227] 2022-07-01-2023-01-09.csv 已包含結束日期 2023-01-09 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[8227] 2022-07-01-2023-01-09-PER_PBR.csv
+文件 PER_PBR/[8227] 2022-07-01-2023-01-09-PER_PBR.csv 已包含結束日期 2023-01-09 的數據，跳過 API 請求
 Data successfully written to company-profile/[8227] 2022-07-01-2023-01-09-company-profile.csv
 Data successfully written to financial/[8227] 2022-07-01-2023-01-09-financial.csv
 Processed row 89 of 281
 Processing stock 6517 for period 2022-07-01 to 2023-01-04
 文件 [6517] 2022-07-01-2023-01-04.csv 已包含結束日期 2023-01-04 的數據，跳過 API 請求
 Data successfully written to dividend/[6517] 2022-07-01-2023-01-04-dividend.csv
-Data successfully written to PER_PBR/[6517] 2022-07-01-2023-01-04-PER_PBR.csv
+文件 PER_PBR/[6517] 2022-07-01-2023-01-04-PER_PBR.csv 已包含結束日期 2023-01-04 的數據，跳過 API 請求
 Data successfully written to company-profile/[6517] 2022-07-01-2023-01-04-company-profile.csv
 Data successfully written to financial/[6517] 2022-07-01-2023-01-04-financial.csv
 Processed row 90 of 281
 Processing stock 3447 for period 2022-07-05 to 2023-01-04
 文件 [3447] 2022-07-05-2023-01-04.csv 已包含結束日期 2023-01-04 的數據，跳過 API 請求
 Data successfully written to dividend/[3447] 2022-07-05-2023-01-04-dividend.csv
-Data successfully written to PER_PBR/[3447] 2022-07-05-2023-01-04-PER_PBR.csv
+文件 PER_PBR/[3447] 2022-07-05-2023-01-04-PER_PBR.csv 已包含結束日期 2023-01-04 的數據，跳過 API 請求
 Data successfully written to company-profile/[3447] 2022-07-05-2023-01-04-company-profile.csv
 Data successfully written to financial/[3447] 2022-07-05-2023-01-04-financial.csv
 Processed row 91 of 281
 Processing stock 6874 for period 2022-07-11 to 2023-01-03
 文件 [6874] 2022-07-11-2023-01-03.csv 已包含結束日期 2023-01-03 的數據，跳過 API 請求
 Data successfully written to dividend/[6874] 2022-07-11-2023-01-03-dividend.csv
-Data successfully written to PER_PBR/[6874] 2022-07-11-2023-01-03-PER_PBR.csv
+文件 PER_PBR/[6874] 2022-07-11-2023-01-03-PER_PBR.csv 已包含結束日期 2023-01-03 的數據，跳過 API 請求
 Data successfully written to company-profile/[6874] 2022-07-11-2023-01-03-company-profile.csv
 Data successfully written to financial/[6874] 2022-07-11-2023-01-03-financial.csv
 Processed row 92 of 281
 Processing stock 6859 for period 2022-06-23 to 2022-12-16
 文件 [6859] 2022-06-23-2022-12-16.csv 已包含結束日期 2022-12-16 的數據，跳過 API 請求
 Data successfully written to dividend/[6859] 2022-06-23-2022-12-16-dividend.csv
-Data successfully written to PER_PBR/[6859] 2022-06-23-2022-12-16-PER_PBR.csv
+文件 PER_PBR/[6859] 2022-06-23-2022-12-16-PER_PBR.csv 已包含結束日期 2022-12-16 的數據，跳過 API 請求
 Data successfully written to company-profile/[6859] 2022-06-23-2022-12-16-company-profile.csv
 Data successfully written to financial/[6859] 2022-06-23-2022-12-16-financial.csv
 Processed row 93 of 281
 Processing stock 6782 for period 2022-07-01 to 2022-12-16
 文件 [6782] 2022-07-01-2022-12-16.csv 已包含結束日期 2022-12-16 的數據，跳過 API 請求
 Data successfully written to dividend/[6782] 2022-07-01-2022-12-16-dividend.csv
-Data successfully written to PER_PBR/[6782] 2022-07-01-2022-12-16-PER_PBR.csv
+文件 PER_PBR/[6782] 2022-07-01-2022-12-16-PER_PBR.csv 已包含結束日期 2022-12-16 的數據，跳過 API 請求
 Data successfully written to company-profile/[6782] 2022-07-01-2022-12-16-company-profile.csv
 Data successfully written to financial/[6782] 2022-07-01-2022-12-16-financial.csv
 Processed row 94 of 281
 Processing stock 6843 for period 2022-04-25 to 2022-12-09
 文件 [6843] 2022-04-25-2022-12-09.csv 已包含結束日期 2022-12-09 的數據，跳過 API 請求
 Data successfully written to dividend/[6843] 2022-04-25-2022-12-09-dividend.csv
-Data successfully written to PER_PBR/[6843] 2022-04-25-2022-12-09-PER_PBR.csv
+文件 PER_PBR/[6843] 2022-04-25-2022-12-09-PER_PBR.csv 已包含結束日期 2022-12-09 的數據，跳過 API 請求
 Data successfully written to company-profile/[6843] 2022-04-25-2022-12-09-company-profile.csv
 Data successfully written to financial/[6843] 2022-04-25-2022-12-09-financial.csv
 Processed row 95 of 281
 Processing stock 6791 for period 2022-06-10 to 2022-12-02
 文件 [6791] 2022-06-10-2022-12-02.csv 已包含結束日期 2022-12-02 的數據，跳過 API 請求
 Data successfully written to dividend/[6791] 2022-06-10-2022-12-02-dividend.csv
-Data successfully written to PER_PBR/[6791] 2022-06-10-2022-12-02-PER_PBR.csv
+文件 PER_PBR/[6791] 2022-06-10-2022-12-02-PER_PBR.csv 已包含結束日期 2022-12-02 的數據，跳過 API 請求
 Data successfully written to company-profile/[6791] 2022-06-10-2022-12-02-company-profile.csv
 Data successfully written to financial/[6791] 2022-06-10-2022-12-02-financial.csv
 Processed row 96 of 281
 Processing stock 6835 for period 2022-06-10 to 2022-11-30
 文件 [6835] 2022-06-10-2022-11-30.csv 已包含結束日期 2022-11-30 的數據，跳過 API 請求
 Data successfully written to dividend/[6835] 2022-06-10-2022-11-30-dividend.csv
-Data successfully written to PER_PBR/[6835] 2022-06-10-2022-11-30-PER_PBR.csv
+文件 PER_PBR/[6835] 2022-06-10-2022-11-30-PER_PBR.csv 已包含結束日期 2022-11-30 的數據，跳過 API 請求
 Data successfully written to company-profile/[6835] 2022-06-10-2022-11-30-company-profile.csv
 Data successfully written to financial/[6835] 2022-06-10-2022-11-30-financial.csv
 Processed row 97 of 281
 Processing stock 6695 for period 2022-06-10 to 2022-11-24
 文件 [6695] 2022-06-10-2022-11-24.csv 已包含結束日期 2022-11-24 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6695] 2022-06-10-2022-11-24-PER_PBR.csv
+文件 PER_PBR/[6695] 2022-06-10-2022-11-24-PER_PBR.csv 已包含結束日期 2022-11-24 的數據，跳過 API 請求
 Data successfully written to company-profile/[6695] 2022-06-10-2022-11-24-company-profile.csv
 Data successfully written to financial/[6695] 2022-06-10-2022-11-24-financial.csv
 Processed row 98 of 281
 Processing stock 4951 for period 2022-05-11 to 2022-11-23
 文件 [4951] 2022-05-11-2022-11-23.csv 已包含結束日期 2022-11-23 的數據，跳過 API 請求
 Data successfully written to dividend/[4951] 2022-05-11-2022-11-23-dividend.csv
-Data successfully written to PER_PBR/[4951] 2022-05-11-2022-11-23-PER_PBR.csv
+文件 PER_PBR/[4951] 2022-05-11-2022-11-23-PER_PBR.csv 已包含結束日期 2022-11-23 的數據，跳過 API 請求
 Data successfully written to company-profile/[4951] 2022-05-11-2022-11-23-company-profile.csv
 Data successfully written to financial/[4951] 2022-05-11-2022-11-23-financial.csv
 Processed row 99 of 281
 Processing stock 6855 for period 2022-04-08 to 2022-10-26
 文件 [6855] 2022-04-08-2022-10-26.csv 已包含結束日期 2022-10-26 的數據，跳過 API 請求
 Data successfully written to dividend/[6855] 2022-04-08-2022-10-26-dividend.csv
-Data successfully written to PER_PBR/[6855] 2022-04-08-2022-10-26-PER_PBR.csv
+文件 PER_PBR/[6855] 2022-04-08-2022-10-26-PER_PBR.csv 已包含結束日期 2022-10-26 的數據，跳過 API 請求
 Data successfully written to company-profile/[6855] 2022-04-08-2022-10-26-company-profile.csv
 Data successfully written to financial/[6855] 2022-04-08-2022-10-26-financial.csv
 Processed row 100 of 281
 Processing stock 4584 for period 2022-04-08 to 2022-10-25
 文件 [4584] 2022-04-08-2022-10-25.csv 已包含結束日期 2022-10-25 的數據，跳過 API 請求
 Data successfully written to dividend/[4584] 2022-04-08-2022-10-25-dividend.csv
-Data successfully written to PER_PBR/[4584] 2022-04-08-2022-10-25-PER_PBR.csv
+文件 PER_PBR/[4584] 2022-04-08-2022-10-25-PER_PBR.csv 已包含結束日期 2022-10-25 的數據，跳過 API 請求
 Data successfully written to company-profile/[4584] 2022-04-08-2022-10-25-company-profile.csv
 Data successfully written to financial/[4584] 2022-04-08-2022-10-25-financial.csv
 Processed row 101 of 281
 Processing stock 6689 for period 2022-04-14 to 2022-10-03
 文件 [6689] 2022-04-14-2022-10-03.csv 已包含結束日期 2022-10-03 的數據，跳過 API 請求
 Data successfully written to dividend/[6689] 2022-04-14-2022-10-03-dividend.csv
-Data successfully written to PER_PBR/[6689] 2022-04-14-2022-10-03-PER_PBR.csv
+文件 PER_PBR/[6689] 2022-04-14-2022-10-03-PER_PBR.csv 已包含結束日期 2022-10-03 的數據，跳過 API 請求
 Data successfully written to company-profile/[6689] 2022-04-14-2022-10-03-company-profile.csv
 Data successfully written to financial/[6689] 2022-04-14-2022-10-03-financial.csv
 Processed row 102 of 281
 Processing stock 3430 for period 2022-04-11 to 2022-09-28
 文件 [3430] 2022-04-11-2022-09-28.csv 已包含結束日期 2022-09-28 的數據，跳過 API 請求
 Data successfully written to dividend/[3430] 2022-04-11-2022-09-28-dividend.csv
-Data successfully written to PER_PBR/[3430] 2022-04-11-2022-09-28-PER_PBR.csv
+文件 PER_PBR/[3430] 2022-04-11-2022-09-28-PER_PBR.csv 已包含結束日期 2022-09-28 的數據，跳過 API 請求
 Data successfully written to company-profile/[3430] 2022-04-11-2022-09-28-company-profile.csv
 Data successfully written to financial/[3430] 2022-04-11-2022-09-28-financial.csv
 Processed row 103 of 281
 Processing stock 6834 for period 2022-03-18 to 2022-09-21
 文件 [6834] 2022-03-18-2022-09-21.csv 已包含結束日期 2022-09-21 的數據，跳過 API 請求
 Data successfully written to dividend/[6834] 2022-03-18-2022-09-21-dividend.csv
-Data successfully written to PER_PBR/[6834] 2022-03-18-2022-09-21-PER_PBR.csv
+文件 PER_PBR/[6834] 2022-03-18-2022-09-21-PER_PBR.csv 已包含結束日期 2022-09-21 的數據，跳過 API 請求
 Data successfully written to company-profile/[6834] 2022-03-18-2022-09-21-company-profile.csv
 Data successfully written to financial/[6834] 2022-03-18-2022-09-21-financial.csv
 Processed row 104 of 281
 Processing stock 6830 for period 2022-03-30 to 2022-09-20
 文件 [6830] 2022-03-30-2022-09-20.csv 已包含結束日期 2022-09-20 的數據，跳過 API 請求
 Data successfully written to dividend/[6830] 2022-03-30-2022-09-20-dividend.csv
-Data successfully written to PER_PBR/[6830] 2022-03-30-2022-09-20-PER_PBR.csv
+文件 PER_PBR/[6830] 2022-03-30-2022-09-20-PER_PBR.csv 已包含結束日期 2022-09-20 的數據，跳過 API 請求
 Data successfully written to company-profile/[6830] 2022-03-30-2022-09-20-company-profile.csv
 Data successfully written to financial/[6830] 2022-03-30-2022-09-20-financial.csv
 Processed row 105 of 281
 Processing stock 6811 for period 2022-03-11 to 2022-08-29
 文件 [6811] 2022-03-11-2022-08-29.csv 已包含結束日期 2022-08-29 的數據，跳過 API 請求
 Data successfully written to dividend/[6811] 2022-03-11-2022-08-29-dividend.csv
-Data successfully written to PER_PBR/[6811] 2022-03-11-2022-08-29-PER_PBR.csv
+文件 PER_PBR/[6811] 2022-03-11-2022-08-29-PER_PBR.csv 已包含結束日期 2022-08-29 的數據，跳過 API 請求
 Data successfully written to company-profile/[6811] 2022-03-11-2022-08-29-company-profile.csv
 Data successfully written to financial/[6811] 2022-03-11-2022-08-29-financial.csv
 Processed row 106 of 281
 Processing stock 6823 for period 2021-12-07 to 2022-07-20
 文件 [6823] 2021-12-07-2022-07-20.csv 已包含結束日期 2022-07-20 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6823] 2021-12-07-2022-07-20-PER_PBR.csv
+文件 PER_PBR/[6823] 2021-12-07-2022-07-20-PER_PBR.csv 已包含結束日期 2022-07-20 的數據，跳過 API 請求
 Data successfully written to company-profile/[6823] 2021-12-07-2022-07-20-company-profile.csv
 Data successfully written to financial/[6823] 2021-12-07-2022-07-20-financial.csv
 Processed row 107 of 281
 Processing stock 6789 for period 2021-12-09 to 2022-07-20
 文件 [6789] 2021-12-09-2022-07-20.csv 已包含結束日期 2022-07-20 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6789] 2021-12-09-2022-07-20-PER_PBR.csv
+文件 PER_PBR/[6789] 2021-12-09-2022-07-20-PER_PBR.csv 已包含結束日期 2022-07-20 的數據，跳過 API 請求
 Data successfully written to company-profile/[6789] 2021-12-09-2022-07-20-company-profile.csv
 Data successfully written to financial/[6789] 2021-12-09-2022-07-20-financial.csv
 Processed row 108 of 281
 Processing stock 4577 for period 2021-11-22 to 2022-07-04
 文件 [4577] 2021-11-22-2022-07-04.csv 已包含結束日期 2022-07-04 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[4577] 2021-11-22-2022-07-04-PER_PBR.csv
+文件 PER_PBR/[4577] 2021-11-22-2022-07-04-PER_PBR.csv 已包含結束日期 2022-07-04 的數據，跳過 API 請求
 Data successfully written to company-profile/[4577] 2021-11-22-2022-07-04-company-profile.csv
 Data successfully written to financial/[4577] 2021-11-22-2022-07-04-financial.csv
 Processed row 109 of 281
 Processing stock 6796 for period 2021-11-18 to 2022-06-21
 文件 [6796] 2021-11-18-2022-06-21.csv 已包含結束日期 2022-06-21 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6796] 2021-11-18-2022-06-21-PER_PBR.csv
+文件 PER_PBR/[6796] 2021-11-18-2022-06-21-PER_PBR.csv 已包含結束日期 2022-06-21 的數據，跳過 API 請求
 Data successfully written to company-profile/[6796] 2021-11-18-2022-06-21-company-profile.csv
 Data successfully written to financial/[6796] 2021-11-18-2022-06-21-financial.csv
 Processed row 110 of 281
 Processing stock 6546 for period 2021-12-10 to 2022-06-13
 文件 [6546] 2021-12-10-2022-06-13.csv 已包含結束日期 2022-06-13 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6546] 2021-12-10-2022-06-13-PER_PBR.csv
+文件 PER_PBR/[6546] 2021-12-10-2022-06-13-PER_PBR.csv 已包含結束日期 2022-06-13 的數據，跳過 API 請求
 Data successfully written to company-profile/[6546] 2021-12-10-2022-06-13-company-profile.csv
 Data successfully written to financial/[6546] 2021-12-10-2022-06-13-financial.csv
 Processed row 111 of 281
 Processing stock 5228 for period 2021-11-26 to 2022-06-09
 文件 [5228] 2021-11-26-2022-06-09.csv 已包含結束日期 2022-06-09 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[5228] 2021-11-26-2022-06-09-PER_PBR.csv
+文件 PER_PBR/[5228] 2021-11-26-2022-06-09-PER_PBR.csv 已包含結束日期 2022-06-09 的數據，跳過 API 請求
 Data successfully written to company-profile/[5228] 2021-11-26-2022-06-09-company-profile.csv
 Data successfully written to financial/[5228] 2021-11-26-2022-06-09-financial.csv
 Processed row 112 of 281
 Processing stock 6585 for period 2021-11-05 to 2022-06-09
 文件 [6585] 2021-11-05-2022-06-09.csv 已包含結束日期 2022-06-09 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6585] 2021-11-05-2022-06-09-PER_PBR.csv
+文件 PER_PBR/[6585] 2021-11-05-2022-06-09-PER_PBR.csv 已包含結束日期 2022-06-09 的數據，跳過 API 請求
 Data successfully written to company-profile/[6585] 2021-11-05-2022-06-09-company-profile.csv
 Data successfully written to financial/[6585] 2021-11-05-2022-06-09-financial.csv
 Processed row 113 of 281
 Processing stock 6799 for period 2021-11-02 to 2022-06-01
 文件 [6799] 2021-11-02-2022-06-01.csv 已包含結束日期 2022-06-01 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6799] 2021-11-02-2022-06-01-PER_PBR.csv
+文件 PER_PBR/[6799] 2021-11-02-2022-06-01-PER_PBR.csv 已包含結束日期 2022-06-01 的數據，跳過 API 請求
 Data successfully written to company-profile/[6799] 2021-11-02-2022-06-01-company-profile.csv
 Data successfully written to financial/[6799] 2021-11-02-2022-06-01-financial.csv
 Processed row 114 of 281
 Processing stock 4583 for period 2021-09-07 to 2022-05-27
 文件 [4583] 2021-09-07-2022-05-27.csv 已包含結束日期 2022-05-27 的數據，跳過 API 請求
 Data successfully written to dividend/[4583] 2021-09-07-2022-05-27-dividend.csv
-Data successfully written to PER_PBR/[4583] 2021-09-07-2022-05-27-PER_PBR.csv
+文件 PER_PBR/[4583] 2021-09-07-2022-05-27-PER_PBR.csv 已包含結束日期 2022-05-27 的數據，跳過 API 請求
 Data successfully written to company-profile/[4583] 2021-09-07-2022-05-27-company-profile.csv
 Data successfully written to financial/[4583] 2021-09-07-2022-05-27-financial.csv
 Processed row 115 of 281
 Processing stock 6721 for period 2021-09-23 to 2022-05-19
 文件 [6721] 2021-09-23-2022-05-19.csv 已包含結束日期 2022-05-19 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6721] 2021-09-23-2022-05-19-PER_PBR.csv
+文件 PER_PBR/[6721] 2021-09-23-2022-05-19-PER_PBR.csv 已包含結束日期 2022-05-19 的數據，跳過 API 請求
 Data successfully written to company-profile/[6721] 2021-09-23-2022-05-19-company-profile.csv
 Data successfully written to financial/[6721] 2021-09-23-2022-05-19-financial.csv
 Processed row 116 of 281
 Processing stock 6735 for period 2021-11-04 to 2022-05-19
 文件 [6735] 2021-11-04-2022-05-19.csv 已包含結束日期 2022-05-19 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6735] 2021-11-04-2022-05-19-PER_PBR.csv
+文件 PER_PBR/[6735] 2021-11-04-2022-05-19-PER_PBR.csv 已包含結束日期 2022-05-19 的數據，跳過 API 請求
 Data successfully written to company-profile/[6735] 2021-11-04-2022-05-19-company-profile.csv
 Data successfully written to financial/[6735] 2021-11-04-2022-05-19-financial.csv
 Processed row 117 of 281
 Processing stock 4768 for period 2021-09-09 to 2022-05-03
 文件 [4768] 2021-09-09-2022-05-03.csv 已包含結束日期 2022-05-03 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[4768] 2021-09-09-2022-05-03-PER_PBR.csv
+文件 PER_PBR/[4768] 2021-09-09-2022-05-03-PER_PBR.csv 已包含結束日期 2022-05-03 的數據，跳過 API 請求
 Data successfully written to company-profile/[4768] 2021-09-09-2022-05-03-company-profile.csv
 Data successfully written to financial/[4768] 2021-09-09-2022-05-03-financial.csv
 Processed row 118 of 281
 Processing stock 6804 for period 2021-09-20 to 2022-04-20
 文件 [6804] 2021-09-20-2022-04-20.csv 已包含結束日期 2022-04-20 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6804] 2021-09-20-2022-04-20-PER_PBR.csv
+文件 PER_PBR/[6804] 2021-09-20-2022-04-20-PER_PBR.csv 已包含結束日期 2022-04-20 的數據，跳過 API 請求
 Data successfully written to company-profile/[6804] 2021-09-20-2022-04-20-company-profile.csv
 Data successfully written to financial/[6804] 2021-09-20-2022-04-20-financial.csv
 Processed row 119 of 281
 Processing stock 3349 for period 2021-09-23 to 2022-04-12
 文件 [3349] 2021-09-23-2022-04-12.csv 已包含結束日期 2022-04-12 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[3349] 2021-09-23-2022-04-12-PER_PBR.csv
+文件 PER_PBR/[3349] 2021-09-23-2022-04-12-PER_PBR.csv 已包含結束日期 2022-04-12 的數據，跳過 API 請求
 Data successfully written to company-profile/[3349] 2021-09-23-2022-04-12-company-profile.csv
 Data successfully written to financial/[3349] 2021-09-23-2022-04-12-financial.csv
 Processed row 120 of 281
 Processing stock 4558 for period 2021-10-08 to 2022-04-06
 文件 [4558] 2021-10-08-2022-04-06.csv 已包含結束日期 2022-04-06 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[4558] 2021-10-08-2022-04-06-PER_PBR.csv
+文件 PER_PBR/[4558] 2021-10-08-2022-04-06-PER_PBR.csv 已包含結束日期 2022-04-06 的數據，跳過 API 請求
 Data successfully written to company-profile/[4558] 2021-10-08-2022-04-06-company-profile.csv
 Data successfully written to financial/[4558] 2021-10-08-2022-04-06-financial.csv
 Processed row 121 of 281
@@ -859,28 +859,28 @@ Processed row 122 of 281
 Processing stock 4923 for period 2021-09-10 to 2022-04-01
 文件 [4923] 2021-09-10-2022-04-01.csv 已包含結束日期 2022-04-01 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[4923] 2021-09-10-2022-04-01-PER_PBR.csv
+文件 PER_PBR/[4923] 2021-09-10-2022-04-01-PER_PBR.csv 已包含結束日期 2022-04-01 的數據，跳過 API 請求
 Data successfully written to company-profile/[4923] 2021-09-10-2022-04-01-company-profile.csv
 Data successfully written to financial/[4923] 2021-09-10-2022-04-01-financial.csv
 Processed row 123 of 281
 Processing stock 8438 for period 2021-10-11 to 2022-03-31
 文件 [8438] 2021-10-11-2022-03-31.csv 已包含結束日期 2022-03-31 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[8438] 2021-10-11-2022-03-31-PER_PBR.csv
+文件 PER_PBR/[8438] 2021-10-11-2022-03-31-PER_PBR.csv 已包含結束日期 2022-03-31 的數據，跳過 API 請求
 Data successfully written to company-profile/[8438] 2021-10-11-2022-03-31-company-profile.csv
-Data successfully written to financial/[8438] 2021-10-11-2022-03-31-financial.csv
+文件 financial/[8438] 2021-10-11-2022-03-31-financial.csv 已包含結束日期 2022-03-31 的數據，跳過 API 請求
 Processed row 124 of 281
 Processing stock 6829 for period 2021-09-20 to 2022-03-31
 文件 [6829] 2021-09-20-2022-03-31.csv 已包含結束日期 2022-03-31 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6829] 2021-09-20-2022-03-31-PER_PBR.csv
+文件 PER_PBR/[6829] 2021-09-20-2022-03-31-PER_PBR.csv 已包含結束日期 2022-03-31 的數據，跳過 API 請求
 Data successfully written to company-profile/[6829] 2021-09-20-2022-03-31-company-profile.csv
-Data successfully written to financial/[6829] 2021-09-20-2022-03-31-financial.csv
+文件 financial/[6829] 2021-09-20-2022-03-31-financial.csv 已包含結束日期 2022-03-31 的數據，跳過 API 請求
 Processed row 125 of 281
 Processing stock 6693 for period 2021-09-09 to 2022-03-21
 文件 [6693] 2021-09-09-2022-03-21.csv 已包含結束日期 2022-03-21 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6693] 2021-09-09-2022-03-21-PER_PBR.csv
+文件 PER_PBR/[6693] 2021-09-09-2022-03-21-PER_PBR.csv 已包含結束日期 2022-03-21 的數據，跳過 API 請求
 Data successfully written to company-profile/[6693] 2021-09-09-2022-03-21-company-profile.csv
 Data successfully written to financial/[6693] 2021-09-09-2022-03-21-financial.csv
 Processed row 126 of 281
@@ -908,112 +908,112 @@ Processed row 129 of 281
 Processing stock 6691 for period 2021-07-26 to 2022-01-21
 文件 [6691] 2021-07-26-2022-01-21.csv 已包含結束日期 2022-01-21 的數據，跳過 API 請求
 Data successfully written to dividend/[6691] 2021-07-26-2022-01-21-dividend.csv
-Data successfully written to PER_PBR/[6691] 2021-07-26-2022-01-21-PER_PBR.csv
+文件 PER_PBR/[6691] 2021-07-26-2022-01-21-PER_PBR.csv 已包含結束日期 2022-01-21 的數據，跳過 API 請求
 Data successfully written to company-profile/[6691] 2021-07-26-2022-01-21-company-profile.csv
 Data successfully written to financial/[6691] 2021-07-26-2022-01-21-financial.csv
 Processed row 130 of 281
 Processing stock 4770 for period 2021-07-14 to 2022-01-11
 文件 [4770] 2021-07-14-2022-01-11.csv 已包含結束日期 2022-01-11 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[4770] 2021-07-14-2022-01-11-PER_PBR.csv
+文件 PER_PBR/[4770] 2021-07-14-2022-01-11-PER_PBR.csv 已包含結束日期 2022-01-11 的數據，跳過 API 請求
 Data successfully written to company-profile/[4770] 2021-07-14-2022-01-11-company-profile.csv
 Data successfully written to financial/[4770] 2021-07-14-2022-01-11-financial.csv
 Processed row 131 of 281
 Processing stock 6792 for period 2021-07-09 to 2021-12-28
 文件 [6792] 2021-07-09-2021-12-28.csv 已包含結束日期 2021-12-28 的數據，跳過 API 請求
 Data successfully written to dividend/[6792] 2021-07-09-2021-12-28-dividend.csv
-Data successfully written to PER_PBR/[6792] 2021-07-09-2021-12-28-PER_PBR.csv
+文件 PER_PBR/[6792] 2021-07-09-2021-12-28-PER_PBR.csv 已包含結束日期 2021-12-28 的數據，跳過 API 請求
 Data successfully written to company-profile/[6792] 2021-07-09-2021-12-28-company-profile.csv
 Data successfully written to financial/[6792] 2021-07-09-2021-12-28-financial.csv
 Processed row 132 of 281
 Processing stock 6770 for period 2021-07-12 to 2021-12-24
 文件 [6770] 2021-07-12-2021-12-24.csv 已包含結束日期 2021-12-24 的數據，跳過 API 請求
 Data successfully written to dividend/[6770] 2021-07-12-2021-12-24-dividend.csv
-Data successfully written to PER_PBR/[6770] 2021-07-12-2021-12-24-PER_PBR.csv
+文件 PER_PBR/[6770] 2021-07-12-2021-12-24-PER_PBR.csv 已包含結束日期 2021-12-24 的數據，跳過 API 請求
 Data successfully written to company-profile/[6770] 2021-07-12-2021-12-24-company-profile.csv
 Data successfully written to financial/[6770] 2021-07-12-2021-12-24-financial.csv
 Processed row 133 of 281
 Processing stock 2945 for period 2021-03-23 to 2021-12-20
 文件 [2945] 2021-03-23-2021-12-20.csv 已包含結束日期 2021-12-20 的數據，跳過 API 請求
 Data successfully written to dividend/[2945] 2021-03-23-2021-12-20-dividend.csv
-Data successfully written to PER_PBR/[2945] 2021-03-23-2021-12-20-PER_PBR.csv
+文件 PER_PBR/[2945] 2021-03-23-2021-12-20-PER_PBR.csv 已包含結束日期 2021-12-20 的數據，跳過 API 請求
 Data successfully written to company-profile/[2945] 2021-03-23-2021-12-20-company-profile.csv
 Data successfully written to financial/[2945] 2021-03-23-2021-12-20-financial.csv
 Processed row 134 of 281
 Processing stock 6806 for period 2021-06-10 to 2021-12-03
 文件 [6806] 2021-06-10-2021-12-03.csv 已包含結束日期 2021-12-03 的數據，跳過 API 請求
 Data successfully written to dividend/[6806] 2021-06-10-2021-12-03-dividend.csv
-Data successfully written to PER_PBR/[6806] 2021-06-10-2021-12-03-PER_PBR.csv
+文件 PER_PBR/[6806] 2021-06-10-2021-12-03-PER_PBR.csv 已包含結束日期 2021-12-03 的數據，跳過 API 請求
 Data successfully written to company-profile/[6806] 2021-06-10-2021-12-03-company-profile.csv
 Data successfully written to financial/[6806] 2021-06-10-2021-12-03-financial.csv
 Processed row 135 of 281
 Processing stock 6761 for period 2021-05-18 to 2021-11-26
 文件 [6761] 2021-05-18-2021-11-26.csv 已包含結束日期 2021-11-26 的數據，跳過 API 請求
 Data successfully written to dividend/[6761] 2021-05-18-2021-11-26-dividend.csv
-Data successfully written to PER_PBR/[6761] 2021-05-18-2021-11-26-PER_PBR.csv
+文件 PER_PBR/[6761] 2021-05-18-2021-11-26-PER_PBR.csv 已包含結束日期 2021-11-26 的數據，跳過 API 請求
 Data successfully written to company-profile/[6761] 2021-05-18-2021-11-26-company-profile.csv
 Data successfully written to financial/[6761] 2021-05-18-2021-11-26-financial.csv
 Processed row 136 of 281
 Processing stock 5222 for period 2021-05-18 to 2021-11-12
 文件 [5222] 2021-05-18-2021-11-12.csv 已包含結束日期 2021-11-12 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[5222] 2021-05-18-2021-11-12-PER_PBR.csv
+文件 PER_PBR/[5222] 2021-05-18-2021-11-12-PER_PBR.csv 已包含結束日期 2021-11-12 的數據，跳過 API 請求
 Data successfully written to company-profile/[5222] 2021-05-18-2021-11-12-company-profile.csv
 Data successfully written to financial/[5222] 2021-05-18-2021-11-12-financial.csv
 Processed row 137 of 281
 Processing stock 4440 for period 2021-06-15 to 2021-11-12
 文件 [4440] 2021-06-15-2021-11-12.csv 已包含結束日期 2021-11-12 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[4440] 2021-06-15-2021-11-12-PER_PBR.csv
+文件 PER_PBR/[4440] 2021-06-15-2021-11-12-PER_PBR.csv 已包含結束日期 2021-11-12 的數據，跳過 API 請求
 Data successfully written to company-profile/[4440] 2021-06-15-2021-11-12-company-profile.csv
 Data successfully written to financial/[4440] 2021-06-15-2021-11-12-financial.csv
 Processed row 138 of 281
 Processing stock 2947 for period 2021-04-09 to 2021-10-26
 文件 [2947] 2021-04-09-2021-10-26.csv 已包含結束日期 2021-10-26 的數據，跳過 API 請求
 Data successfully written to dividend/[2947] 2021-04-09-2021-10-26-dividend.csv
-Data successfully written to PER_PBR/[2947] 2021-04-09-2021-10-26-PER_PBR.csv
+文件 PER_PBR/[2947] 2021-04-09-2021-10-26-PER_PBR.csv 已包含結束日期 2021-10-26 的數據，跳過 API 請求
 Data successfully written to company-profile/[2947] 2021-04-09-2021-10-26-company-profile.csv
 Data successfully written to financial/[2947] 2021-04-09-2021-10-26-financial.csv
 Processed row 139 of 281
 Processing stock 6790 for period 2021-04-09 to 2021-10-19
 文件 [6790] 2021-04-09-2021-10-19.csv 已包含結束日期 2021-10-19 的數據，跳過 API 請求
 Data successfully written to dividend/[6790] 2021-04-09-2021-10-19-dividend.csv
-Data successfully written to PER_PBR/[6790] 2021-04-09-2021-10-19-PER_PBR.csv
+文件 PER_PBR/[6790] 2021-04-09-2021-10-19-PER_PBR.csv 已包含結束日期 2021-10-19 的數據，跳過 API 請求
 Data successfully written to company-profile/[6790] 2021-04-09-2021-10-19-company-profile.csv
 Data successfully written to financial/[6790] 2021-04-09-2021-10-19-financial.csv
 Processed row 140 of 281
 Processing stock 6788 for period 2021-04-08 to 2021-10-19
 文件 [6788] 2021-04-08-2021-10-19.csv 已包含結束日期 2021-10-19 的數據，跳過 API 請求
 Data successfully written to dividend/[6788] 2021-04-08-2021-10-19-dividend.csv
-Data successfully written to PER_PBR/[6788] 2021-04-08-2021-10-19-PER_PBR.csv
+文件 PER_PBR/[6788] 2021-04-08-2021-10-19-PER_PBR.csv 已包含結束日期 2021-10-19 的數據，跳過 API 請求
 Data successfully written to company-profile/[6788] 2021-04-08-2021-10-19-company-profile.csv
 Data successfully written to financial/[6788] 2021-04-08-2021-10-19-financial.csv
 Processed row 141 of 281
 Processing stock 2753 for period 2021-04-08 to 2021-09-29
 文件 [2753] 2021-04-08-2021-09-29.csv 已包含結束日期 2021-09-29 的數據，跳過 API 請求
 Data successfully written to dividend/[2753] 2021-04-08-2021-09-29-dividend.csv
-Data successfully written to PER_PBR/[2753] 2021-04-08-2021-09-29-PER_PBR.csv
+文件 PER_PBR/[2753] 2021-04-08-2021-09-29-PER_PBR.csv 已包含結束日期 2021-09-29 的數據，跳過 API 請求
 Data successfully written to company-profile/[2753] 2021-04-08-2021-09-29-company-profile.csv
 Data successfully written to financial/[2753] 2021-04-08-2021-09-29-financial.csv
 Processed row 142 of 281
 Processing stock 6684 for period 2021-03-11 to 2021-08-31
 文件 [6684] 2021-03-11-2021-08-31.csv 已包含結束日期 2021-08-31 的數據，跳過 API 請求
 Data successfully written to dividend/[6684] 2021-03-11-2021-08-31-dividend.csv
-Data successfully written to PER_PBR/[6684] 2021-03-11-2021-08-31-PER_PBR.csv
+文件 PER_PBR/[6684] 2021-03-11-2021-08-31-PER_PBR.csv 已包含結束日期 2021-08-31 的數據，跳過 API 請求
 Data successfully written to company-profile/[6684] 2021-03-11-2021-08-31-company-profile.csv
 Data successfully written to financial/[6684] 2021-03-11-2021-08-31-financial.csv
 Processed row 143 of 281
 Processing stock 5236 for period 2021-03-04 to 2021-08-18
 文件 [5236] 2021-03-04-2021-08-18.csv 已包含結束日期 2021-08-18 的數據，跳過 API 請求
 Data successfully written to dividend/[5236] 2021-03-04-2021-08-18-dividend.csv
-Data successfully written to PER_PBR/[5236] 2021-03-04-2021-08-18-PER_PBR.csv
+文件 PER_PBR/[5236] 2021-03-04-2021-08-18-PER_PBR.csv 已包含結束日期 2021-08-18 的數據，跳過 API 請求
 Data successfully written to company-profile/[5236] 2021-03-04-2021-08-18-company-profile.csv
 Data successfully written to financial/[5236] 2021-03-04-2021-08-18-financial.csv
 Processed row 144 of 281
 Processing stock 3357 for period 2020-10-30 to 2021-05-17
 文件 [3357] 2020-10-30-2021-05-17.csv 已包含結束日期 2021-05-17 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[3357] 2020-10-30-2021-05-17-PER_PBR.csv
+文件 PER_PBR/[3357] 2020-10-30-2021-05-17-PER_PBR.csv 已包含結束日期 2021-05-17 的數據，跳過 API 請求
 Data successfully written to company-profile/[3357] 2020-10-30-2021-05-17-company-profile.csv
 Data successfully written to financial/[3357] 2020-10-30-2021-05-17-financial.csv
 Processed row 145 of 281
@@ -1027,21 +1027,21 @@ Processed row 146 of 281
 Processing stock 6776 for period 2020-10-05 to 2021-04-20
 文件 [6776] 2020-10-05-2021-04-20.csv 已包含結束日期 2021-04-20 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6776] 2020-10-05-2021-04-20-PER_PBR.csv
+文件 PER_PBR/[6776] 2020-10-05-2021-04-20-PER_PBR.csv 已包含結束日期 2021-04-20 的數據，跳過 API 請求
 Data successfully written to company-profile/[6776] 2020-10-05-2021-04-20-company-profile.csv
 Data successfully written to financial/[6776] 2020-10-05-2021-04-20-financial.csv
 Processed row 147 of 281
 Processing stock 6651 for period 2020-09-03 to 2021-02-19
 文件 [6651] 2020-09-03-2021-02-19.csv 已包含結束日期 2021-02-19 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6651] 2020-09-03-2021-02-19-PER_PBR.csv
+文件 PER_PBR/[6651] 2020-09-03-2021-02-19-PER_PBR.csv 已包含結束日期 2021-02-19 的數據，跳過 API 請求
 Data successfully written to company-profile/[6651] 2020-09-03-2021-02-19-company-profile.csv
 Data successfully written to financial/[6651] 2020-09-03-2021-02-19-financial.csv
 Processed row 148 of 281
 Processing stock 6733 for period 2020-08-11 to 2021-02-17
 文件 [6733] 2020-08-11-2021-02-17.csv 已包含結束日期 2021-02-17 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6733] 2020-08-11-2021-02-17-PER_PBR.csv
+文件 PER_PBR/[6733] 2020-08-11-2021-02-17-PER_PBR.csv 已包含結束日期 2021-02-17 的數據，跳過 API 請求
 Data successfully written to company-profile/[6733] 2020-08-11-2021-02-17-company-profile.csv
 Data successfully written to financial/[6733] 2020-08-11-2021-02-17-financial.csv
 Processed row 149 of 281
@@ -1062,42 +1062,42 @@ Processed row 151 of 281
 Processing stock 6712 for period 2020-08-04 to 2021-01-28
 文件 [6712] 2020-08-04-2021-01-28.csv 已包含結束日期 2021-01-28 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6712] 2020-08-04-2021-01-28-PER_PBR.csv
+文件 PER_PBR/[6712] 2020-08-04-2021-01-28-PER_PBR.csv 已包含結束日期 2021-01-28 的數據，跳過 API 請求
 Data successfully written to company-profile/[6712] 2020-08-04-2021-01-28-company-profile.csv
 Data successfully written to financial/[6712] 2020-08-04-2021-01-28-financial.csv
 Processed row 152 of 281
 Processing stock 6751 for period 2020-06-30 to 2021-01-14
 文件 [6751] 2020-06-30-2021-01-14.csv 已包含結束日期 2021-01-14 的數據，跳過 API 請求
 Data successfully written to dividend/[6751] 2020-06-30-2021-01-14-dividend.csv
-Data successfully written to PER_PBR/[6751] 2020-06-30-2021-01-14-PER_PBR.csv
+文件 PER_PBR/[6751] 2020-06-30-2021-01-14-PER_PBR.csv 已包含結束日期 2021-01-14 的數據，跳過 API 請求
 Data successfully written to company-profile/[6751] 2020-06-30-2021-01-14-company-profile.csv
 Data successfully written to financial/[6751] 2020-06-30-2021-01-14-financial.csv
 Processed row 153 of 281
 Processing stock 6728 for period 2020-04-03 to 2021-01-14
 文件 [6728] 2020-04-03-2021-01-14.csv 已包含結束日期 2021-01-14 的數據，跳過 API 請求
 Data successfully written to dividend/[6728] 2020-04-03-2021-01-14-dividend.csv
-Data successfully written to PER_PBR/[6728] 2020-04-03-2021-01-14-PER_PBR.csv
+文件 PER_PBR/[6728] 2020-04-03-2021-01-14-PER_PBR.csv 已包含結束日期 2021-01-14 的數據，跳過 API 請求
 Data successfully written to company-profile/[6728] 2020-04-03-2021-01-14-company-profile.csv
 Data successfully written to financial/[6728] 2020-04-03-2021-01-14-financial.csv
 Processed row 154 of 281
 Processing stock 6756 for period 2020-07-16 to 2021-01-13
 文件 [6756] 2020-07-16-2021-01-13.csv 已包含結束日期 2021-01-13 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6756] 2020-07-16-2021-01-13-PER_PBR.csv
+文件 PER_PBR/[6756] 2020-07-16-2021-01-13-PER_PBR.csv 已包含結束日期 2021-01-13 的數據，跳過 API 請求
 Data successfully written to company-profile/[6756] 2020-07-16-2021-01-13-company-profile.csv
 Data successfully written to financial/[6756] 2020-07-16-2021-01-13-financial.csv
 Processed row 155 of 281
 Processing stock 6762 for period 2020-08-10 to 2021-01-07
 文件 [6762] 2020-08-10-2021-01-07.csv 已包含結束日期 2021-01-07 的數據，跳過 API 請求
 Data successfully written to dividend/[6762] 2020-08-10-2021-01-07-dividend.csv
-Data successfully written to PER_PBR/[6762] 2020-08-10-2021-01-07-PER_PBR.csv
+文件 PER_PBR/[6762] 2020-08-10-2021-01-07-PER_PBR.csv 已包含結束日期 2021-01-07 的數據，跳過 API 請求
 Data successfully written to company-profile/[6762] 2020-08-10-2021-01-07-company-profile.csv
 Data successfully written to financial/[6762] 2020-08-10-2021-01-07-financial.csv
 Processed row 156 of 281
 Processing stock 2755 for period 2020-06-02 to 2021-01-05
 文件 [2755] 2020-06-02-2021-01-05.csv 已包含結束日期 2021-01-05 的數據，跳過 API 請求
 Data successfully written to dividend/[2755] 2020-06-02-2021-01-05-dividend.csv
-Data successfully written to PER_PBR/[2755] 2020-06-02-2021-01-05-PER_PBR.csv
+文件 PER_PBR/[2755] 2020-06-02-2021-01-05-PER_PBR.csv 已包含結束日期 2021-01-05 的數據，跳過 API 請求
 Data successfully written to company-profile/[2755] 2020-06-02-2021-01-05-company-profile.csv
 Data successfully written to financial/[2755] 2020-06-02-2021-01-05-financial.csv
 Processed row 157 of 281
@@ -1111,153 +1111,153 @@ Processed row 158 of 281
 Processing stock 3138 for period 2020-07-13 to 2020-12-31
 文件 [3138] 2020-07-13-2020-12-31.csv 已包含結束日期 2020-12-31 的數據，跳過 API 請求
 Data successfully written to dividend/[3138] 2020-07-13-2020-12-31-dividend.csv
-Data successfully written to PER_PBR/[3138] 2020-07-13-2020-12-31-PER_PBR.csv
+文件 PER_PBR/[3138] 2020-07-13-2020-12-31-PER_PBR.csv 已包含結束日期 2020-12-31 的數據，跳過 API 請求
 Data successfully written to company-profile/[3138] 2020-07-13-2020-12-31-company-profile.csv
-Data successfully written to financial/[3138] 2020-07-13-2020-12-31-financial.csv
+文件 financial/[3138] 2020-07-13-2020-12-31-financial.csv 已包含結束日期 2020-12-31 的數據，跳過 API 請求
 Processed row 159 of 281
 Processing stock 6752 for period 2020-07-09 to 2020-12-30
 文件 [6752] 2020-07-09-2020-12-30.csv 已包含結束日期 2020-12-30 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6752] 2020-07-09-2020-12-30-PER_PBR.csv
+文件 PER_PBR/[6752] 2020-07-09-2020-12-30-PER_PBR.csv 已包含結束日期 2020-12-30 的數據，跳過 API 請求
 Data successfully written to company-profile/[6752] 2020-07-09-2020-12-30-company-profile.csv
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6752&start_date=2020-07-09&end_date=2020-12-30&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to financial/[6752] 2020-07-09-2020-12-30-financial.csv
 Processed row 160 of 281
 Processing stock 6727 for period 2020-07-02 to 2020-12-21
 文件 [6727] 2020-07-02-2020-12-21.csv 已包含結束日期 2020-12-21 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6727&start_date=2020-07-02&end_date=2020-12-21&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6727&start_date=2020-07-02&end_date=2020-12-21&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6727&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6727&start_date=2020-07-02&end_date=2020-12-21&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[6727] 2020-07-02-2020-12-21-dividend.csv
+Data successfully written to PER_PBR/[6727] 2020-07-02-2020-12-21-PER_PBR.csv
+Data successfully written to company-profile/[6727] 2020-07-02-2020-12-21-company-profile.csv
+Data successfully written to financial/[6727] 2020-07-02-2020-12-21-financial.csv
 Processed row 161 of 281
 Processing stock 1342 for period 2020-06-04 to 2020-12-14
 文件 [1342] 2020-06-04-2020-12-14.csv 已包含結束日期 2020-12-14 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=1342&start_date=2020-06-04&end_date=2020-12-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=1342&start_date=2020-06-04&end_date=2020-12-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=1342&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=1342&start_date=2020-06-04&end_date=2020-12-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[1342] 2020-06-04-2020-12-14-dividend.csv
+Data successfully written to PER_PBR/[1342] 2020-06-04-2020-12-14-PER_PBR.csv
+Data successfully written to company-profile/[1342] 2020-06-04-2020-12-14-company-profile.csv
+Data successfully written to financial/[1342] 2020-06-04-2020-12-14-financial.csv
 Processed row 162 of 281
 Processing stock 4945 for period 2020-05-29 to 2020-12-10
 文件 [4945] 2020-05-29-2020-12-10.csv 已包含結束日期 2020-12-10 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=4945&start_date=2020-05-29&end_date=2020-12-10&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=4945&start_date=2020-05-29&end_date=2020-12-10&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=4945&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=4945&start_date=2020-05-29&end_date=2020-12-10&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[4945] 2020-05-29-2020-12-10-dividend.csv
+Data successfully written to PER_PBR/[4945] 2020-05-29-2020-12-10-PER_PBR.csv
+Data successfully written to company-profile/[4945] 2020-05-29-2020-12-10-company-profile.csv
+Data successfully written to financial/[4945] 2020-05-29-2020-12-10-financial.csv
 Processed row 163 of 281
 Processing stock 7556 for period 2020-06-03 to 2020-11-19
 文件 [7556] 2020-06-03-2020-11-19.csv 已包含結束日期 2020-11-19 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=7556&start_date=2020-06-03&end_date=2020-11-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=7556&start_date=2020-06-03&end_date=2020-11-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=7556&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=7556&start_date=2020-06-03&end_date=2020-11-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[7556] 2020-06-03-2020-11-19-dividend.csv
+Data successfully written to PER_PBR/[7556] 2020-06-03-2020-11-19-PER_PBR.csv
+Data successfully written to company-profile/[7556] 2020-06-03-2020-11-19-company-profile.csv
+Data successfully written to financial/[7556] 2020-06-03-2020-11-19-financial.csv
 Processed row 164 of 281
 Processing stock 6703 for period 2020-04-07 to 2020-11-09
 文件 [6703] 2020-04-07-2020-11-09.csv 已包含結束日期 2020-11-09 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6703&start_date=2020-04-07&end_date=2020-11-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6703&start_date=2020-04-07&end_date=2020-11-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6703&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6703&start_date=2020-04-07&end_date=2020-11-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[6703] 2020-04-07-2020-11-09-dividend.csv
+Data successfully written to PER_PBR/[6703] 2020-04-07-2020-11-09-PER_PBR.csv
+Data successfully written to company-profile/[6703] 2020-04-07-2020-11-09-company-profile.csv
+Data successfully written to financial/[6703] 2020-04-07-2020-11-09-financial.csv
 Processed row 165 of 281
 Processing stock 2247 for period 2019-11-05 to 2020-10-30
 文件 [2247] 2019-11-05-2020-10-30.csv 已包含結束日期 2020-10-30 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2247&start_date=2019-11-05&end_date=2020-10-30&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=2247&start_date=2019-11-05&end_date=2020-10-30&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=2247&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=2247&start_date=2019-11-05&end_date=2020-10-30&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[2247] 2019-11-05-2020-10-30-dividend.csv
+Data successfully written to PER_PBR/[2247] 2019-11-05-2020-10-30-PER_PBR.csv
+Data successfully written to company-profile/[2247] 2019-11-05-2020-10-30-company-profile.csv
+Data successfully written to financial/[2247] 2019-11-05-2020-10-30-financial.csv
 Processed row 166 of 281
 Processing stock 8089 for period 2020-04-08 to 2020-10-13
 文件 [8089] 2020-04-08-2020-10-13.csv 已包含結束日期 2020-10-13 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=8089&start_date=2020-04-08&end_date=2020-10-13&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=8089&start_date=2020-04-08&end_date=2020-10-13&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=8089&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=8089&start_date=2020-04-08&end_date=2020-10-13&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[8089] 2020-04-08-2020-10-13-dividend.csv
+Data successfully written to PER_PBR/[8089] 2020-04-08-2020-10-13-PER_PBR.csv
+Data successfully written to company-profile/[8089] 2020-04-08-2020-10-13-company-profile.csv
+Data successfully written to financial/[8089] 2020-04-08-2020-10-13-financial.csv
 Processed row 167 of 281
 Processing stock 2754 for period 2019-12-10 to 2020-10-07
 文件 [2754] 2019-12-10-2020-10-07.csv 已包含結束日期 2020-10-07 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2754&start_date=2019-12-10&end_date=2020-10-07&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=2754&start_date=2019-12-10&end_date=2020-10-07&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=2754&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=2754&start_date=2019-12-10&end_date=2020-10-07&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[2754] 2019-12-10-2020-10-07-dividend.csv
+Data successfully written to PER_PBR/[2754] 2019-12-10-2020-10-07-PER_PBR.csv
+Data successfully written to company-profile/[2754] 2019-12-10-2020-10-07-company-profile.csv
+Data successfully written to financial/[2754] 2019-12-10-2020-10-07-financial.csv
 Processed row 168 of 281
 Processing stock 2241 for period 2020-04-09 to 2020-09-15
 文件 [2241] 2020-04-09-2020-09-15.csv 已包含結束日期 2020-09-15 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2241&start_date=2020-04-09&end_date=2020-09-15&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=2241&start_date=2020-04-09&end_date=2020-09-15&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=2241&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=2241&start_date=2020-04-09&end_date=2020-09-15&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[2241] 2020-04-09-2020-09-15-dividend.csv
+Data successfully written to PER_PBR/[2241] 2020-04-09-2020-09-15-PER_PBR.csv
+Data successfully written to company-profile/[2241] 2020-04-09-2020-09-15-company-profile.csv
+Data successfully written to financial/[2241] 2020-04-09-2020-09-15-financial.csv
 Processed row 169 of 281
 Processing stock 6754 for period 2020-04-06 to 2020-09-14
 文件 [6754] 2020-04-06-2020-09-14.csv 已包含結束日期 2020-09-14 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6754&start_date=2020-04-06&end_date=2020-09-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6754&start_date=2020-04-06&end_date=2020-09-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6754&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6754&start_date=2020-04-06&end_date=2020-09-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[6754] 2020-04-06-2020-09-14-dividend.csv
+Data successfully written to PER_PBR/[6754] 2020-04-06-2020-09-14-PER_PBR.csv
+Data successfully written to company-profile/[6754] 2020-04-06-2020-09-14-company-profile.csv
+Data successfully written to financial/[6754] 2020-04-06-2020-09-14-financial.csv
 Processed row 170 of 281
 Processing stock 6588 for period 2019-11-06 to 2020-07-21
 文件 [6588] 2019-11-06-2020-07-21.csv 已包含結束日期 2020-07-21 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6588&start_date=2019-11-06&end_date=2020-07-21&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6588&start_date=2019-11-06&end_date=2020-07-21&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6588&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6588&start_date=2019-11-06&end_date=2020-07-21&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[6588] 2019-11-06-2020-07-21-PER_PBR.csv
+Data successfully written to company-profile/[6588] 2019-11-06-2020-07-21-company-profile.csv
+Data successfully written to financial/[6588] 2019-11-06-2020-07-21-financial.csv
 Processed row 171 of 281
 Processing stock 6732 for period 2019-11-29 to 2020-06-26
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=6732&start_date=2019-11-29&end_date=2020-06-26&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6732&start_date=2019-11-29&end_date=2020-06-26&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6732&start_date=2019-11-29&end_date=2020-06-26&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6732&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6732&start_date=2019-11-29&end_date=2020-06-26&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to [6732] 2019-11-29-2020-06-26.csv
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[6732] 2019-11-29-2020-06-26-PER_PBR.csv
+Data successfully written to company-profile/[6732] 2019-11-29-2020-06-26-company-profile.csv
+Data successfully written to financial/[6732] 2019-11-29-2020-06-26-financial.csv
 Processed row 172 of 281
 Processing stock 8284 for period 2019-11-15 to 2020-06-05
 文件 [8284] 2019-11-15-2020-06-05.csv 已包含結束日期 2020-06-05 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=8284&start_date=2019-11-15&end_date=2020-06-05&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=8284&start_date=2019-11-15&end_date=2020-06-05&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=8284&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=8284&start_date=2019-11-15&end_date=2020-06-05&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[8284] 2019-11-15-2020-06-05-PER_PBR.csv
+Data successfully written to company-profile/[8284] 2019-11-15-2020-06-05-company-profile.csv
+Data successfully written to financial/[8284] 2019-11-15-2020-06-05-financial.csv
 Processed row 173 of 281
 Processing stock 3543 for period 2019-10-31 to 2020-05-05
 文件 [3543] 2019-10-31-2020-05-05.csv 已包含結束日期 2020-05-05 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=3543&start_date=2019-10-31&end_date=2020-05-05&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=3543&start_date=2019-10-31&end_date=2020-05-05&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=3543&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=3543&start_date=2019-10-31&end_date=2020-05-05&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[3543] 2019-10-31-2020-05-05-PER_PBR.csv
+Data successfully written to company-profile/[3543] 2019-10-31-2020-05-05-company-profile.csv
+Data successfully written to financial/[3543] 2019-10-31-2020-05-05-financial.csv
 Processed row 174 of 281
 Processing stock 6716 for period 2019-10-10 to 2020-04-16
 文件 [6716] 2019-10-10-2020-04-16.csv 已包含結束日期 2020-04-16 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6716&start_date=2019-10-10&end_date=2020-04-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6716&start_date=2019-10-10&end_date=2020-04-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6716&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6716&start_date=2019-10-10&end_date=2020-04-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[6716] 2019-10-10-2020-04-16-PER_PBR.csv
+Data successfully written to company-profile/[6716] 2019-10-10-2020-04-16-company-profile.csv
+Data successfully written to financial/[6716] 2019-10-10-2020-04-16-financial.csv
 Processed row 175 of 281
 Processing stock 2743 for period 2019-09-17 to 2020-03-27
 文件 [2743] 2019-09-17-2020-03-27.csv 已包含結束日期 2020-03-27 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2743&start_date=2019-09-17&end_date=2020-03-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=2743&start_date=2019-09-17&end_date=2020-03-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=2743&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=2743&start_date=2019-09-17&end_date=2020-03-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[2743] 2019-09-17-2020-03-27-PER_PBR.csv
+Data successfully written to company-profile/[2743] 2019-09-17-2020-03-27-company-profile.csv
+Data successfully written to financial/[2743] 2019-09-17-2020-03-27-financial.csv
 Processed row 176 of 281
 Processing stock 3597 for period 2019-09-05 to 2020-03-27
 文件 [3597] 2019-09-05-2020-03-27.csv 已包含結束日期 2020-03-27 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=3597&start_date=2019-09-05&end_date=2020-03-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=3597&start_date=2019-09-05&end_date=2020-03-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=3597&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=3597&start_date=2019-09-05&end_date=2020-03-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[3597] 2019-09-05-2020-03-27-dividend.csv
+Data successfully written to PER_PBR/[3597] 2019-09-05-2020-03-27-PER_PBR.csv
+Data successfully written to company-profile/[3597] 2019-09-05-2020-03-27-company-profile.csv
+Data successfully written to financial/[3597] 2019-09-05-2020-03-27-financial.csv
 Processed row 177 of 281
 Processing stock 4580 for period 2019-08-14 to 2020-01-24
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=4580&start_date=2019-08-14&end_date=2020-01-24&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=4580&start_date=2019-08-14&end_date=2020-01-24&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=4580&start_date=2019-08-14&end_date=2020-01-24&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=4580&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=4580&start_date=2019-08-14&end_date=2020-01-24&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to [4580] 2019-08-14-2020-01-24.csv
+Data successfully written to dividend/[4580] 2019-08-14-2020-01-24-dividend.csv
+Data successfully written to PER_PBR/[4580] 2019-08-14-2020-01-24-PER_PBR.csv
+Data successfully written to company-profile/[4580] 2019-08-14-2020-01-24-company-profile.csv
+Data successfully written to financial/[4580] 2019-08-14-2020-01-24-financial.csv
 Processed row 178 of 281
 Processing stock 6697 for period 2019-08-05 to 2020-01-15
 文件 [6697] 2019-08-05-2020-01-15.csv 已包含結束日期 2020-01-15 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6697&start_date=2019-08-05&end_date=2020-01-15&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6697&start_date=2019-08-05&end_date=2020-01-15&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6697&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6697&start_date=2019-08-05&end_date=2020-01-15&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+No data returned for the given parameters on dividend.
+Data successfully written to PER_PBR/[6697] 2019-08-05-2020-01-15-PER_PBR.csv
+Data successfully written to company-profile/[6697] 2019-08-05-2020-01-15-company-profile.csv
+Data successfully written to financial/[6697] 2019-08-05-2020-01-15-financial.csv
 Processed row 179 of 281
 Processing stock 6527 for period 2019-08-09 to 2020-01-14
 文件 [6527] 2019-08-09-2020-01-14.csv 已包含結束日期 2020-01-14 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6527&start_date=2019-08-09&end_date=2020-01-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
+Data successfully written to dividend/[6527] 2019-08-09-2020-01-14-dividend.csv
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6527&start_date=2019-08-09&end_date=2020-01-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6527&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6527&start_date=2019-08-09&end_date=2020-01-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
@@ -1439,7 +1439,7 @@ HTTP Request error: 402 Client Error: Payment Required for url: https://api.finm
 Processed row 205 of 281
 Processing stock 4538 for period 2018-07-11 to 2019-02-04
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=4538&start_date=2018-07-11&end_date=2019-02-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
-Data successfully written to dividend/[4538] 2018-07-11-2019-02-04-dividend.csv
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=4538&start_date=2018-07-11&end_date=2019-02-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=4538&start_date=2018-07-11&end_date=2019-02-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=4538&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=4538&start_date=2018-07-11&end_date=2019-02-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
