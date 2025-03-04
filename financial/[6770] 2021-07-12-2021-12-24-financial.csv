@@ -1,0 +1,16 @@
+日期,股票代碼,類型,值,名稱
+2021-09-30,6770,OperatingExpenses,2053000000.0,營業費用
+2021-09-30,6770,TAX,907279000.0,所得稅費用（利益）
+2021-09-30,6770,PreTaxIncome,5325420000.0,稅前淨利（淨損）
+2021-09-30,6770,IncomeFromContinuingOperations,4418141000.0,繼續營業單位本期淨利（淨損）
+2021-09-30,6770,IncomeAfterTaxes,4418141000.0,本期淨利（淨損）
+2021-09-30,6770,TotalConsolidatedProfitForThePeriod,4417700000.0,本期綜合損益總額
+2021-09-30,6770,Revenue,17291244000.0,營業收入
+2021-09-30,6770,CostOfGoodsSold,9769689000.0,營業成本
+2021-09-30,6770,OTHNOE,15321000.0,其他收益及費損淨額
+2021-09-30,6770,OperatingIncome,5483876000.0,營業利益（損失）
+2021-09-30,6770,TotalNonoperatingIncomeAndExpense,-158456000.0,營業外收入及支出
+2021-09-30,6770,OtherComprehensiveIncome,-441000.0,其他綜合損益（淨額）
+2021-09-30,6770,EquityAttributableToOwnersOfParent,4417700000.0,綜合損益總額歸屬於母公司業主
+2021-09-30,6770,EPS,1.32,基本每股盈餘（元）
+2021-09-30,6770,GrossProfit,7521555000.0,營業毛利（毛損）
