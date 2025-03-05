@@ -195,7 +195,8 @@ def fetch_and_save_stock_dividend(api_token, stock_id, start_date, end_date, out
         with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)
        
-            writer.writerow(["日期", "股票代碼", "年", "股票收益分配", "股票法定盈餘","股票除息交易日"])
+            
+            writer.writerow(["日期", "股票代碼", "年", "股票收益分配", "股票法定盈餘","股票除息交易日","員工股票股利額","員工股票股利總額","員工股票紅利佔總股本比例","員工股票股利比例","現金盈餘分配","現金法定盈餘","現金除息交易日","現金股利支付日","員工現金紅利總額","現金資本增加總數","現金增加認購利率","現金增加認購價","董事、監事報酬","參與分配股份總數","公告日期","公告時間"])
             for record in records:
                 writer.writerow([
                     record.get("date"), record.get("stock_id"), record.get("year"),
