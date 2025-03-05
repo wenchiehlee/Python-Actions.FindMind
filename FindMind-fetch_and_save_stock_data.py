@@ -439,7 +439,7 @@ def main():
                 if max_rows < len(data):
                     print(f"-----Processed row {row_count} of {max_rows} limit-----")
                 else:
-                    print(f"Processed row {row_count} of {len(data)}")
+                    print(f"-----Processed row {row_count} of {len(data)}-----")
                 
             except Exception as e:
                 print(f"Error processing stock {stock_id}: {e}")
