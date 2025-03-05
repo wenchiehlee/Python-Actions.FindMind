@@ -5,7 +5,7 @@ No row limit set. Processing all rows from the CSV file
 Processing stock 3467 for period 2024-09-05 to 2025-04-14
 Data successfully written to [3467] 2024-09-05-2025-04-14.csv
 No data returned for the given parameters on dividend.
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=3467&start_date=2024-09-05&end_date=2025-04-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 Processed row 1 of 282
 Processing stock 7718 for period 2024-10-09 to 2025-04-07
 Data successfully written to [7718] 2024-10-09-2025-04-07.csv
@@ -384,7 +384,7 @@ Data successfully written to dividend/[6895] 2023-03-10-2023-09-11-dividend.csv
 Processed row 76 of 282
 Processing stock 2073 for period 2022-10-11 to 2023-07-11
 文件 [2073] 2022-10-11-2023-07-11.csv 已包含結束日期 2023-07-11 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 502 Server Error: Bad Gateway for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2073&start_date=2022-10-11&end_date=2023-07-11&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[2073] 2022-10-11-2023-07-11-PER_PBR.csv 已包含結束日期 2023-07-11 的數據，跳過 API 請求
 Processed row 77 of 282
 Processing stock 6877 for period 2022-10-06 to 2023-07-06
@@ -569,7 +569,7 @@ No data returned for the given parameters on dividend.
 Processed row 113 of 282
 Processing stock 6585 for period 2021-11-05 to 2022-06-09
 文件 [6585] 2021-11-05-2022-06-09.csv 已包含結束日期 2022-06-09 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 502 Server Error: Bad Gateway for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6585&start_date=2021-11-05&end_date=2022-06-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6585] 2021-11-05-2022-06-09-PER_PBR.csv 已包含結束日期 2022-06-09 的數據，跳過 API 請求
 Processed row 114 of 282
 Processing stock 6799 for period 2021-11-02 to 2022-06-01
@@ -659,7 +659,7 @@ Data successfully written to dividend/[6691] 2021-07-26-2022-01-21-dividend.csv
 Processed row 131 of 282
 Processing stock 4770 for period 2021-07-14 to 2022-01-11
 文件 [4770] 2021-07-14-2022-01-11.csv 已包含結束日期 2022-01-11 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 502 Server Error: Bad Gateway for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=4770&start_date=2021-07-14&end_date=2022-01-11&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[4770] 2021-07-14-2022-01-11-PER_PBR.csv 已包含結束日期 2022-01-11 的數據，跳過 API 請求
 Processed row 132 of 282
 Processing stock 6792 for period 2021-07-09 to 2021-12-28
