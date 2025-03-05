@@ -28,13 +28,17 @@ jobs:
           FINDMIND_GMAIL_TOKEN: ${{ secrets.FINDMIND_GMAIL_TOKEN }}
         run: |
           python FindMind-fetch_and_save_stock_data.py >output.log 2>&1 || true
-      - name: Running Python2 (from CSV pick data by date)
-        run: 
+      - name: Running Python2 (from CSV pick stock data by date)
+        run: |
           python FindMind-read_stock_data_by_date.py >output2.log 2>&1 
-
       - name: Running Python3 (check the missing date by holiday.csv to check complete or not)
-        run:
+        run: |
           python create_holiday.py >output3.log 2>&1 
+      - name: Running Python4,5,6 (from CSV pick Company features into `Features-Company.csv`)
+        run: |
+          python FindMind-read_PER_PBR.py >output4.log 2>&1
+          python FindMind-read_company-profile.py >output5.log 2>&1
+          python FindMind-read_dividend.py >output6.log 2>&1   
 
       - name: Commit and Push The Results From Python Action
         run: |
