@@ -10,9 +10,9 @@
 2024-06-30,7712,IncomeAfterTaxes,67392000.0,本期淨利（淨損）
 2024-06-30,7712,OtherComprehensiveIncome,189000.0,其他綜合損益（淨額）
 2024-06-30,7712,TotalConsolidatedProfitForThePeriod,67581000.0,本期綜合損益總額
-2024-06-30,7712,EquityAttributableToOwnersOfParent,67581000.0,綜合損益總額歸屬於母公司業主
 2024-06-30,7712,EPS,2.29,基本每股盈餘（元）
-2024-06-30,7712,GrossProfit,131693000.0,營業毛利（毛損）淨額
+2024-06-30,7712,GrossProfit,131693000.0,營業毛利（毛損）
+2024-06-30,7712,EquityAttributableToOwnersOfParent,67392000.0,淨利（淨損）歸屬於母公司業主
 2024-09-30,7712,Revenue,351149000.0,營業收入
 2024-09-30,7712,CostOfGoodsSold,228315000.0,營業成本
 2024-09-30,7712,OperatingExpenses,51348000.0,營業費用
@@ -24,6 +24,6 @@
 2024-09-30,7712,IncomeAfterTaxes,49423000.0,本期淨利（淨損）
 2024-09-30,7712,OtherComprehensiveIncome,-311000.0,其他綜合損益（淨額）
 2024-09-30,7712,TotalConsolidatedProfitForThePeriod,49112000.0,本期綜合損益總額
-2024-09-30,7712,EquityAttributableToOwnersOfParent,49112000.0,綜合損益總額歸屬於母公司業主
 2024-09-30,7712,EPS,1.68,基本每股盈餘（元）
-2024-09-30,7712,GrossProfit,122834000.0,營業毛利（毛損）淨額
+2024-09-30,7712,GrossProfit,122834000.0,營業毛利（毛損）
+2024-09-30,7712,EquityAttributableToOwnersOfParent,49423000.0,淨利（淨損）歸屬於母公司業主
