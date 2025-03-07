@@ -430,7 +430,7 @@ def main():
                                 
                 # 財務報表數據
                 file_name = f"financial/[{stock_id}] {start_date}-{end_date}-financial.csv"
-                # fetch_and_save_stock_financialstatements(api_token, stock_id, start_date, end_date, file_name)
+                fetch_and_save_stock_financialstatements(api_token, stock_id, start_date, end_date, file_name)
                 
                 # 增加已處理行計數
                 row_count += 1
