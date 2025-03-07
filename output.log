@@ -25,7 +25,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 7728 for period 2024-09-05 to 2025-03-26
 Data successfully written to [7728] 2024-09-05-2025-03-26.csv
 No data returned for the given parameters on dividend.
-No data returned for the given parameters on PER_PBR.
+Data successfully written to PER_PBR/[7728] 2024-09-05-2025-03-26-PER_PBR.csv
 -----Processed row 5 of 282-----
 Processing stock 7734 for period 2024-09-06 to 2025-03-18
 Data successfully written to [7734] 2024-09-06-2025-03-18.csv
