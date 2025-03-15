@@ -120,7 +120,7 @@ Processing stock 8045 for period 2024-05-31 to 2024-12-31
 文件 [8045] 2024-05-31-2024-12-31.csv 已包含結束日期 2024-12-31 的數據，跳過 API 請求
 Data successfully written to dividend/[8045] 2024-05-31-2024-12-31-dividend.csv
 文件 PER_PBR/[8045] 2024-05-31-2024-12-31-PER_PBR.csv 已包含結束日期 2024-12-31 的數據，跳過 API 請求
-Data successfully written to financial/[8045] 2024-05-31-2024-12-31-financial.csv
+文件 financial/[8045] 2024-05-31-2024-12-31-financial.csv 已包含結束日期 2024-12-31 的數據，跳過 API 請求
 -----Processed row 20 of 282-----
 Processing stock 6996 for period 2024-06-05 to 2024-12-30
 文件 [6996] 2024-06-05-2024-12-30.csv 已包含結束日期 2024-12-30 的數據，跳過 API 請求
@@ -1594,7 +1594,7 @@ Data successfully written to financial/[6593] 2017-04-05-2017-11-23-financial.cs
 -----Processed row 265 of 282-----
 Processing stock 6556 for period 2016-12-08 to 2017-11-20
 文件 [6556] 2016-12-08-2017-11-20.csv 已包含結束日期 2017-11-20 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6556&start_date=2016-12-08&end_date=2017-11-20&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+Data successfully written to dividend/[6556] 2016-12-08-2017-11-20-dividend.csv
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6556&start_date=2016-12-08&end_date=2017-11-20&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6556&start_date=2016-12-08&end_date=2017-11-20&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 -----Processed row 266 of 282-----
