@@ -29,6 +29,6 @@
 2024-03-31,3168,IncomeAfterTaxes,60979000.0,本期淨利（淨損）
 2024-03-31,3168,OtherComprehensiveIncome,12054000.0,其他綜合損益（淨額）
 2024-03-31,3168,TotalConsolidatedProfitForThePeriod,73033000.0,本期綜合損益總額
-2024-03-31,3168,EquityAttributableToOwnersOfParent,59411000.0,綜合損益總額歸屬於母公司業主
-2024-03-31,3168,NoncontrollingInterests,13622000.0,綜合損益總額歸屬於非控制權益
-2024-03-31,3168,GrossProfit,207382000.0,營業毛利（毛損）
+2024-03-31,3168,GrossProfit,207672000.0,營業毛利（毛損）淨額
+2024-03-31,3168,EquityAttributableToOwnersOfParent,48224000.0,淨利（淨損）歸屬於母公司業主
+2024-03-31,3168,NoncontrollingInterests,12755000.0,淨利（淨損）歸屬於非控制權益

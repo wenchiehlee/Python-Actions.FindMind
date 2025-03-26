@@ -5,7 +5,7 @@ No row limit set. Processing all rows from the CSV file
 Processing stock 3467 for period 2024-09-05 to 2025-04-14
 Data successfully written to [3467] 2024-09-05-2025-04-14.csv
 No data returned for the given parameters on dividend.
-No data returned for the given parameters on PER_PBR.
+Data successfully written to PER_PBR/[3467] 2024-09-05-2025-04-14-PER_PBR.csv
 Data successfully written to company-profile/[3467] 2024-09-05-2025-04-14-company-profile.csv
 Data successfully written to financial/[3467] 2024-09-05-2025-04-14-financial.csv
 Processed row 1 of 282
