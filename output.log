@@ -14,7 +14,7 @@ Data successfully written to [7718] 2024-10-09-2025-04-07.csv
 No data returned for the given parameters on dividend.
 Data successfully written to PER_PBR/[7718] 2024-10-09-2025-04-07-PER_PBR.csv
 Data successfully written to company-profile/[7718] 2024-10-09-2025-04-07-company-profile.csv
-No data returned for the given parameters on financialstatements.
+Data successfully written to financial/[7718] 2024-10-09-2025-04-07-financial.csv
 Processed row 2 of 282
 Processing stock 7736 for period 2024-09-19 to 2025-04-07
 Data successfully written to [7736] 2024-09-19-2025-04-07.csv
@@ -1301,7 +1301,7 @@ Processing stock 6690 for period 2019-06-10 to 2019-11-19
 文件 [6690] 2019-06-10-2019-11-19.csv 已包含結束日期 2019-11-19 的數據，跳過 API 請求
 Data successfully written to dividend/[6690] 2019-06-10-2019-11-19-dividend.csv
 文件 PER_PBR/[6690] 2019-06-10-2019-11-19-PER_PBR.csv 已包含結束日期 2019-11-19 的數據，跳過 API 請求
-Data successfully written to company-profile/[6690] 2019-06-10-2019-11-19-company-profile.csv
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=6690&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6690&start_date=2019-06-10&end_date=2019-11-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 Processed row 186 of 282
 Processing stock 6491 for period 2019-05-13 to 2019-10-25
