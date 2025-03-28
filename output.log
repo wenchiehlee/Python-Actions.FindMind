@@ -27,9 +27,9 @@ Data successfully written to PER_PBR/[6872] 2024-07-23-2025-03-27-PER_PBR.csv
 Data successfully written to financial/[6872] 2024-07-23-2025-03-27-financial.csv
 -----Processed row 4 of 282-----
 Processing stock 7728 for period 2024-09-05 to 2025-03-26
-Data successfully written to [7728] 2024-09-05-2025-03-26.csv
+文件 [7728] 2024-09-05-2025-03-26.csv 已包含結束日期 2025-03-26 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[7728] 2024-09-05-2025-03-26-PER_PBR.csv
+文件 PER_PBR/[7728] 2024-09-05-2025-03-26-PER_PBR.csv 已包含結束日期 2025-03-26 的數據，跳過 API 請求
 Data successfully written to financial/[7728] 2024-09-05-2025-03-26-financial.csv
 -----Processed row 5 of 282-----
 Processing stock 7734 for period 2024-09-06 to 2025-03-18
@@ -1613,13 +1613,13 @@ Data successfully written to financial/[6441] 2017-04-05-2017-10-17-financial.cs
 Processing stock 4741 for period 2017-02-24 to 2017-10-16
 文件 [4741] 2017-02-24-2017-10-16.csv 已包含結束日期 2017-10-16 的數據，跳過 API 請求
 Data successfully written to dividend/[4741] 2017-02-24-2017-10-16-dividend.csv
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=4741&start_date=2017-02-24&end_date=2017-10-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=4741&start_date=2017-02-24&end_date=2017-10-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on PER_PBR.
+Data successfully written to financial/[4741] 2017-02-24-2017-10-16-financial.csv
 -----Processed row 269 of 282-----
 Processing stock 6574 for period 2017-03-10 to 2017-09-22
 文件 [6574] 2017-03-10-2017-09-22.csv 已包含結束日期 2017-09-22 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6574&start_date=2017-03-10&end_date=2017-09-22&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6574&start_date=2017-03-10&end_date=2017-09-22&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+Data successfully written to dividend/[6574] 2017-03-10-2017-09-22-dividend.csv
+No data returned for the given parameters on PER_PBR.
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6574&start_date=2017-03-10&end_date=2017-09-22&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 -----Processed row 270 of 282-----
 Processing stock 4562 for period 2017-03-20 to 2017-09-08
@@ -1680,11 +1680,11 @@ Processing stock 6472 for period 2023-09-18 to 2017-05-09
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=6472&start_date=2023-09-18&end_date=2017-05-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6472&start_date=2023-09-18&end_date=2017-05-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6472&start_date=2023-09-18&end_date=2017-05-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6472&start_date=2023-09-18&end_date=2017-05-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on financialstatements.
 -----Processed row 280 of 282-----
 Processing stock 6577 for period 2016-09-06 to 2017-04-10
 文件 [6577] 2016-09-06-2017-04-10.csv 已包含結束日期 2017-04-10 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6577&start_date=2016-09-06&end_date=2017-04-10&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on dividend.
 文件 PER_PBR/[6577] 2016-09-06-2017-04-10-PER_PBR.csv 已包含結束日期 2017-04-10 的數據，跳過 API 請求
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6577&start_date=2016-09-06&end_date=2017-04-10&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 -----Processed row 281 of 282-----
