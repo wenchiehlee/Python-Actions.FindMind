@@ -1446,7 +1446,7 @@ Processing stock 6288 for period 2017-08-15 to 2018-05-29
 文件 [6288] 2017-08-15-2018-05-29.csv 已包含結束日期 2018-05-29 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
 文件 PER_PBR/[6288] 2017-08-15-2018-05-29-PER_PBR.csv 已包含結束日期 2018-05-29 的數據，跳過 API 請求
-Data successfully written to financial/[6288] 2017-08-15-2018-05-29-financial.csv
+HTTP Request error: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=6288&start_date=2017-08-15&end_date=2018-05-29&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 -----Processed row 241 of 282-----
 Processing stock 5220 for period 2017-09-29 to 2018-05-16
 文件 [5220] 2017-09-29-2018-05-16.csv 已包含結束日期 2018-05-16 的數據，跳過 API 請求
