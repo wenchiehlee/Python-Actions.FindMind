@@ -1,6 +1,6 @@
 # FindMind-fetch_and_save_stock_data.py 指南
 
-## Version 1.0.2
+## Version 1.0.3
 {Guideline version}
 
 ## Way of working
@@ -52,6 +52,9 @@
 - `fetch_and_save_stock_company_profile`: 公司基本資料
 - `fetch_and_save_stock_dividend`: 股息數據
 - `fetch_and_save_stock_financialstatements`: 財務報表數據
+- `fetch_and_save_TWSE_TPEX`: 台灣證券交易所(TWSE)和證券櫃檯買賣中心(TPEX)的指數數據
+    
+    Parameters:
 
 每個函數需要:
 - 先檢查數據是否已存在
@@ -83,11 +86,14 @@
 
 ## 文件保存規則
 依照以下規則保存數據文件:
-- 股價數據: `[股票代碼] 開始日期-結束日期.csv`
+- 股價數據: `stockdata/[股票代碼] 開始日期-結束日期.csv`
 - 本益比/淨值比: `PER_PBR/[股票代碼] 開始日期-結束日期-PER_PBR.csv`
 - 公司資料: `company-profile/[股票代碼] 開始日期-結束日期-company-profile.csv`
 - 股息數據: `dividend/[股票代碼] 開始日期-結束日期-dividend.csv`
 - 財務數據: `financial/[股票代碼] 開始日期-結束日期-financial.csv`
+- 台灣證券交易所(TWSE)和證券櫃檯買賣中心(TPEX)的指數數據: `TWSE_TPEX/[股票代碼] 開始日期-結束日期-TWSE_TPEX.csv`
+    
+    Parameters:
 
 ## 執行流程
 1. 加載環境變量和 API 令牌
