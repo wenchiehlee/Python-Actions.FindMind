@@ -117,6 +117,9 @@ def get_security_stats(security_id):
                 full_path = os.path.join('stockdata', file_name)
                 price_data = pd.read_csv(full_path, encoding='utf-8')
 
+                total_rows = price_data.shape[0]
+                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
+
                 match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
                 if match:
                     start_date = pd.to_datetime(match.group(2), errors='coerce').date()
