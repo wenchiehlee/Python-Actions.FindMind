@@ -79,8 +79,7 @@ HTTP Request error: 402 Client Error: Payment Required for url: https://api.finm
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockInfo&data_id=7713&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockFinancialStatements&data_id=7713&start_date=2024-08-26&end_date=2025-03-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error for TWSE: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TAIEX&start_date=2024-08-26&end_date=2025-03-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2024-08-26&end_date=2025-03-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-No data retrieved for either TWSE or TPEX.
+Data successfully written to TWSE_TPEX/[7713] 2024-08-26-2025-03-14-TWSE_TPEX.csv
 -----Processed row 8 of 282-----
 Processing stock 4749 for period 2024-07-10 to 2025-02-06
 文件 stockdata/[4749] 2024-07-10-2025-02-06.csv 已包含結束日期 2025-02-06 的數據，跳過 API 請求
@@ -384,7 +383,7 @@ No data retrieved for either TWSE or TPEX.
 -----Processed row 38 of 282-----
 Processing stock 6838 for period 2024-03-11 to 2024-09-02
 文件 stockdata/[6838] 2024-03-11-2024-09-02.csv 已包含結束日期 2024-09-02 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6838&start_date=2024-03-11&end_date=2024-09-02&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on dividend.
 文件 PER_PBR/[6838] 2024-03-11-2024-09-02-PER_PBR.csv 已包含結束日期 2024-09-02 的數據，跳過 API 請求
 文件 company-profile/[6838] 2024-03-11-2024-09-02-company-profile.csv 已包含股票代碼 6838 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6838] 2024-03-11-2024-09-02-financial.csv 已包含股票代碼 6838 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -1388,8 +1387,7 @@ HTTP Request error: 402 Client Error: Payment Required for url: https://api.finm
 文件 PER_PBR/[4440] 2021-06-15-2021-11-12-PER_PBR.csv 已包含結束日期 2021-11-12 的數據，跳過 API 請求
 文件 company-profile/[4440] 2021-06-15-2021-11-12-company-profile.csv 已包含股票代碼 4440 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[4440] 2021-06-15-2021-11-12-financial.csv 已包含股票代碼 4440 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2021-06-15&end_date=2021-11-12&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-Data successfully written to TWSE_TPEX/[4440] 2021-06-15-2021-11-12-TWSE_TPEX.csv
+文件 TWSE_TPEX/[4440] 2021-06-15-2021-11-12-TWSE_TPEX.csv 已包含結束日期 2021-11-12 的數據，跳過 API 請求
 -----Processed row 139 of 282-----
 Processing stock 2947 for period 2021-04-09 to 2021-10-26
 文件 stockdata/[2947] 2021-04-09-2021-10-26.csv 已包含結束日期 2021-10-26 的數據，跳過 API 請求
@@ -1817,8 +1815,7 @@ HTTP Request error: 402 Client Error: Payment Required for url: https://api.finm
 文件 PER_PBR/[6706] 2019-09-05-2020-01-08-PER_PBR.csv 已包含結束日期 2020-01-08 的數據，跳過 API 請求
 文件 company-profile/[6706] 2019-09-05-2020-01-08-company-profile.csv 已包含股票代碼 6706 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6706] 2019-09-05-2020-01-08-financial.csv 已包含股票代碼 6706 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2019-09-05&end_date=2020-01-08&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-Data successfully written to TWSE_TPEX/[6706] 2019-09-05-2020-01-08-TWSE_TPEX.csv
+文件 TWSE_TPEX/[6706] 2019-09-05-2020-01-08-TWSE_TPEX.csv 已包含結束日期 2020-01-08 的數據，跳過 API 請求
 -----Processed row 182 of 282-----
 Processing stock 6715 for period 2019-06-21 to 2020-01-01
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=6715&start_date=2019-06-21&end_date=2020-01-01&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
