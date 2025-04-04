@@ -51,5 +51,7 @@ jobs:
          git add company-profile/*.csv
          git add PER_PBR/*.csv
          git add financial/*.csv
+         git add stockdata/*.csv
+         git add TWSE_TPEX/*.csv
          git commit -m "⬆️ GitHub Actions Results added" || true
          git push || true
