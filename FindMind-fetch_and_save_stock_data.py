@@ -351,9 +351,25 @@ def fetch_and_save_stock_dividend(api_token, stock_id, start_date, end_date, out
     if directory:  # 只有當目錄非空時才創建
         os.makedirs(directory, exist_ok=True)
     
-    # 檢查文件是否已經包含結束日期
-    if is_file_complete_with_end_date(output_file, end_date):
-        return
+    # 檢查文件是否已存在
+    if os.path.exists(output_file):
+        # 如果提供了結束日期，檢查是否在有效期內
+        if end_date:
+            # 讀取現有文件
+            try:
+                df = pd.read_csv(output_file, encoding="utf-8")
+                
+                # 檢查文件是否為空或不包含必要列
+                if df.empty or "股票代碼" not in df.columns or "日期" not in df.columns:
+                    print(f"文件 {output_file} 為空或格式不正確，將重新獲取數據")
+                else:
+                    # 檢查日期範圍
+                    if not is_date_within_two_months(end_date):
+                        print(f"文件 {output_file} 已包含股票代碼 {stock_id} 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求")
+                        return True
+            
+            except Exception as e:
+                print(f"檢查Dividend文件時發生錯誤: {e}")
 
     url = "https://api.finmindtrade.com/api/v4/data"
     params = {
