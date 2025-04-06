@@ -1546,15 +1546,13 @@ Processing stock 4576 for period 2019-04-10 to 2019-09-24
 文件 financial/[4576] 2019-04-10-2019-09-24-financial.csv 已包含股票代碼 4576 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[4576] 2019-04-10-2019-09-24-TWSE_TPEX.csv 已包含結束日期 2019-09-24 的數據，跳過 API 請求
 -----Processed row 193 of 282-----
-Processing stock 6589 for period 2024-12-09 to 2019-07-18
-No data returned for the given parameters.
+Processing stock 6589 for period 2018-11-28 to 2019-07-18
+文件 stockdata/[6589] 2018-11-28-2019-07-18.csv 已包含結束日期 2019-07-18 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-No data returned for the given parameters on PER_PBR.
-文件 company-profile/[6589] 2024-12-09-2019-07-18-company-profile.csv 已包含股票代碼 6589 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on financialstatements.
-No data returned for TWSE.
-No data returned for TPEX.
-No data retrieved for either TWSE or TPEX.
+Data successfully written to PER_PBR/[6589] 2018-11-28-2019-07-18-PER_PBR.csv
+Data successfully written to company-profile/[6589] 2018-11-28-2019-07-18-company-profile.csv
+Data successfully written to financial/[6589] 2018-11-28-2019-07-18-financial.csv
+Data successfully written to TWSE_TPEX/[6589] 2018-11-28-2019-07-18-TWSE_TPEX.csv
 -----Processed row 194 of 282-----
 Processing stock 6649 for period 2018-11-12 to 2019-06-25
 文件 stockdata/[6649] 2018-11-12-2019-06-25.csv 已包含結束日期 2019-06-25 的數據，跳過 API 請求
@@ -2212,15 +2210,13 @@ No data returned for the given parameters on dividend.
 文件 financial/[8489] 2016-10-07-2017-05-17-financial.csv 已包含股票代碼 8489 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[8489] 2016-10-07-2017-05-17-TWSE_TPEX.csv 已包含結束日期 2017-05-17 的數據，跳過 API 請求
 -----Processed row 276 of 282-----
-Processing stock 6438 for period 2020-10-12 to 2017-05-15
-No data returned for the given parameters.
+Processing stock 6438 for period 2016-10-11 to 2017-05-15
+Data successfully written to stockdata/[6438] 2016-10-11-2017-05-15.csv
 No data returned for the given parameters on dividend.
-No data returned for the given parameters on PER_PBR.
-文件 company-profile/[6438] 2020-10-12-2017-05-15-company-profile.csv 已包含股票代碼 6438 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on financialstatements.
-No data returned for TWSE.
-No data returned for TPEX.
-No data retrieved for either TWSE or TPEX.
+Data successfully written to PER_PBR/[6438] 2016-10-11-2017-05-15-PER_PBR.csv
+Data successfully written to company-profile/[6438] 2016-10-11-2017-05-15-company-profile.csv
+Data successfully written to financial/[6438] 2016-10-11-2017-05-15-financial.csv
+Data successfully written to TWSE_TPEX/[6438] 2016-10-11-2017-05-15-TWSE_TPEX.csv
 -----Processed row 277 of 282-----
 Processing stock 6492 for period 2016-10-11 to 2017-05-12
 文件 stockdata/[6492] 2016-10-11-2017-05-12.csv 已包含結束日期 2017-05-12 的數據，跳過 API 請求
@@ -2238,15 +2234,13 @@ No data returned for the given parameters on dividend.
 文件 financial/[2065] 2016-10-07-2017-05-11-financial.csv 已包含股票代碼 2065 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[2065] 2016-10-07-2017-05-11-TWSE_TPEX.csv 已包含結束日期 2017-05-11 的數據，跳過 API 請求
 -----Processed row 279 of 282-----
-Processing stock 6472 for period 2023-09-18 to 2017-05-09
-No data returned for the given parameters.
+Processing stock 6472 for period 2016-09-05 to 2017-05-09
+Data successfully written to stockdata/[6472] 2016-09-05-2017-05-09.csv
 No data returned for the given parameters on dividend.
-No data returned for the given parameters on PER_PBR.
-文件 company-profile/[6472] 2023-09-18-2017-05-09-company-profile.csv 已包含股票代碼 6472 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on financialstatements.
-No data returned for TWSE.
-No data returned for TPEX.
-No data retrieved for either TWSE or TPEX.
+Data successfully written to PER_PBR/[6472] 2016-09-05-2017-05-09-PER_PBR.csv
+Data successfully written to company-profile/[6472] 2016-09-05-2017-05-09-company-profile.csv
+Data successfully written to financial/[6472] 2016-09-05-2017-05-09-financial.csv
+Data successfully written to TWSE_TPEX/[6472] 2016-09-05-2017-05-09-TWSE_TPEX.csv
 -----Processed row 280 of 282-----
 Processing stock 6577 for period 2016-09-06 to 2017-04-10
 文件 stockdata/[6577] 2016-09-06-2017-04-10.csv 已包含結束日期 2017-04-10 的數據，跳過 API 請求
