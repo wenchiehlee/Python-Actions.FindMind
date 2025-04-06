@@ -42,7 +42,7 @@ print(date_columns,"<<AAAAAAAAAAAAAAA")
 
 
 # 獲取所有文件列表
-all_files = os.listdir()
+all_files = [f for f in os.listdir('stockdata') if f.endswith('.csv')]
 
 # 初始化台灣工作日計算
 cal = Taiwan()
@@ -81,7 +81,9 @@ def get_closing_price(security_id, base_date, offset=0):
     for file_name in all_files:
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
             try:
-                price_data = pd.read_csv(file_name, encoding='utf-8')
+                # Update file path to use stockdata directory
+                full_path = os.path.join('stockdata', file_name)
+                price_data = pd.read_csv(full_path, encoding='utf-8')
                 price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
                 price_data = price_data.sort_values(by='日期').reset_index(drop=True)
 
@@ -111,7 +113,10 @@ def get_security_stats(security_id):
     for file_name in all_files:
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
             try:
-                price_data = pd.read_csv(file_name, encoding='utf-8')
+                # Update file path to use stockdata directory
+                full_path = os.path.join('stockdata', file_name)
+                price_data = pd.read_csv(full_path, encoding='utf-8')
+
                 total_rows = price_data.shape[0]
                 price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
 
