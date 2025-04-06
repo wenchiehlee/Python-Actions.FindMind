@@ -892,7 +892,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 111 of 282-----
 Processing stock 6546 for period 2021-12-10 to 2022-06-13
 文件 stockdata/[6546] 2021-12-10-2022-06-13.csv 已包含結束日期 2022-06-13 的數據，跳過 API 請求
-HTTP Request error: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6546&start_date=2021-12-10&end_date=2022-06-13&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on dividend.
 文件 PER_PBR/[6546] 2021-12-10-2022-06-13-PER_PBR.csv 已包含結束日期 2022-06-13 的數據，跳過 API 請求
 文件 company-profile/[6546] 2021-12-10-2022-06-13-company-profile.csv 已包含股票代碼 6546 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6546] 2021-12-10-2022-06-13-financial.csv 已包含股票代碼 6546 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -1459,7 +1459,7 @@ No data returned for the given parameters on dividend.
 文件 TWSE_TPEX/[6706] 2019-09-05-2020-01-08-TWSE_TPEX.csv 已包含結束日期 2020-01-08 的數據，跳過 API 請求
 -----Processed row 182 of 282-----
 Processing stock 6715 for period 2019-06-21 to 2020-01-01
-HTTP Request error: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=6715&start_date=2019-06-21&end_date=2020-01-01&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+Data successfully written to stockdata/[6715] 2019-06-21-2020-01-01.csv
 文件 dividend/[6715] 2019-06-21-2020-01-01-dividend.csv 已包含股票代碼 6715 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 Data successfully written to PER_PBR/[6715] 2019-06-21-2020-01-01-PER_PBR.csv
 文件 company-profile/[6715] 2019-06-21-2020-01-01-company-profile.csv 已包含股票代碼 6715 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
