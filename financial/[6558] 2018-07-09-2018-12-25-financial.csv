@@ -1,0 +1,17 @@
+日期,股票代碼,類型,值,名稱
+2018-09-30,6558,IncomeBeforeIncomeTax,69825000.0,稅前淨利(淨損)
+2018-09-30,6558,NetIncome,55654000.0,本期淨利(淨損)
+2018-09-30,6558,OperatingExpenses,67008000.0,營業費用
+2018-09-30,6558,TAX,14171000.0,所得稅費用（利益）
+2018-09-30,6558,EPS,0.74,基本每股盈餘（元）
+2018-09-30,6558,PreTaxIncome,69825000.0,稅前淨利（淨損）
+2018-09-30,6558,IncomeFromContinuingOperations,55654000.0,繼續營業單位本期淨利（淨損）
+2018-09-30,6558,IncomeAfterTaxes,55654000.0,本期淨利（淨損）
+2018-09-30,6558,TotalConsolidatedProfitForThePeriod,33603000.0,本期綜合損益總額
+2018-09-30,6558,Revenue,492206000.0,營業收入
+2018-09-30,6558,CostOfGoodsSold,366835000.0,營業成本
+2018-09-30,6558,GrossProfit,125371000.0,營業毛利（毛損）淨額
+2018-09-30,6558,OperatingIncome,58363000.0,營業利益（損失）
+2018-09-30,6558,TotalNonoperatingIncomeAndExpense,11462000.0,營業外收入及支出
+2018-09-30,6558,OtherComprehensiveIncome,-22051000.0,其他綜合損益（淨額）
+2018-09-30,6558,EquityAttributableToOwnersOfParent,55654000.0,淨利（淨損）歸屬於母公司業主
