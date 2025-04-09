@@ -19,20 +19,20 @@ Data successfully written to financial/[3467] 2024-09-05-2025-04-14-financial.cs
 Data successfully written to TWSE_TPEX/[3467] 2024-09-05-2025-04-14-TWSE_TPEX.csv
 -----Processed row 2 of 283-----
 Processing stock 7718 for period 2024-10-09 to 2025-04-07
-Data successfully written to stockdata/[7718] 2024-10-09-2025-04-07.csv
+文件 stockdata/[7718] 2024-10-09-2025-04-07.csv 已包含結束日期 2025-04-07 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[7718] 2024-10-09-2025-04-07-PER_PBR.csv
+文件 PER_PBR/[7718] 2024-10-09-2025-04-07-PER_PBR.csv 已包含結束日期 2025-04-07 的數據，跳過 API 請求
 Data successfully written to company-profile/[7718] 2024-10-09-2025-04-07-company-profile.csv
 Data successfully written to financial/[7718] 2024-10-09-2025-04-07-financial.csv
-Data successfully written to TWSE_TPEX/[7718] 2024-10-09-2025-04-07-TWSE_TPEX.csv
+文件 TWSE_TPEX/[7718] 2024-10-09-2025-04-07-TWSE_TPEX.csv 已包含結束日期 2025-04-07 的數據，跳過 API 請求
 -----Processed row 3 of 283-----
 Processing stock 7736 for period 2024-09-19 to 2025-04-07
-Data successfully written to stockdata/[7736] 2024-09-19-2025-04-07.csv
+文件 stockdata/[7736] 2024-09-19-2025-04-07.csv 已包含結束日期 2025-04-07 的數據，跳過 API 請求
 No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[7736] 2024-09-19-2025-04-07-PER_PBR.csv
+文件 PER_PBR/[7736] 2024-09-19-2025-04-07-PER_PBR.csv 已包含結束日期 2025-04-07 的數據，跳過 API 請求
 Data successfully written to company-profile/[7736] 2024-09-19-2025-04-07-company-profile.csv
 Data successfully written to financial/[7736] 2024-09-19-2025-04-07-financial.csv
-Data successfully written to TWSE_TPEX/[7736] 2024-09-19-2025-04-07-TWSE_TPEX.csv
+文件 TWSE_TPEX/[7736] 2024-09-19-2025-04-07-TWSE_TPEX.csv 已包含結束日期 2025-04-07 的數據，跳過 API 請求
 -----Processed row 4 of 283-----
 Processing stock 6872 for period 2024-07-23 to 2025-03-27
 文件 stockdata/[6872] 2024-07-23-2025-03-27.csv 已包含結束日期 2025-03-27 的數據，跳過 API 請求
@@ -1216,7 +1216,6 @@ No data returned for the given parameters on dividend.
 Data successfully written to PER_PBR/[6661] 2020-08-25-2021-02-16-PER_PBR.csv
 文件 company-profile/[6661] 2020-08-25-2021-02-16-company-profile.csv 已包含股票代碼 6661 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6661] 2020-08-25-2021-02-16-financial.csv 已包含股票代碼 6661 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-HTTP Request error for TPEX: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2020-08-25&end_date=2021-02-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyODoxMCIsInVzZXJfaWQiOiJBbmR5X2xlZSIsImlwIjoiMS4xNjEuMjIxLjEwMyJ9.mSdG6BEe3JFwMxouDSMf9VEmiVm4CJVSKREdB6etYA0
 Data successfully written to TWSE_TPEX/[6661] 2020-08-25-2021-02-16-TWSE_TPEX.csv
 -----Processed row 152 of 283-----
 Processing stock 6767 for period 2020-08-18 to 2021-02-12
