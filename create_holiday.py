@@ -62,7 +62,10 @@ def find_missing_dates(security_id, start_date, end_date):
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
             try:
                 # 讀取證券資料
-                price_data = pd.read_csv(file_name, encoding='utf-8')
+                file_path = os.path.join('stockdata', file_name)
+                price_data = pd.read_csv(file_path, encoding='utf-8')
+
+
                 price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
                 
                 # 獲取日期範圍內的所有工作日（考慮國定假日與額外假日）
@@ -108,5 +111,4 @@ for index, row in auction_data.iterrows():
 missing_dates_df = pd.DataFrame(missing_dates_data)
 missing_dates_df.to_csv(missing_dates_output_path, index=False, header=False, encoding='utf-8-sig')
 
-print(f"缺失日期已儲存至 {missing_dates_output_path}")
-
+print(f"缺失日期已儲存至 {missing_dates_
