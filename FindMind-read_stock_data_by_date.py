@@ -134,4 +134,62 @@ def get_security_stats(security_id):
                 full_path = os.path.join('stockdata', file_name)
                 price_data = pd.read_csv(full_path, encoding='utf-8')
 
-                total_rows = price_data.shape
+                total_rows = price_data.shape[0]
+                price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
+
+                match = re.search(r"\[(\d+)\] (\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})", file_name)
+                if match:
+                    start_date = pd.to_datetime(match.group(2), errors='coerce').date()
+                    end_date = pd.to_datetime(match.group(3), errors='coerce').date()
+
+                    if start_date and end_date:
+                        working_days = 0
+                        current_date = start_date
+                        while current_date <= end_date:
+                            if not cal.is_holiday(current_date) and current_date not in holidays_set and cal.is_working_day(current_date):
+                                working_days += 1
+                            current_date += timedelta(days=1)
+
+                        print(f"股票代號: {security_id}, 資料總數: {total_rows}/總工作天數: {working_days}")
+                        return total_rows, working_days
+                    else:
+                        return total_rows, "無資料"
+                else:
+                    return total_rows, "無資料"
+
+            except (FileNotFoundError, pd.errors.EmptyDataError) as e:
+                print(f"讀取證券檔案錯誤: {e}")
+                return "無資料", "無資料"
+    return "無資料", "無資料"
+
+
+# 4. 更新資料中的日期欄位並添加新列
+auction_data.insert(auction_data.columns.get_loc("DateEnd") + 1, "資料總數", "無資料")
+auction_data.insert(auction_data.columns.get_loc("資料總數") + 1, "總工作天數", "無資料")
+
+for index, row in auction_data.iterrows():
+    security_id = row["股票代號"]
+
+    # 更新日期欄位，根據偏移量調整收盤價查詢
+    for col, info in date_columns.items():
+        base_col = info['base']
+        offset = info['offset']
+
+        if base_col in auction_data.columns and pd.notna(row[base_col]):
+            closing_price = get_closing_price(security_id, row[base_col], offset)
+            auction_data.at[index, col] = closing_price
+        else:
+            auction_data.at[index, col] = "無資料"
+
+
+    
+    # 獲取資料總數和總工作天數
+    total_rows, working_days = get_security_stats(security_id)
+    auction_data.at[index, "資料總數"] = total_rows
+    auction_data.at[index, "總工作天數"] = working_days
+
+# 5. 儲存更新的資料至新的檔案中
+output_path = os.path.join(output_dir, "updated_cleaned_auction_data.csv")
+auction_data.to_csv(output_path, index=False, encoding='utf-8-sig')
+
+print(f"已完成資料處理並儲存至 {output_path}")
