@@ -89,6 +89,7 @@ def get_closing_price(security_id, base_date, offset=0):
 
                 base_date = pd.to_datetime(base_date, errors='coerce').date()
                 if pd.isna(base_date):
+                    print(f"無效日期: base_date={base_date}, offset={offset}")
                     return "無效日期"
 
                 base_idx = price_data[price_data['日期'] == base_date].index
@@ -97,11 +98,15 @@ def get_closing_price(security_id, base_date, offset=0):
                     if 0 <= target_idx < len(price_data):
                         return price_data.iloc[target_idx]['收盤價']
                     else:
+                        print(f"超出範圍: base_date={base_date}, offset={offset}, 目標索引={target_idx}, 資料長度={len(price_data)}")
                         return "超出範圍"
                 else:
+                    print(f"日期不存在: base_date={base_date}, offset={offset}, 檔案={file_name}")
                     return "日期不存在"
-            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError):
+            except (KeyError, FileNotFoundError, pd.errors.EmptyDataError) as e:
+                print(f"處理檔案時出錯: {file_name}, 錯誤: {e}")
                 continue
+    print(f"無資料: security_id={security_id}, base_date={base_date}, offset={offset}")
     return "無資料"
 
 
