@@ -1071,17 +1071,16 @@ HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https:/
 No data retrieved for either TWSE or TPEX.
 -----Processed row 130 of 284-----
 Processing stock 6719 for period 2021-08-25 to 2022-02-02
-Data successfully written to stockdata/[6719] 2021-08-25-2022-02-02.csv
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=6719&start_date=2021-08-25&end_date=2022-02-02&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 dividend/[6719] 2021-08-25-2022-02-02-dividend.csv 已包含股票代碼 6719 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6719&start_date=2021-08-25&end_date=2022-02-02&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6719] 2021-08-25-2022-02-02-company-profile.csv 已包含股票代碼 6719 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6719] 2021-08-25-2022-02-02-financial.csv 已包含股票代碼 6719 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 HTTP Request error for TWSE: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TAIEX&start_date=2021-08-25&end_date=2022-02-02&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2021-08-25&end_date=2022-02-02&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-No data retrieved for either TWSE or TPEX.
+Data successfully written to TWSE_TPEX/[6719] 2021-08-25-2022-02-02-TWSE_TPEX.csv
 -----Processed row 131 of 284-----
 Processing stock 3592 for period 2021-08-03 to 2022-01-27
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=3592&start_date=2021-08-03&end_date=2022-01-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+Data successfully written to stockdata/[3592] 2021-08-03-2022-01-27.csv
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=3592&start_date=2021-08-03&end_date=2022-01-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=3592&start_date=2021-08-03&end_date=2022-01-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[3592] 2021-08-03-2022-01-27-company-profile.csv 已包含股票代碼 3592 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -1974,7 +1973,7 @@ HTTP Request error: 402 Client Error: Payment Required for url: https://api.finm
 -----Processed row 239 of 284-----
 Processing stock 4561 for period 2017-11-08 to 2018-06-29
 文件 stockdata/[4561] 2017-11-08-2018-06-29.csv 已包含結束日期 2018-06-29 的數據，跳過 API 請求
-HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=4561&start_date=2017-11-08&end_date=2018-06-29&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on dividend.
 文件 PER_PBR/[4561] 2017-11-08-2018-06-29-PER_PBR.csv 已包含結束日期 2018-06-29 的數據，跳過 API 請求
 文件 company-profile/[4561] 2017-11-08-2018-06-29-company-profile.csv 已包含股票代碼 4561 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[4561] 2017-11-08-2018-06-29-financial.csv 已包含股票代碼 4561 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2334,7 +2333,8 @@ HTTP Request error: 402 Client Error: Payment Required for url: https://api.finm
 HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6533&start_date=2016-06-10&end_date=2017-04-03&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6533] 2016-06-10-2017-04-03-company-profile.csv 已包含股票代碼 6533 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6533] 2016-06-10-2017-04-03-financial.csv 已包含股票代碼 6533 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
+HTTP Request error for TWSE: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TAIEX&start_date=2016-06-10&end_date=2017-04-03&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2016-06-10&end_date=2017-04-03&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
-Data successfully written to TWSE_TPEX/[6533] 2016-06-10-2017-04-03-TWSE_TPEX.csv
+No data retrieved for either TWSE or TPEX.
 -----Processed row 284 of 284-----
 Processing completed.
