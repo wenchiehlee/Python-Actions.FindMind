@@ -1,4 +1,2 @@
-  File "/home/runner/work/Python-Actions.FindMind/Python-Actions.FindMind/create_holiday.py", line 114
-    print(f"缺失日期已儲存至 {missing_dates_
-                                                    ^
-SyntaxError: EOL while scanning string literal
+成功讀取 holidays.csv，共 58 個假日
+缺失日期已儲存至 auction_data_processed/missing_dates.csv
