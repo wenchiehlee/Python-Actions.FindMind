@@ -117,17 +117,17 @@ def get_closing_price(security_id, base_date, offset=0):
                         min_date = price_data['日期'].min()
                         max_date = price_data['日期'].max()
                         if min_date <= target_date <= max_date:
-                            print(f"  範圍內，但沒有數據: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name} 注意: 此日期在檔案日期範圍內 ({min_date} 至 {max_date})，但沒有數據 (可能是非預期的休市日)")
+                            print(f"  🈳範圍內，但沒有數據: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name} 注意: 此日期在檔案日期範圍內 ({min_date} 至 {max_date})，但沒有數據 (可能是非預期的休市日)")
                         else:
-                            print(f"  未來日期: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name} 注意: 未來日期，無法獲取數據")
+                            print(f"  🚀未來日期: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name} 注意: 未來日期，無法獲取數據")
                     # NEW: Optional debugging for weekend/holiday identification
                     elif is_weekend:
                         # Optional: You can uncomment if you want weekend prints
-                        print(f"  週末非交易日: target_date={target_date} (base_date={base_date}, offset={offset})")
+                        print(f"  🛌週末非交易日: target_date={target_date} (base_date={base_date}, offset={offset})")
                         pass
                     elif is_holiday:
                         # Optional: You can uncomment if you want holiday prints
-                        print(f"  假日非交易日: target_date={target_date} (base_date={base_date}, offset={offset})")
+                        print(f"  🧨假日非交易日: target_date={target_date} (base_date={base_date}, offset={offset})")
                         pass
                     return ""
                 
