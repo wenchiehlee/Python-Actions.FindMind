@@ -112,13 +112,14 @@ def get_closing_price(security_id, base_date, offset=0):
                 else:
                     # CHANGED: Only print if it's a regular trading day (not weekend or holiday)
                     if not is_non_trading_day:  # CHANGED from "if not is_weekend:"
-                        print(f"日期不存在: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name}")
+
                         # Check if this date should exist (is it within the file's date range?)
                         min_date = price_data['日期'].min()
                         max_date = price_data['日期'].max()
                         if min_date <= target_date <= max_date:
-                            # CHANGED: Updated message to be more specific
-                            print(f"  注意: 此日期在檔案日期範圍內 ({min_date} 至 {max_date})，但沒有數據 (可能是非預期的休市日)")
+                            print(f"  範圍內，但沒有數據: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name} 注意: 此日期在檔案日期範圍內 ({min_date} 至 {max_date})，但沒有數據 (可能是非預期的休市日)")
+                        else:
+                            print(f"  未來日期: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name} 注意: 未來日期，無法獲取數據")
                     # NEW: Optional debugging for weekend/holiday identification
                     elif is_weekend:
                         # Optional: You can uncomment if you want weekend prints
