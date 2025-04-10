@@ -111,4 +111,5 @@ for index, row in auction_data.iterrows():
 missing_dates_df = pd.DataFrame(missing_dates_data)
 missing_dates_df.to_csv(missing_dates_output_path, index=False, header=False, encoding='utf-8-sig')
 
-print(f"缺失日期已儲存至 {missing_dates_
+
+print(f"缺失日期已儲存至 {missing_dates_output_path}")
