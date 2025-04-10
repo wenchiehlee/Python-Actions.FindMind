@@ -73,9 +73,10 @@ else:
     holidays_set = set()
 
 # 2. 定義函數以獲取收盤價，並根據偏移量調整
+# 2. 定義函數以獲取收盤價，並根據偏移量調整
 def get_closing_price(security_id, base_date, offset=0):
     """
-    根據證券代號和日期獲取收盤價，並根據偏移量調整資料位置。
+    根據證券代號和日期獲取收盤價，並根據偏移量調整日期（非索引位置）。
     """
     for file_name in all_files:
         if file_name.startswith(f"[{security_id}]") and file_name.endswith(".csv"):
@@ -86,32 +87,32 @@ def get_closing_price(security_id, base_date, offset=0):
                 price_data['日期'] = pd.to_datetime(price_data['日期'], errors='coerce').dt.date
                 price_data = price_data.sort_values(by='日期').reset_index(drop=True)
 
-                # Convert base_date to datetime.date object
+                # Convert base_date to datetime object
                 base_date_dt = pd.to_datetime(base_date, errors='coerce')
                 if pd.isna(base_date_dt):
                     print(f"無效日期格式: base_date={base_date}, offset={offset}")
                     return ""
                 
+                # Calculate the target date by adding offset days to base_date
+                from datetime import timedelta
                 base_date = base_date_dt.date()
+                target_date = base_date + timedelta(days=offset)
                 
-                # Try to find the exact base date in the data
-                base_idx = price_data[price_data['日期'] == base_date].index
+                print(f"尋找日期: base_date={base_date}, offset={offset}, target_date={target_date}")
                 
-                if not base_idx.empty:
-                    # Base date found, apply offset
-                    target_idx = base_idx[0] + offset
-                    if 0 <= target_idx < len(price_data):
-                        return price_data.iloc[target_idx]['收盤價']
-                    else:
-                        print(f"超出範圍: base_date={base_date}, offset={offset}, 目標索引={target_idx}, 資料長度={len(price_data)}")
-                        return ""
+                # Look for the target date in the data
+                target_data = price_data[price_data['日期'] == target_date]
+                
+                if not target_data.empty:
+                    # Target date found
+                    return target_data.iloc[0]['收盤價']
                 else:
-                    # Base date not found in data
-                    print(f"日期不存在: base_date={base_date}, offset={offset}, 檔案={file_name}")
+                    # Target date not found in data
+                    print(f"日期不存在: target_date={target_date} (base_date={base_date}, offset={offset}), 檔案={file_name}")
                     # Check if this date should exist (is it within the file's date range?)
                     min_date = price_data['日期'].min()
                     max_date = price_data['日期'].max()
-                    if min_date <= base_date <= max_date:
+                    if min_date <= target_date <= max_date:
                         print(f"  注意: 此日期在檔案日期範圍內 ({min_date} 至 {max_date})，但沒有數據 (可能是非交易日)")
                     return ""
                 
@@ -119,7 +120,8 @@ def get_closing_price(security_id, base_date, offset=0):
                 print(f"處理檔案時出錯: {file_name}, 錯誤: {e}")
                 continue
     
-    print(f"無資料: security_id={security_id}, base_date={base_date}, offset={offset}")
+    from datetime import timedelta
+    print(f"無資料: security_id={security_id}, target_date={base_date + timedelta(days=offset)} (base_date={base_date}, offset={offset})")
     return ""
 
 # 3. 計算資料總數與總工作天數
