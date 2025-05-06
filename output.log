@@ -24,7 +24,6 @@ Data successfully written to dividend/[7743] 2024-10-10-2025-06-09-dividend.csv
 No data returned for the given parameters on PER_PBR.
 Data successfully written to company-profile/[7743] 2024-10-10-2025-06-09-company-profile.csv
 Data successfully written to financial/[7743] 2024-10-10-2025-06-09-financial.csv
-HTTP Request error for TPEX: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2024-10-10&end_date=2025-06-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 Data successfully written to TWSE_TPEX/[7743] 2024-10-10-2025-06-09-TWSE_TPEX.csv
 -----Processed row 3 of 289-----
 Processing stock 6498 for period 2024-11-28 to 2025-06-09
