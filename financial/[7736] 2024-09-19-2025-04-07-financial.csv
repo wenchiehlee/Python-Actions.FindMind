@@ -10,9 +10,9 @@
 2024-09-30,7736,OperatingIncome,96631000.0,營業利益（損失）
 2024-09-30,7736,TotalNonoperatingIncomeAndExpense,-18528000.0,營業外收入及支出
 2024-09-30,7736,OtherComprehensiveIncome,-6892000.0,其他綜合損益（淨額）
-2024-09-30,7736,EquityAttributableToOwnersOfParent,55525000.0,綜合損益總額歸屬於母公司業主
 2024-09-30,7736,EPS,0.91,基本每股盈餘（元）
-2024-09-30,7736,GrossProfit,136478000.0,營業毛利（毛損）
+2024-09-30,7736,GrossProfit,136478000.0,營業毛利（毛損）淨額
+2024-09-30,7736,EquityAttributableToOwnersOfParent,62417000.0,淨利（淨損）歸屬於母公司業主
 2024-12-31,7736,OperatingExpenses,48486000.0,營業費用
 2024-12-31,7736,TAX,38838000.0,所得稅費用（利益）
 2024-12-31,7736,EPS,2.25,基本每股盈餘（元）
@@ -25,8 +25,8 @@
 2024-12-31,7736,OperatingIncome,91311000.0,營業利益（損失）
 2024-12-31,7736,TotalNonoperatingIncomeAndExpense,102268000.0,營業外收入及支出
 2024-12-31,7736,OtherComprehensiveIncome,1032000.0,其他綜合損益（淨額）
-2024-12-31,7736,EquityAttributableToOwnersOfParent,155773000.0,綜合損益總額歸屬於母公司業主
-2024-12-31,7736,GrossProfit,139797000.0,營業毛利（毛損）
+2024-12-31,7736,GrossProfit,139797000.0,營業毛利（毛損）淨額
+2024-12-31,7736,EquityAttributableToOwnersOfParent,154741000.0,淨利（淨損）歸屬於母公司業主
 2025-03-31,7736,OperatingExpenses,36320000.0,營業費用
 2025-03-31,7736,TAX,29617000.0,所得稅費用（利益）
 2025-03-31,7736,EPS,1.68,基本每股盈餘（元）
@@ -39,5 +39,5 @@
 2025-03-31,7736,OperatingIncome,104638000.0,營業利益（損失）
 2025-03-31,7736,TotalNonoperatingIncomeAndExpense,42889000.0,營業外收入及支出
 2025-03-31,7736,OtherComprehensiveIncome,-3360000.0,其他綜合損益（淨額）
-2025-03-31,7736,EquityAttributableToOwnersOfParent,114550000.0,綜合損益總額歸屬於母公司業主
-2025-03-31,7736,GrossProfit,140958000.0,營業毛利（毛損）
+2025-03-31,7736,GrossProfit,140958000.0,營業毛利（毛損）淨額
+2025-03-31,7736,EquityAttributableToOwnersOfParent,117910000.0,淨利（淨損）歸屬於母公司業主
