@@ -38,8 +38,8 @@ Found 1 company-profile files for company 6498
   - Extracted data: Industry Category=光電業 (newest), Type=emerging (most common)
 Processing company 9/293: 6597
 Found 2 company-profile files for company 6597
-  - Processed [6597] 2024-11-11-2025-05-14-company-profile.csv: Latest date 2025-04-14
   - Processed [6597] 2024-11-11-2025-05-28-company-profile.csv: Latest date 2025-06-11
+  - Processed [6597] 2024-11-11-2025-05-14-company-profile.csv: Latest date 2025-06-11
   - Extracted data: Industry Category=電子零組件業 (newest), Type=emerging (most common)
 Processing company 10/293: 7723
 Found 1 company-profile files for company 7723
@@ -1156,8 +1156,8 @@ Found 1 company-profile files for company 8489
   - Extracted data: Industry Category=其他 (newest), Type=tpex (most common)
 Processing company 288/293: 6438
 Found 2 company-profile files for company 6438
+  - Processed [6438] 2020-10-12-2017-05-15-company-profile.csv: Latest date 2024-12-04
   - Processed [6438] 2016-10-11-2017-05-15-company-profile.csv: Latest date 2025-04-06
-  - Processed [6438] 2020-10-12-2017-05-15-company-profile.csv: Latest date 2025-04-06
   - Extracted data: Industry Category=其他電子業 (newest), Type=twse (most common)
 Processing company 289/293: 6492
 Found 1 company-profile files for company 6492
