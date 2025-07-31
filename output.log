@@ -100,7 +100,7 @@ Data successfully written to financial/[7743] 2024-10-10-2025-06-09-financial.cs
 -----Processed row 12 of 298-----
 Processing stock 6498 for period 2024-11-28 to 2025-06-09
 文件 stockdata/[6498] 2024-11-28-2025-06-09.csv 已包含結束日期 2025-06-09 的數據，跳過 API 請求
-HTTP Request error: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6498&start_date=2024-11-28&end_date=2025-06-09&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on dividend.
 文件 PER_PBR/[6498] 2024-11-28-2025-06-09-PER_PBR.csv 已包含結束日期 2025-06-09 的數據，跳過 API 請求
 Data successfully written to company-profile/[6498] 2024-11-28-2025-06-09-company-profile.csv
 Data successfully written to financial/[6498] 2024-11-28-2025-06-09-financial.csv
@@ -996,7 +996,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 124 of 298-----
 Processing stock 6789 for period 2021-12-09 to 2022-07-20
 文件 stockdata/[6789] 2021-12-09-2022-07-20.csv 已包含結束日期 2022-07-20 的數據，跳過 API 請求
-HTTP Request error: 504 Server Error: Gateway Timeout for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6789&start_date=2021-12-09&end_date=2022-07-20&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data returned for the given parameters on dividend.
 文件 PER_PBR/[6789] 2021-12-09-2022-07-20-PER_PBR.csv 已包含結束日期 2022-07-20 的數據，跳過 API 請求
 文件 company-profile/[6789] 2021-12-09-2022-07-20-company-profile.csv 已包含股票代碼 6789 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6789] 2021-12-09-2022-07-20-financial.csv 已包含股票代碼 6789 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
