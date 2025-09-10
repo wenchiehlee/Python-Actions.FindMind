@@ -2116,7 +2116,7 @@ Data successfully written to TWSE_TPEX/[3147] 2017-12-08-2018-06-18-TWSE_TPEX.cs
 -----Processed row 264 of 306-----
 Processing stock 6288 for period 2017-08-15 to 2018-05-29
 文件 stockdata/[6288] 2017-08-15-2018-05-29.csv 已包含結束日期 2018-05-29 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6288&start_date=2017-08-15&end_date=2018-05-29&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6288] 2017-08-15-2018-05-29-PER_PBR.csv 已包含結束日期 2018-05-29 的數據，跳過 API 請求
 文件 company-profile/[6288] 2017-08-15-2018-05-29-company-profile.csv 已包含股票代碼 6288 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6288] 2017-08-15-2018-05-29-financial.csv 已包含股票代碼 6288 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2124,7 +2124,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 265 of 306-----
 Processing stock 5220 for period 2017-09-29 to 2018-05-16
 文件 stockdata/[5220] 2017-09-29-2018-05-16.csv 已包含結束日期 2018-05-16 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=5220&start_date=2017-09-29&end_date=2018-05-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[5220] 2017-09-29-2018-05-16-PER_PBR.csv 已包含結束日期 2018-05-16 的數據，跳過 API 請求
 文件 company-profile/[5220] 2017-09-29-2018-05-16-company-profile.csv 已包含股票代碼 5220 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[5220] 2017-09-29-2018-05-16-financial.csv 已包含股票代碼 5220 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2132,7 +2132,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 266 of 306-----
 Processing stock 1587 for period 2017-09-06 to 2018-05-04
 文件 stockdata/[1587] 2017-09-06-2018-05-04.csv 已包含結束日期 2018-05-04 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=1587&start_date=2017-09-06&end_date=2018-05-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[1587] 2017-09-06-2018-05-04-PER_PBR.csv 已包含結束日期 2018-05-04 的數據，跳過 API 請求
 文件 company-profile/[1587] 2017-09-06-2018-05-04-company-profile.csv 已包含股票代碼 1587 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[1587] 2017-09-06-2018-05-04-financial.csv 已包含股票代碼 1587 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2140,7 +2140,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 267 of 306-----
 Processing stock 6416 for period 2017-11-10 to 2018-05-04
 文件 stockdata/[6416] 2017-11-10-2018-05-04.csv 已包含結束日期 2018-05-04 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6416&start_date=2017-11-10&end_date=2018-05-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6416] 2017-11-10-2018-05-04-PER_PBR.csv 已包含結束日期 2018-05-04 的數據，跳過 API 請求
 文件 company-profile/[6416] 2017-11-10-2018-05-04-company-profile.csv 已包含股票代碼 6416 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6416] 2017-11-10-2018-05-04-financial.csv 已包含股票代碼 6416 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2148,7 +2148,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 268 of 306-----
 Processing stock 2745 for period 2017-09-26 to 2018-05-04
 文件 stockdata/[2745] 2017-09-26-2018-05-04.csv 已包含結束日期 2018-05-04 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2745&start_date=2017-09-26&end_date=2018-05-04&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[2745] 2017-09-26-2018-05-04-PER_PBR.csv 已包含結束日期 2018-05-04 的數據，跳過 API 請求
 文件 company-profile/[2745] 2017-09-26-2018-05-04-company-profile.csv 已包含股票代碼 2745 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[2745] 2017-09-26-2018-05-04-financial.csv 已包含股票代碼 2745 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2156,7 +2156,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 269 of 306-----
 Processing stock 6547 for period 2017-07-28 to 2018-05-07
 文件 stockdata/[6547] 2017-07-28-2018-05-07.csv 已包含結束日期 2018-05-07 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6547&start_date=2017-07-28&end_date=2018-05-07&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6547] 2017-07-28-2018-05-07-PER_PBR.csv 已包含結束日期 2018-05-07 的數據，跳過 API 請求
 文件 company-profile/[6547] 2017-07-28-2018-05-07-company-profile.csv 已包含股票代碼 6547 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6547] 2017-07-28-2018-05-07-financial.csv 已包含股票代碼 6547 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2164,7 +2164,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 270 of 306-----
 Processing stock 5864 for period 2017-09-28 to 2018-04-20
 文件 stockdata/[5864] 2017-09-28-2018-04-20.csv 已包含結束日期 2018-04-20 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=5864&start_date=2017-09-28&end_date=2018-04-20&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[5864] 2017-09-28-2018-04-20-PER_PBR.csv 已包含結束日期 2018-04-20 的數據，跳過 API 請求
 文件 company-profile/[5864] 2017-09-28-2018-04-20-company-profile.csv 已包含股票代碼 5864 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[5864] 2017-09-28-2018-04-20-financial.csv 已包含股票代碼 5864 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2172,7 +2172,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 271 of 306-----
 Processing stock 8440 for period 2017-09-01 to 2018-04-17
 文件 stockdata/[8440] 2017-09-01-2018-04-17.csv 已包含結束日期 2018-04-17 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=8440&start_date=2017-09-01&end_date=2018-04-17&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[8440] 2017-09-01-2018-04-17-PER_PBR.csv 已包含結束日期 2018-04-17 的數據，跳過 API 請求
 文件 company-profile/[8440] 2017-09-01-2018-04-17-company-profile.csv 已包含股票代碼 8440 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[8440] 2017-09-01-2018-04-17-financial.csv 已包含股票代碼 8440 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2180,7 +2180,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 272 of 306-----
 Processing stock 6461 for period 2017-07-26 to 2018-04-17
 文件 stockdata/[6461] 2017-07-26-2018-04-17.csv 已包含結束日期 2018-04-17 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6461&start_date=2017-07-26&end_date=2018-04-17&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6461] 2017-07-26-2018-04-17-PER_PBR.csv 已包含結束日期 2018-04-17 的數據，跳過 API 請求
 文件 company-profile/[6461] 2017-07-26-2018-04-17-company-profile.csv 已包含股票代碼 6461 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6461] 2017-07-26-2018-04-17-financial.csv 已包含股票代碼 6461 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2188,7 +2188,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 273 of 306-----
 Processing stock 8497 for period 2017-07-11 to 2018-04-12
 文件 stockdata/[8497] 2017-07-11-2018-04-12.csv 已包含結束日期 2018-04-12 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=8497&start_date=2017-07-11&end_date=2018-04-12&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[8497] 2017-07-11-2018-04-12-PER_PBR.csv 已包含結束日期 2018-04-12 的數據，跳過 API 請求
 文件 company-profile/[8497] 2017-07-11-2018-04-12-company-profile.csv 已包含股票代碼 8497 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[8497] 2017-07-11-2018-04-12-financial.csv 已包含股票代碼 8497 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2196,7 +2196,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 274 of 306-----
 Processing stock 2630 for period 2017-09-07 to 2018-03-14
 文件 stockdata/[2630] 2017-09-07-2018-03-14.csv 已包含結束日期 2018-03-14 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=2630&start_date=2017-09-07&end_date=2018-03-14&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[2630] 2017-09-07-2018-03-14-PER_PBR.csv 已包含結束日期 2018-03-14 的數據，跳過 API 請求
 文件 company-profile/[2630] 2017-09-07-2018-03-14-company-profile.csv 已包含股票代碼 2630 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[2630] 2017-09-07-2018-03-14-financial.csv 已包含股票代碼 2630 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2204,7 +2204,7 @@ No data returned for the given parameters on dividend.
 -----Processed row 275 of 306-----
 Processing stock 6625 for period 2017-09-12 to 2018-02-27
 文件 stockdata/[6625] 2017-09-12-2018-02-27.csv 已包含結束日期 2018-02-27 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6625&start_date=2017-09-12&end_date=2018-02-27&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6625] 2017-09-12-2018-02-27-PER_PBR.csv 已包含結束日期 2018-02-27 的數據，跳過 API 請求
 文件 company-profile/[6625] 2017-09-12-2018-02-27-company-profile.csv 已包含股票代碼 6625 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6625] 2017-09-12-2018-02-27-financial.csv 已包含股票代碼 6625 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2212,23 +2212,25 @@ No data returned for the given parameters on dividend.
 -----Processed row 276 of 306-----
 Processing stock 4566 for period 2017-09-15 to 2018-02-23
 文件 stockdata/[4566] 2017-09-15-2018-02-23.csv 已包含結束日期 2018-02-23 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=4566&start_date=2017-09-15&end_date=2018-02-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[4566] 2017-09-15-2018-02-23-PER_PBR.csv 已包含結束日期 2018-02-23 的數據，跳過 API 請求
 文件 company-profile/[4566] 2017-09-15-2018-02-23-company-profile.csv 已包含股票代碼 4566 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[4566] 2017-09-15-2018-02-23-financial.csv 已包含股票代碼 4566 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[4566] 2017-09-15-2018-02-23-TWSE_TPEX.csv 已包含結束日期 2018-02-23 的數據，跳過 API 請求
 -----Processed row 277 of 306-----
 Processing stock 6581 for period 2017-07-10 to 2018-02-19
-Data successfully written to stockdata/[6581] 2017-07-10-2018-02-19.csv
-No data returned for the given parameters on dividend.
-Data successfully written to PER_PBR/[6581] 2017-07-10-2018-02-19-PER_PBR.csv
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=6581&start_date=2017-07-10&end_date=2018-02-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6581&start_date=2017-07-10&end_date=2018-02-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6581&start_date=2017-07-10&end_date=2018-02-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6581] 2017-07-10-2018-02-19-company-profile.csv 已包含股票代碼 6581 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6581] 2017-07-10-2018-02-19-financial.csv 已包含股票代碼 6581 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-Data successfully written to TWSE_TPEX/[6581] 2017-07-10-2018-02-19-TWSE_TPEX.csv
+HTTP Request error for TWSE: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TAIEX&start_date=2017-07-10&end_date=2018-02-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+HTTP Request error for TPEX: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPrice&data_id=TPEx&start_date=2017-07-10&end_date=2018-02-19&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
+No data retrieved for either TWSE or TPEX.
 -----Processed row 278 of 306-----
 Processing stock 1760 for period 2017-08-03 to 2018-02-12
 文件 stockdata/[1760] 2017-08-03-2018-02-12.csv 已包含結束日期 2018-02-12 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=1760&start_date=2017-08-03&end_date=2018-02-12&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[1760] 2017-08-03-2018-02-12-PER_PBR.csv 已包含結束日期 2018-02-12 的數據，跳過 API 請求
 文件 company-profile/[1760] 2017-08-03-2018-02-12-company-profile.csv 已包含股票代碼 1760 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[1760] 2017-08-03-2018-02-12-financial.csv 已包含股票代碼 1760 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2268,7 +2270,7 @@ Processing stock 4764 for period 2017-07-07 to 2018-01-24
 -----Processed row 283 of 306-----
 Processing stock 6613 for period 2017-07-06 to 2018-01-17
 文件 stockdata/[6613] 2017-07-06-2018-01-17.csv 已包含結束日期 2018-01-17 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=6613&start_date=2017-07-06&end_date=2018-01-17&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[6613] 2017-07-06-2018-01-17-PER_PBR.csv 已包含結束日期 2018-01-17 的數據，跳過 API 請求
 文件 company-profile/[6613] 2017-07-06-2018-01-17-company-profile.csv 已包含股票代碼 6613 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6613] 2017-07-06-2018-01-17-financial.csv 已包含股票代碼 6613 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2277,14 +2279,14 @@ No data returned for the given parameters on dividend.
 Processing stock 6570 for period 2017-06-26 to 2017-12-29
 文件 stockdata/[6570] 2017-06-26-2017-12-29.csv 已包含結束日期 2017-12-29 的數據，跳過 API 請求
 文件 dividend/[6570] 2017-06-26-2017-12-29-dividend.csv 已包含股票代碼 6570 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6570&start_date=2017-06-26&end_date=2017-12-29&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6570] 2017-06-26-2017-12-29-company-profile.csv 已包含股票代碼 6570 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6570] 2017-06-26-2017-12-29-financial.csv 已包含股票代碼 6570 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[6570] 2017-06-26-2017-12-29-TWSE_TPEX.csv 已包含結束日期 2017-12-29 的數據，跳過 API 請求
 -----Processed row 285 of 306-----
 Processing stock 8478 for period 2017-07-06 to 2017-12-29
 文件 stockdata/[8478] 2017-07-06-2017-12-29.csv 已包含結束日期 2017-12-29 的數據，跳過 API 請求
-No data returned for the given parameters on dividend.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockDividend&data_id=8478&start_date=2017-07-06&end_date=2017-12-29&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 PER_PBR/[8478] 2017-07-06-2017-12-29-PER_PBR.csv 已包含結束日期 2017-12-29 的數據，跳過 API 請求
 文件 company-profile/[8478] 2017-07-06-2017-12-29-company-profile.csv 已包含股票代碼 8478 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[8478] 2017-07-06-2017-12-29-financial.csv 已包含股票代碼 8478 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
@@ -2301,7 +2303,7 @@ Processing stock 4155 for period 2017-03-09 to 2017-12-25
 Processing stock 8342 for period 2017-02-24 to 2017-12-13
 文件 stockdata/[8342] 2017-02-24-2017-12-13.csv 已包含結束日期 2017-12-13 的數據，跳過 API 請求
 文件 dividend/[8342] 2017-02-24-2017-12-13-dividend.csv 已包含股票代碼 8342 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=8342&start_date=2017-02-24&end_date=2017-12-13&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[8342] 2017-02-24-2017-12-13-company-profile.csv 已包含股票代碼 8342 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[8342] 2017-02-24-2017-12-13-financial.csv 已包含股票代碼 8342 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[8342] 2017-02-24-2017-12-13-TWSE_TPEX.csv 已包含結束日期 2017-12-13 的數據，跳過 API 請求
@@ -2309,7 +2311,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 6593 for period 2017-04-05 to 2017-11-23
 文件 stockdata/[6593] 2017-04-05-2017-11-23.csv 已包含結束日期 2017-11-23 的數據，跳過 API 請求
 文件 dividend/[6593] 2017-04-05-2017-11-23-dividend.csv 已包含股票代碼 6593 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6593&start_date=2017-04-05&end_date=2017-11-23&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6593] 2017-04-05-2017-11-23-company-profile.csv 已包含股票代碼 6593 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6593] 2017-04-05-2017-11-23-financial.csv 已包含股票代碼 6593 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[6593] 2017-04-05-2017-11-23-TWSE_TPEX.csv 已包含結束日期 2017-11-23 的數據，跳過 API 請求
@@ -2317,7 +2319,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 6556 for period 2016-12-08 to 2017-11-20
 文件 stockdata/[6556] 2016-12-08-2017-11-20.csv 已包含結束日期 2017-11-20 的數據，跳過 API 請求
 文件 dividend/[6556] 2016-12-08-2017-11-20-dividend.csv 已包含股票代碼 6556 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6556&start_date=2016-12-08&end_date=2017-11-20&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6556] 2016-12-08-2017-11-20-company-profile.csv 已包含股票代碼 6556 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6556] 2016-12-08-2017-11-20-financial.csv 已包含股票代碼 6556 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[6556] 2016-12-08-2017-11-20-TWSE_TPEX.csv 已包含結束日期 2017-11-20 的數據，跳過 API 請求
@@ -2325,7 +2327,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 1268 for period 2017-03-13 to 2017-10-17
 文件 stockdata/[1268] 2017-03-13-2017-10-17.csv 已包含結束日期 2017-10-17 的數據，跳過 API 請求
 文件 dividend/[1268] 2017-03-13-2017-10-17-dividend.csv 已包含股票代碼 1268 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=1268&start_date=2017-03-13&end_date=2017-10-17&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[1268] 2017-03-13-2017-10-17-company-profile.csv 已包含股票代碼 1268 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[1268] 2017-03-13-2017-10-17-financial.csv 已包含股票代碼 1268 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[1268] 2017-03-13-2017-10-17-TWSE_TPEX.csv 已包含結束日期 2017-10-17 的數據，跳過 API 請求
@@ -2333,7 +2335,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 6441 for period 2017-04-05 to 2017-10-17
 文件 stockdata/[6441] 2017-04-05-2017-10-17.csv 已包含結束日期 2017-10-17 的數據，跳過 API 請求
 文件 dividend/[6441] 2017-04-05-2017-10-17-dividend.csv 已包含股票代碼 6441 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6441&start_date=2017-04-05&end_date=2017-10-17&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6441] 2017-04-05-2017-10-17-company-profile.csv 已包含股票代碼 6441 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6441] 2017-04-05-2017-10-17-financial.csv 已包含股票代碼 6441 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[6441] 2017-04-05-2017-10-17-TWSE_TPEX.csv 已包含結束日期 2017-10-17 的數據，跳過 API 請求
@@ -2341,7 +2343,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 4741 for period 2017-02-24 to 2017-10-16
 文件 stockdata/[4741] 2017-02-24-2017-10-16.csv 已包含結束日期 2017-10-16 的數據，跳過 API 請求
 文件 dividend/[4741] 2017-02-24-2017-10-16-dividend.csv 已包含股票代碼 4741 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=4741&start_date=2017-02-24&end_date=2017-10-16&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[4741] 2017-02-24-2017-10-16-company-profile.csv 已包含股票代碼 4741 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[4741] 2017-02-24-2017-10-16-financial.csv 已包含股票代碼 4741 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[4741] 2017-02-24-2017-10-16-TWSE_TPEX.csv 已包含結束日期 2017-10-16 的數據，跳過 API 請求
@@ -2349,7 +2351,7 @@ No data returned for the given parameters on PER_PBR.
 Processing stock 6574 for period 2017-03-10 to 2017-09-22
 文件 stockdata/[6574] 2017-03-10-2017-09-22.csv 已包含結束日期 2017-09-22 的數據，跳過 API 請求
 文件 dividend/[6574] 2017-03-10-2017-09-22-dividend.csv 已包含股票代碼 6574 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
-No data returned for the given parameters on PER_PBR.
+HTTP Request error: 402 Client Error: Payment Required for url: https://api.finmindtrade.com/api/v4/data?dataset=TaiwanStockPER&data_id=6574&start_date=2017-03-10&end_date=2017-09-22&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wMS0wNCAxNDoyMzowOSIsInVzZXJfaWQiOiJ3ZW5jaGllaGxlZS5pbnZlc3RtZW50IiwiaXAiOiIxLjE2MS4yMjEuMTAzIn0.RJZjD5pOciBlHkk0HlYyQzId_t4-t7h4JdvqMIML2FE
 文件 company-profile/[6574] 2017-03-10-2017-09-22-company-profile.csv 已包含股票代碼 6574 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 financial/[6574] 2017-03-10-2017-09-22-financial.csv 已包含股票代碼 6574 的數據，且開標日期非在今兩個月範圍內，跳過 API 請求
 文件 TWSE_TPEX/[6574] 2017-03-10-2017-09-22-TWSE_TPEX.csv 已包含結束日期 2017-09-22 的數據，跳過 API 請求
