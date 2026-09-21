@@ -1,29 +1,29 @@
 <!-- FINMIND_STATUS_START -->
 ## Status
 
-Update time: 2026-09-21 23:15:03 CST
+Update time: 2026-09-21 23:23:02 CST
 
 Watchlist completion is counted from successfully generated local CSV files: `142` stocks total.
 
 | Type | GoodInfo type | FinMind dataset | Completion | API | Adapter | Status | Note |
 | -- | -- | -- | --: | -- | -- | -- | -- |
-| 1 | DividendDetail | TaiwanStockDividend | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 4 | StockBzPerformance | TaiwanStockFinancialStatements | 0/142 | local CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 5 | ShowSaleMonChart | TaiwanStockMonthRevenue | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 6 | EquityDistribution | TaiwanStockShareholding | 0/142 | local CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 7 | StockBzPerformance1 | TaiwanStockFinancialStatements | 0/142 | local CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 8 | ShowK_ChartFlow | TaiwanStockPER | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 9 | StockHisAnaQuar | TaiwanStockFinancialStatements | 0/142 | local CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 10 | EquityDistributionClassHis | TaiwanStockHoldingSharesPer | 0/142 | local CSV | permission | ![](https://img.shields.io/badge/permission-red) | FinMind tier 不足或尚未取得資料 |
-| 11 | WeeklyTradingData | TaiwanStockInstitutionalInvestorsBuySellWide | 1/142 | local CSV | partial | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 12 | ShowMonthlyK_ChartFlow | TaiwanStockPER | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 13 | ShowMarginChart | TaiwanStockMarginPurchaseShortSale | 0/142 | local CSV | direct | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 14 | ShowMarginChartWeek | TaiwanStockMarginPurchaseShortSale | 1/142 | local CSV | derived | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 15 | ShowMarginChartMonth | TaiwanStockMarginPurchaseShortSale | 1/142 | local CSV | derived | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 16 | StockFinDetail | TaiwanStockFinancialStatements | 1/142 | local CSV | partial | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 17 | ShowWeeklyK_ChartFlow | TaiwanStockPER | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 18 | ShowDailyK_ChartFlow | TaiwanStockPER | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 19 | Dividenschedule | TaiwanStockDividend | 1/142 | local CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 1 | DividendDetail | TaiwanStockDividend | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 4 | StockBzPerformance | TaiwanStockFinancialStatements | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
+| 5 | ShowSaleMonChart | TaiwanStockMonthRevenue | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 6 | EquityDistribution | TaiwanStockShareholding | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
+| 7 | StockBzPerformance1 | TaiwanStockFinancialStatements | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
+| 8 | ShowK_ChartFlow | TaiwanStockPER | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 9 | StockHisAnaQuar | TaiwanStockFinancialStatements | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
+| 10 | EquityDistributionClassHis | TaiwanStockHoldingSharesPer | 0/142 | FinMind API → CSV | permission | ![](https://img.shields.io/badge/permission-red) | FinMind tier 不足或尚未取得資料 |
+| 11 | WeeklyTradingData | TaiwanStockInstitutionalInvestorsBuySellWide | 1/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 12 | ShowMonthlyK_ChartFlow | TaiwanStockPER | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 13 | ShowMarginChart | TaiwanStockMarginPurchaseShortSale | 0/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
+| 14 | ShowMarginChartWeek | TaiwanStockMarginPurchaseShortSale | 1/142 | FinMind API → CSV | derived | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 15 | ShowMarginChartMonth | TaiwanStockMarginPurchaseShortSale | 1/142 | FinMind API → CSV | derived | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 16 | StockFinDetail | TaiwanStockFinancialStatements | 1/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 17 | ShowWeeklyK_ChartFlow | TaiwanStockPER | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 18 | ShowDailyK_ChartFlow | TaiwanStockPER | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| 19 | Dividenschedule | TaiwanStockDividend | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
 <!-- FINMIND_STATUS_END -->
 
 # Python-Actions.FindMind
