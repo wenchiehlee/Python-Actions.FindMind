@@ -6,6 +6,10 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 import logging
+from dotenv import load_dotenv
+from token_env import TokenRotator
+
+load_dotenv()
 
 # Add parent directory to sys.path to enable self_update imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -43,11 +47,6 @@ def parse_args():
                         help="Limit number of stocks fetched (for debugging).")
     return parser.parse_args()
 
-def get_finmind_token(args):
-    if args.token:
-        return args.token
-    return os.environ.get("FINMIND_TOKEN") or os.environ.get("FINMIND_API_TOKEN")
-
 def fetch_data(dataset, data_id=None, start_date=None, end_date=None, token=None):
     params = {
         "dataset": dataset,
@@ -56,20 +55,26 @@ def fetch_data(dataset, data_id=None, start_date=None, end_date=None, token=None
     }
     if data_id:
         params["data_id"] = data_id
-    if token:
-        params["token"] = token
+    request_token = token.next() if isinstance(token, TokenRotator) else token
+    if request_token:
+        params["token"] = request_token
         
     try:
         r = requests.get(FINMIND_URL, params=params)
-        r.raise_for_status()
         res = r.json()
-        if res.get("status") == 200:
+        if r.ok and res.get("status") == 200:
             return pd.DataFrame(res.get("data", []))
-        else:
-            logger.warning(f"FinMind API return status {res.get('status')} for dataset {dataset}: {res.get('msg')}")
+        if isinstance(token, TokenRotator) and "token is illegal" in str(res.get("msg", "")).strip().lower():
+            token.retire(request_token)
+            if token.count:
+                return fetch_data(dataset, data_id, start_date, end_date, token)
+            logger.error("FinMind rejected all configured tokens")
             return pd.DataFrame()
+        logger.warning(f"FinMind API return status {res.get('status')} for dataset {dataset}: {res.get('msg')}")
+        return pd.DataFrame()
     except Exception as e:
-        logger.error(f"Error fetching dataset {dataset} for {data_id}: {e}")
+        # Never log requests' URL, because it may contain the token query parameter.
+        logger.error(f"Error fetching dataset {dataset} for {data_id}: {type(e).__name__}: request failed")
         return pd.DataFrame()
 
 def to_stage1_date(date_str):
@@ -352,7 +357,8 @@ def determine_incremental_targets(existing_df, stock_list_df, default_start_date
 
 def main():
     args = parse_args()
-    token = get_finmind_token(args)
+    token = TokenRotator(args.token)
+    logger.info("Using %d FinMind token(s) with round-robin rotation", token.count)
     
     # 1. Load Stock List
     stock_list_df = pd.DataFrame()

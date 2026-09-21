@@ -17,7 +17,7 @@ description: 從 FinMind API 獲取台灣股市個股與大盤指數的融資融
 - `pandas`
 - `requests`
 - `numpy`
-- 建議設定環境變數 `FINMIND_TOKEN` 或 `FINMIND_API_TOKEN` 以提高每小時的 API 呼叫額度。
+- 可設定 `FINMIND_TOKEN`、`FINMIND_API_TOKEN`、`FINDMIND_GMAIL_TOKEN`、`FINDMIND_GMAIL_TOKEN1`、`FINDMIND_GMAIL_TOKEN2`；所有非空 token 會按 request round-robin rotation 使用。
 
 ## 核心腳本與指令
 

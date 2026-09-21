@@ -18,6 +18,7 @@ from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
+from token_env import TokenRotator
 
 API_URL = "https://api.finmindtrade.com/api/v4/data"
 DATASETS = (
@@ -58,18 +59,27 @@ def quarter(value):
 def fetch(session, dataset, stock_id, start_date, end_date, token):
     params = {"dataset": dataset, "data_id": stock_id,
               "start_date": start_date, "end_date": end_date}
-    if token:
-        params["token"] = token
+    request_token = token.next() if isinstance(token, TokenRotator) else token
+    if request_token:
+        params["token"] = request_token
     for attempt in range(3):
         response = session.get(API_URL, params=params, timeout=90)
-        response.raise_for_status()
-        payload = response.json()
-        if payload.get("msg") == "success":
+        try:
+            payload = response.json()
+        except ValueError:
+            payload = {}
+        if response.ok and payload.get("msg") == "success":
             return payload.get("data", [])
+        safe_error = payload.get("msg") or f"HTTP {response.status_code}"
+        if isinstance(token, TokenRotator) and "token is illegal" in str(safe_error).strip().lower():
+            token.retire(request_token)
+            if token.count == 0:
+                raise RuntimeError("FinMind rejected all configured tokens")
+            return fetch(session, dataset, stock_id, start_date, end_date, token)
         if attempt < 2:
             time.sleep(2 ** attempt)
         else:
-            raise RuntimeError(f"FinMind {dataset}: {payload.get('msg')}")
+            raise RuntimeError(f"FinMind {dataset}: {safe_error}")
     return []
 
 
@@ -241,8 +251,9 @@ def main():
     parser.add_argument("--start-date", default="2020-01-01")
     parser.add_argument("--end-date", default=date.today().isoformat())
     parser.add_argument("--output", default="financial/type16/raw_fin_ratio_quarter_2330.csv")
-    parser.add_argument("--token", default=os.getenv("FINMIND_TOKEN") or os.getenv("FINDMIND_TOKEN"))
+    parser.add_argument("--token", default=None)
     args = parser.parse_args()
+    args.token = TokenRotator(args.token)
     session = requests.Session()
     records = {ds: fetch(session, ds, args.stock_id, args.start_date, args.end_date, args.token) for ds in DATASETS}
     rows = build_rows(args.stock_id, args.company_name, records)
@@ -267,7 +278,7 @@ def main():
                     normalized[key] = f"{normalized[key]:.2f}"
             writer.writerow(normalized)
     print(f"Wrote {len(rows)} quarter rows to {args.output}")
-    print(f"Token source: {'env' if args.token else 'anonymous API'}")
+    print(f"FinMind token rotation count: {args.token.count}")
 
 
 if __name__ == "__main__":
