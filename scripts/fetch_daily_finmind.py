@@ -14,7 +14,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN", "FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2")
+TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5")
 PYTHON = sys.executable
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "skills" / "skill-finmind-fetch" / "scripts"

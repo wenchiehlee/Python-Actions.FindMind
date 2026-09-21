@@ -15,6 +15,9 @@ jobs:
       FINDMIND_GMAIL_TOKEN: ${{ secrets.FINDMIND_GMAIL_TOKEN }}
       FINDMIND_GMAIL_TOKEN1: ${{ secrets.FINDMIND_GMAIL_TOKEN1 }}
       FINDMIND_GMAIL_TOKEN2: ${{ secrets.FINDMIND_GMAIL_TOKEN2 }}
+      FINDMIND_GMAIL_TOKEN3: ${{ secrets.FINDMIND_GMAIL_TOKEN3 }}
+      FINDMIND_GMAIL_TOKEN4: ${{ secrets.FINDMIND_GMAIL_TOKEN4 }}
+      FINDMIND_GMAIL_TOKEN5: ${{ secrets.FINDMIND_GMAIL_TOKEN5 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
