@@ -84,6 +84,28 @@ python skills/skill-finmind-fetch/scripts/fetch_k_chart_flow.py --type 17 \
 
 `--type` 可使用 `8`（週）、`12`（月）、`17`（週）、`18`（日）。資料使用 FinMind `TaiwanStockPrice`、`TaiwanStockPER` 與可用的季度 EPS；來源缺少的欄位保留空值。
 
+## Type 11：每週交易資料（含法人）
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type11.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type11/raw_weekly_trading_data_2330.csv
+```
+
+Type 11 使用 FinMind 每日價格、三大法人寬表與融資融券資料聚合；來源沒有的持股比例欄位保留空值。
+
+## Type 19：除權息日程
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type19.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type19/raw_dividend_schedule_2330.csv
+```
+
+Type 19 使用 FinMind `TaiwanStockDividend`；填息/填權完成日與參考價若來源沒有提供則保留空值。
+
 ## Type 14：每週融資融券 CSV
 
 Type 14 優先重用 Type 13 每日 CSV 聚合，不需重新下載同一批每日資料：
