@@ -49,6 +49,28 @@ python scripts/fetch_to_csv.py --stocks "0000,2330,0050" --start-date "2026-07-0
 - `--debug-limit`：除大盤外，限制只下載前 N 檔個股，供測試使用。
 
 
+## Type 1：股利政策 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type1.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type1/raw_dividends_2330.csv
+```
+
+Type 1 使用 FinMind `TaiwanStockDividend`；GoodInfo 特有的填息天數與多種歷史殖利率欄位，若來源沒有提供則保留空值。
+
+## Type 5：每月營收 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type5.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type5/raw_revenue_2330.csv
+```
+
+Type 5 使用 FinMind `TaiwanStockMonthRevenue` 搭配 `TaiwanStockPrice`，輸出月營收、月增/年增、年度累計與月內價格欄位。
+
 ## Type 14：每週融資融券 CSV
 
 Type 14 優先重用 Type 13 每日 CSV 聚合，不需重新下載同一批每日資料：
