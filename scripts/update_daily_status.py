@@ -83,7 +83,7 @@ def main() -> None:
             status, color, note = "permission", "red", "FinMind tier 不足或尚未取得資料"
         else:
             status, color, note = "not run", "lightgrey", "尚無成功產生的 CSV"
-        rows.append(f"| {type_id} | {folder} | {dataset} | {completion} | local CSV | {mode} | {badge(status, color)} | {note} |")
+        rows.append(f"| {type_id} | {folder} | {dataset} | {completion} | FinMind API → CSV | {mode} | {badge(status, color)} | {note} |")
     table = "\n".join(["| Type | GoodInfo type | FinMind dataset | Completion | API | Adapter | Status | Note |", "| -- | -- | -- | --: | -- | -- | -- | -- |", *rows])
     block = f"""<!-- FINMIND_STATUS_START -->
 ## Status
