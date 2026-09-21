@@ -71,6 +71,19 @@ python skills/skill-finmind-fetch/scripts/fetch_type5.py \
 
 Type 5 使用 FinMind `TaiwanStockMonthRevenue` 搭配 `TaiwanStockPrice`，輸出月營收、月增/年增、年度累計與月內價格欄位。
 
+## Type 8、12、17、18：K 線 / PER 資金流向 CSV
+
+四個類型共用 `fetch_k_chart_flow.py`，差異只在頻率與目標 PER 倍數：
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_k_chart_flow.py --type 17 \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type17/raw_weekly_k_chart_flow_2330.csv
+```
+
+`--type` 可使用 `8`（週）、`12`（月）、`17`（週）、`18`（日）。資料使用 FinMind `TaiwanStockPrice`、`TaiwanStockPER` 與可用的季度 EPS；來源缺少的欄位保留空值。
+
 ## Type 14：每週融資融券 CSV
 
 Type 14 優先重用 Type 13 每日 CSV 聚合，不需重新下載同一批每日資料：
