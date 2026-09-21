@@ -14,9 +14,13 @@ import subprocess
 import sys
 from pathlib import Path
 
-TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5")
-PYTHON = sys.executable
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "skills" / "skill-finmind-fetch" / "scripts"))
+from token_env import get_finmind_tokens, order_tokens
+
+TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5")
+TOKEN_ORDER = []
+PYTHON = sys.executable
 SCRIPTS = ROOT / "skills" / "skill-finmind-fetch" / "scripts"
 
 
@@ -31,7 +35,7 @@ def stocks(path: Path):
 
 
 def token_env(index: int):
-    values = [os.environ.get(name, "") for name in TOKEN_NAMES]
+    values = TOKEN_ORDER or [os.environ.get(name, "") for name in TOKEN_NAMES]
     selected = values[index % len(values)] if any(values) else ""
     env = os.environ.copy()
     # The child receives one token only; this makes round-robin assignment
@@ -41,10 +45,11 @@ def token_env(index: int):
     return env
 
 
-def run(args, token_index: int, label: str) -> bool:
+def run(args, token_index: int, label: str, preserve_pool: bool = False) -> bool:
     command = [PYTHON, *map(str, args)]
     print(f"[{label}] {Path(command[1]).name if len(command) > 1 else label}", flush=True)
-    completed = subprocess.run(command, cwd=ROOT, env=token_env(token_index))
+    env = os.environ.copy() if preserve_pool else token_env(token_index)
+    completed = subprocess.run(command, cwd=ROOT, env=env)
     if completed.returncode:
         print(f"[{label}] failed with exit code {completed.returncode}", flush=True)
         return False
@@ -61,14 +66,19 @@ def main():
     target = list(stocks(Path(args.stock_list)))
     if not target:
         raise SystemExit("No stocks found")
-    print(f"Fetching {len(target)} stocks with token rotation", flush=True)
+    global TOKEN_ORDER
+    configured = get_finmind_tokens()
+    TOKEN_ORDER, details = order_tokens(configured)
+    for slot, ((_, state), _) in enumerate(zip(details, TOKEN_ORDER), start=1):
+        print(f"token-slot={slot} quota-check={state}", flush=True)
+    print(f"Fetching {len(target)} stocks with quota-aware token rotation", flush=True)
     ok = 0
 
     # One combined Type 13 request loop; Type 14/15 reuse this file locally.
     type13 = ROOT / "financial" / "type13" / "raw_margin_daily.csv"
     if run([SCRIPTS / "fetch_to_csv.py", "--stock-list", args.stock_list,
             "--start-date", args.start_date, "--end-date", end,
-            "--output-csv", type13], 0, "type13"):
+            "--output-csv", type13], 0, "type13", preserve_pool=True):
         ok += 1
 
     jobs = [
