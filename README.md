@@ -1,9 +1,9 @@
 <!-- FINMIND_STATUS_START -->
 ## Status
 
-Update time: 2026-09-21 22:55:18 CST
+Update time: 2026-09-21 15:01:53 UTC
 
-Token rotation pool: `3` configured
+Token rotation pool: `1` configured
 
 | Type | GoodInfo type | FinMind dataset | Watchlist | API | Adapter | Status | Note |
 | -- | -- | -- | --: | -- | -- | -- | -- |
