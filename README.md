@@ -1,3 +1,31 @@
+<!-- FINMIND_STATUS_START -->
+## Status
+
+Update time: 2026-09-21 22:55:18 CST
+
+Token rotation pool: `3` configured
+
+| Type | GoodInfo type | FinMind dataset | Watchlist | API | Adapter | Status | Note |
+| -- | -- | -- | --: | -- | -- | -- | -- |
+| 1 | DividendDetail | TaiwanStockDividend | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+| 4 | StockBzPerformance | TaiwanStockFinancialStatements | 142 | success | partial | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+| 5 | ShowSaleMonChart | TaiwanStockMonthRevenue | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+| 6 | EquityDistribution | TaiwanStockShareholding | 142 | success | partial | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 7 | StockBzPerformance1 | TaiwanStockFinancialStatements | 142 | success | partial | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+| 8 | ShowK_ChartFlow | TaiwanStockPER | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 9 | StockHisAnaQuar | TaiwanStockFinancialStatements | 142 | success | partial | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+| 10 | EquityDistributionClassHis | TaiwanStockHoldingSharesPer | 142 | permission | permission | ![](https://img.shields.io/badge/permission-orange) | FinMind tier 不足 |
+| 11 | WeeklyTradingData | TaiwanStockInstitutionalInvestorsBuySellWide | 142 | success | partial | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 12 | ShowMonthlyK_ChartFlow | TaiwanStockPER | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 13 | ShowMarginChart | TaiwanStockMarginPurchaseShortSale | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 14 | ShowMarginChartWeek | TaiwanStockMarginPurchaseShortSale | 142 | 由 Type 13 daily 聚合 | derived | ![](https://img.shields.io/badge/derived-blue) | 不重複下載 |
+| 15 | ShowMarginChartMonth | TaiwanStockMarginPurchaseShortSale | 142 | 由 Type 13 daily 聚合 | derived | ![](https://img.shields.io/badge/derived-blue) | 不重複下載 |
+| 16 | StockFinDetail | TaiwanStockFinancialStatements | 142 | success | partial | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+| 17 | ShowWeeklyK_ChartFlow | TaiwanStockPER | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 18 | ShowDailyK_ChartFlow | TaiwanStockPER | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=11 |
+| 19 | Dividenschedule | TaiwanStockDividend | 142 | success | direct | ![](https://img.shields.io/badge/ready-brightgreen) | sample rows=0 |
+<!-- FINMIND_STATUS_END -->
+
 # Python-Actions.FindMind
 
 FinMind-based data fetchers for the GoodInfo Analyzer-compatible pipeline.
