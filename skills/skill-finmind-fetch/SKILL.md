@@ -5,7 +5,7 @@ description: 從 FinMind API 獲取台灣股市個股與大盤指數的融資融
 
 # FinMind Fetch Skill (FinMind 資料抓取與合併技能)
 
-此技能利用 FinMind API，獲取台灣股市個股與大盤的每日收盤價與融資融券數據。它會將獲取的資料整理為與 `raw_margin_daily.csv` (Type 13: ShowMarginChart) 相同的 31 個欄位格式，並自動與現有資料進行增量合併（Incremental Update）及去重。欄位排序與定義完全遵循 [raw_column_definition_Analyzer.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/Python-Actions.GoodInfo.Analyzer/definitions/raw_column_definition_Analyzer.md) 規格。
+此技能利用 FinMind API，獲取台灣股市個股與大盤的每日收盤價與融資融券數據。它會將獲取的資料整理為與 `raw_margin_daily.csv` (Type 13: ShowMarginChart) 相同的 31 個欄位格式；另可由 Type 13 每日 CSV 聚合 `raw_margin_weekly.csv` (Type 14: ShowMarginChartWeek)，並自動與現有資料進行增量合併（Incremental Update）及去重。欄位排序與定義完全遵循 [raw_column_definition_Analyzer.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/Python-Actions.GoodInfo.Analyzer/definitions/raw_column_definition_Analyzer.md) 規格。
 
 ## 適用場景
 
@@ -49,6 +49,28 @@ python scripts/fetch_to_csv.py --stocks "0000,2330,0050" --start-date "2026-07-0
 - `--debug-limit`：除大盤外，限制只下載前 N 檔個股，供測試使用。
 
 
+## Type 14：每週融資融券 CSV
+
+Type 14 優先重用 Type 13 每日 CSV 聚合，不需重新下載同一批每日資料：
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type14.py \
+  --stock-id 2330 --company-name 台積電 \
+  --daily-csv /path/to/raw_margin_daily.csv \
+  --output financial/type14/raw_margin_weekly_2330.csv
+```
+
+若沒有 Type 13 CSV，省略 `--daily-csv`，腳本會使用 FinMind 每日價格與融資融券 API 建立資料：
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type14.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type14/raw_margin_weekly_2330.csv
+```
+
+用 `compare_type14.py` 可與 Analyzer 的 `raw_margin_weekly.csv` 做欄位及數值比對。
+
 ## Type 16：季度財務比率 CSV
 
 同一個 skill 也提供季度財務比率 adapter，使用 FinMind 的綜合損益、資產負債表與現金流量表，輸出與 GoodInfo Analyzer 的 `raw_fin_ratio_quarter.csv` 相同的 164 欄 schema：
@@ -66,6 +88,7 @@ python skills/skill-finmind-fetch/scripts/fetch_type16.py \
 ## Parity 驗證
 
 - Type 13：`python skills/skill-finmind-fetch/scripts/compare_type13.py <finmind.csv> <analyzer/raw_margin_daily.csv> --stock-id 2330`
+- Type 14：`python skills/skill-finmind-fetch/scripts/compare_type14.py --candidate <finmind.csv> --reference <analyzer/raw_margin_weekly.csv> --stock-id 2330`
 - Type 16：`python skills/skill-finmind-fetch/scripts/compare_type16.py <finmind.csv> <analyzer/raw_fin_ratio_quarter.csv> --stock-id 2330`
 
 驗證器以數值比較 CSV，會分開報告來源缺少的欄位；不會把缺少的 FinMind 欄位填成假資料。
