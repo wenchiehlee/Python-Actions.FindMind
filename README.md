@@ -8,6 +8,8 @@ FinMind-based data fetchers for the GoodInfo Analyzer-compatible pipeline.
 - `skills/skill-finmind-fetch/scripts/fetch_type1.py`: FinMind Type 1 dividend-policy adapter.
 - `skills/skill-finmind-fetch/scripts/fetch_type5.py`: FinMind Type 5 monthly-revenue adapter.
 - `skills/skill-finmind-fetch/scripts/fetch_k_chart_flow.py`: shared FinMind adapter for Types 8, 12, 17, and 18.
+- `skills/skill-finmind-fetch/scripts/fetch_type11.py`: FinMind Type 11 weekly trading/institutional-flow adapter.
+- `skills/skill-finmind-fetch/scripts/fetch_type19.py`: FinMind Type 19 dividend-schedule adapter.
 - `skills/skill-finmind-fetch/scripts/fetch_type14.py`: FinMind Type 14 weekly margin adapter. It reuses Type 13 daily CSV when available, otherwise aggregates FinMind daily price/margin data.
 - `skills/skill-finmind-fetch/scripts/fetch_type15.py`: FinMind Type 15 monthly margin adapter. It reuses Type 13 daily CSV when available and converts lots to thousand-lots.
 - `skills/skill-finmind-fetch/scripts/fetch_type16.py`: FinMind Type 16 quarterly financial-ratio adapter. It uses the Analyzer 164-column schema and is a separate script within the same skill because it consumes quarterly financial statements, balance sheets, and cash-flow statements.
