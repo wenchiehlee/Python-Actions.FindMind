@@ -1,0 +1,5 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+6526,達發,2023,577.0,,,,,,,,,6.4,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6526,True,2026-09-22T11:34:51,2026-09-22T11:34:51,2026-09-22T11:34:51
+6526,達發,2024,704.0,127.0,22.01,,,,,,,8.4,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6526,True,2026-09-22T11:34:51,2026-09-22T11:34:51,2026-09-22T11:34:51
+6526,達發,2025,442.5,-261.5,-37.14,,,,,,,6.75,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6526,True,2026-09-22T11:34:51,2026-09-22T11:34:51,2026-09-22T11:34:51
+6526,達發,2026,764.0,321.5,72.66,,,,,,,8.88,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6526,True,2026-09-22T11:34:51,2026-09-22T11:34:51,2026-09-22T11:34:51

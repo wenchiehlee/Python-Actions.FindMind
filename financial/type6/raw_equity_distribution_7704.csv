@@ -1,0 +1,4 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+7704,明遠精密,2024,78.8,,,,,,,,,0.12,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_7704,True,2026-09-22T11:38:45,2026-09-22T11:38:45,2026-09-22T11:38:45
+7704,明遠精密,2025,48.3,-30.5,-38.71,,,,,,,0.36,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_7704,True,2026-09-22T11:38:45,2026-09-22T11:38:45,2026-09-22T11:38:45
+7704,明遠精密,2026,62.1,13.800000000000004,28.57,,,,,,,2.13,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_7704,True,2026-09-22T11:38:45,2026-09-22T11:38:45,2026-09-22T11:38:45

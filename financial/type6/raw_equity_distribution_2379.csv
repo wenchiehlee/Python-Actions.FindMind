@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+2379,瑞昱,2018,143.0,,,,,,,,,63.31,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2019,235.0,92.0,64.34,,,,,,,65.5,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2020,390.5,155.5,66.17,,,,,,,59.48,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2021,580.0,189.5,48.53,,,,,,,57.23,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2022,281.0,-299.0,-51.55,,,,,,,45.86,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2023,471.5,190.5,67.79,,,,,,,45.65,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2024,568.0,96.5,20.47,,,,,,,50.57,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2025,489.0,-79.0,-13.91,,,,,,,45.66,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11
+2379,瑞昱,2026,755.0,266.0,54.4,,,,,,,45.54,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2379,True,2026-09-22T11:32:11,2026-09-22T11:32:11,2026-09-22T11:32:11

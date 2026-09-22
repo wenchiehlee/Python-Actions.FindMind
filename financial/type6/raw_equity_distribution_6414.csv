@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+6414,樺漢,2018,244.0,,,,,,,,,22.9,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2019,247.0,3.0,1.23,,,,,,,11.87,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2020,251.0,4.0,1.62,,,,,,,9.58,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2021,236.5,-14.5,-5.78,,,,,,,10.22,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2022,203.5,-33.0,-13.95,,,,,,,16.1,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2023,268.0,64.5,31.7,,,,,,,20.61,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2024,291.5,23.5,8.77,,,,,,,19.28,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2025,286.5,-5.0,-1.72,,,,,,,23.14,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52
+6414,樺漢,2026,376.0,89.5,31.24,,,,,,,44.16,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_6414,True,2026-09-22T11:43:52,2026-09-22T11:43:52,2026-09-22T11:43:52

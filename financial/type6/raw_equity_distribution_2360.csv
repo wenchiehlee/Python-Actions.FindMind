@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+2360,致茂,2018,118.0,,,,,,,,,60.87,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2019,145.0,27.0,22.88,,,,,,,60.4,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2020,168.0,23.0,15.86,,,,,,,70.17,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2021,200.0,32.0,19.05,,,,,,,69.67,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2022,181.0,-19.0,-9.5,,,,,,,65.6,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2023,213.0,32.0,17.68,,,,,,,67.84,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2024,409.0,196.0,92.02,,,,,,,62.13,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2025,775.0,366.0,89.49,,,,,,,59.77,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13
+2360,致茂,2026,2440.0,1665.0,214.84,,,,,,,59.17,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2360,True,2026-09-22T11:43:13,2026-09-22T11:43:13,2026-09-22T11:43:13

@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+2454,聯發科,2018,229.5,,,,,,,,,57.33,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2019,443.5,214.0,93.25,,,,,,,63.08,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2020,747.0,303.5,68.43,,,,,,,68.67,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2021,1190.0,443.0,59.3,,,,,,,68.8,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2022,625.0,-565.0,-47.48,,,,,,,60.76,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2023,1015.0,390.0,62.4,,,,,,,59.86,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2024,1415.0,400.0,39.41,,,,,,,59.32,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2025,1430.0,15.0,1.06,,,,,,,56.53,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37
+2454,聯發科,2026,5180.0,3750.0,262.24,,,,,,,56.43,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2454,True,2026-09-22T11:32:37,2026-09-22T11:32:37,2026-09-22T11:32:37

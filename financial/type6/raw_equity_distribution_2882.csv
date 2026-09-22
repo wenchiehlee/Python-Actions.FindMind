@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+2882,國泰金,2018,47.0,,,,,,,,,28.01,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2019,42.55,-4.450000000000003,-9.47,,,,,,,23.26,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2020,42.25,-0.29999999999999716,-0.71,,,,,,,21.34,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2021,62.5,20.25,47.93,,,,,,,24.39,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2022,40.0,-22.5,-36.0,,,,,,,20.44,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2023,45.75,5.75,14.37,,,,,,,21.01,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2024,68.3,22.549999999999997,49.29,,,,,,,25.29,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2025,75.8,7.5,10.98,,,,,,,19.6,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52
+2882,國泰金,2026,112.0,36.2,47.76,,,,,,,23.17,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2882,True,2026-09-22T11:42:52,2026-09-22T11:42:52,2026-09-22T11:42:52

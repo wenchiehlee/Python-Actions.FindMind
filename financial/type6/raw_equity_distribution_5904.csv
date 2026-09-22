@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+5904,寶雅,2018,316.5,,,,,,,,,35.37,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2019,421.5,105.0,33.18,,,,,,,35.89,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2020,576.0,154.5,36.65,,,,,,,37.57,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2021,423.5,-152.5,-26.48,,,,,,,32.88,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2022,497.5,74.0,17.47,,,,,,,28.72,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2023,552.0,54.5,10.95,,,,,,,29.4,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2024,496.5,-55.5,-10.05,,,,,,,21.6,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2025,439.5,-57.0,-11.48,,,,,,,26.17,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16
+5904,寶雅,2026,70.7,-368.8,-83.91,,,,,,,26.05,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_5904,True,2026-09-22T11:37:16,2026-09-22T11:37:16,2026-09-22T11:37:16

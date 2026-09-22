@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+2480,敦陽科,2018,38.25,,,,,,,,,7.97,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2019,53.7,15.450000000000003,40.39,,,,,,,8.38,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2020,66.5,12.799999999999997,23.84,,,,,,,5.66,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2021,72.8,6.299999999999997,9.47,,,,,,,5.39,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2022,85.9,13.100000000000009,17.99,,,,,,,5.48,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2023,120.5,34.599999999999994,40.28,,,,,,,7.49,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2024,138.0,17.5,14.52,,,,,,,7.08,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2025,151.0,13.0,9.42,,,,,,,11.98,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56
+2480,敦陽科,2026,162.5,11.5,7.62,,,,,,,12.4,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_2480,True,2026-09-22T11:32:56,2026-09-22T11:32:56,2026-09-22T11:32:56

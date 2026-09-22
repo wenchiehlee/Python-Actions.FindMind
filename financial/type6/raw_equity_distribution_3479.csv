@@ -1,0 +1,10 @@
+﻿stock_code,company_name,年度,收盤_價格_元,漲跌_價格_元,漲跌_pct,政府公營機構_pct,金融機構_pct,證券投信_pct,僑外投資_僑外_pct,僑外投資_證券_pct,僑外投資_僑外自然人_pct,僑外投資_合計_pct,本國金融機構_金融機構_pct,本國金融機構_證券投信_pct,本國金融機構_合計_pct,本國法人_公司法人_pct,本國法人_其他法人_pct,本國法人_合計_pct,本國自然人_個人_pct,file_type,source_file,download_success,download_timestamp,process_timestamp,stage1_process_timestamp
+3479,安勤,2018,38.5,,,,,,,,,2.4,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2019,76.4,37.900000000000006,98.44,,,,,,,10.94,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2020,55.5,-20.900000000000006,-27.36,,,,,,,5.0,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2021,56.9,1.3999999999999986,2.52,,,,,,,1.65,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2022,81.4,24.500000000000007,43.06,,,,,,,6.19,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2023,119.5,38.099999999999994,46.81,,,,,,,8.45,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2024,89.4,-30.099999999999994,-25.19,,,,,,,5.34,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2025,91.4,2.0,2.24,,,,,,,6.69,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
+3479,安勤,2026,129.5,38.099999999999994,41.68,,,,,,,8.05,,,,,,,,EquityDistribution,FinMind_API_TaiwanStockShareholding_3479,True,2026-09-22T11:44:30,2026-09-22T11:44:30,2026-09-22T11:44:30
