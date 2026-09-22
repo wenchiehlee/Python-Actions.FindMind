@@ -1,29 +1,29 @@
 <!-- FINMIND_STATUS_START -->
 ## Status
 
-Update time: 2026-09-22 02:22:44 UTC
+Update time: 2026-09-22 12:23:45 CST
 
-Watchlist completion is counted from successfully generated local CSV files: `142` stocks total.
+Time units: `y/M/d/h/m`; `M` = month, `m` = minute. Completion is counted from FinMind fetch attempts logged per stock: `142` stocks total.
 
-| Type | GoodInfo type | FinMind dataset | Completion | API | Adapter | Status | Note |
-| -- | -- | -- | --: | -- | -- | -- | -- |
-| 1 | DividendDetail | TaiwanStockDividend | 137/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 4 | StockBzPerformance | TaiwanStockFinancialStatements | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 5 | ShowSaleMonChart | TaiwanStockMonthRevenue | 32/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 6 | EquityDistribution | TaiwanStockShareholding | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 7 | StockBzPerformance1 | TaiwanStockFinancialStatements | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 8 | ShowK_ChartFlow | TaiwanStockPER | 28/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 9 | StockHisAnaQuar | TaiwanStockFinancialStatements | 0/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/not%20run-lightgrey) | 尚無成功產生的 CSV |
-| 10 | EquityDistributionClassHis | TaiwanStockHoldingSharesPer | 0/142 | FinMind API → CSV | permission | ![](https://img.shields.io/badge/permission-red) | FinMind tier 不足或尚未取得資料 |
-| 11 | WeeklyTradingData | TaiwanStockInstitutionalInvestorsBuySellWide | 7/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 12 | ShowMonthlyK_ChartFlow | TaiwanStockPER | 18/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 13 | ShowMarginChart | TaiwanStockMarginPurchaseShortSale | 131/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 14 | ShowMarginChartWeek | TaiwanStockMarginPurchaseShortSale | 130/142 | FinMind API → CSV | derived | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 15 | ShowMarginChartMonth | TaiwanStockMarginPurchaseShortSale | 130/142 | FinMind API → CSV | derived | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 16 | StockFinDetail | TaiwanStockFinancialStatements | 19/142 | FinMind API → CSV | partial | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 17 | ShowWeeklyK_ChartFlow | TaiwanStockPER | 19/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 18 | ShowDailyK_ChartFlow | TaiwanStockPER | 12/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
-| 19 | Dividenschedule | TaiwanStockDividend | 1/142 | FinMind API → CSV | direct | ![](https://img.shields.io/badge/partial-orange) | CSV 尚未涵蓋全部觀察名單 |
+| No | Folder | Period | Completion | Downloaded | Failures | Duration | Lag | Limit | Status |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| 1 | DividendDetail | Daily | ![](https://img.shields.io/badge/137%2F142-failed-orange) | ![](https://img.shields.io/badge/137-success-brightgreen) | ![](https://img.shields.io/badge/retryable_5-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/24m_ago-brightgreen) | 1d | ![](https://img.shields.io/badge/warning-yellow) |
+| 4 | StockBzPerformance | Weekly | ![](https://img.shields.io/badge/0%2F142-inactive-lightgrey) |  |  | N/A | N/A | 7d | ![](https://img.shields.io/badge/not_run-lightgrey) |
+| 5 | ShowSaleMonChart | Daily | ![](https://img.shields.io/badge/32%2F142-failed-orange) | ![](https://img.shields.io/badge/32-success-brightgreen) | ![](https://img.shields.io/badge/retryable_110-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 1d | ![](https://img.shields.io/badge/warning-yellow) |
+| 6 | EquityDistribution | Weekly | ![](https://img.shields.io/badge/0%2F142-inactive-lightgrey) |  |  | N/A | N/A | 7d | ![](https://img.shields.io/badge/not_run-lightgrey) |
+| 7 | StockBzPerformance1 | Weekly | ![](https://img.shields.io/badge/0%2F142-inactive-lightgrey) |  |  | N/A | N/A | 7d | ![](https://img.shields.io/badge/not_run-lightgrey) |
+| 8 | ShowK_ChartFlow | Weekly | ![](https://img.shields.io/badge/28%2F142-failed-orange) | ![](https://img.shields.io/badge/28-success-brightgreen) | ![](https://img.shields.io/badge/retryable_114-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 7d | ![](https://img.shields.io/badge/warning-yellow) |
+| 9 | StockHisAnaQuar | Weekly | ![](https://img.shields.io/badge/0%2F142-inactive-lightgrey) |  |  | N/A | N/A | 7d | ![](https://img.shields.io/badge/not_run-lightgrey) |
+| 10 | EquityDistributionClassHis | Weekly | ![](https://img.shields.io/badge/0%2F142-inactive-lightgrey) |  |  | N/A | N/A | 7d | ![](https://img.shields.io/badge/not_run-lightgrey) |
+| 11 | WeeklyTradingData | Weekly | ![](https://img.shields.io/badge/7%2F142-failed-orange) | ![](https://img.shields.io/badge/7-success-brightgreen) | ![](https://img.shields.io/badge/retryable_135-failed-orange) | ![](https://img.shields.io/badge/2h_52m_ago-blue) | ![](https://img.shields.io/badge/2h_52m_ago-blue) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 7d | ![](https://img.shields.io/badge/warning-yellow) |
+| 12 | ShowMonthlyK_ChartFlow | Monthly | ![](https://img.shields.io/badge/18%2F142-failed-orange) | ![](https://img.shields.io/badge/18-success-brightgreen) | ![](https://img.shields.io/badge/retryable_124-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 30d | ![](https://img.shields.io/badge/warning-yellow) |
+| 13 | ShowMarginChart | Daily | ![](https://img.shields.io/badge/131%2F142-failed-orange) | ![](https://img.shields.io/badge/131-success-brightgreen) | ![](https://img.shields.io/badge/retryable_11-failed-orange) | ![](https://img.shields.io/badge/now-brightgreen) | ![](https://img.shields.io/badge/now-brightgreen) / ![](https://img.shields.io/badge/now-brightgreen) | 1d | ![](https://img.shields.io/badge/warning-yellow) |
+| 14 | ShowMarginChartWeek | Weekly | ![](https://img.shields.io/badge/130%2F142-failed-orange) | ![](https://img.shields.io/badge/130-success-brightgreen) | ![](https://img.shields.io/badge/retryable_12-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/24m_ago-brightgreen) | 7d | ![](https://img.shields.io/badge/warning-yellow) |
+| 15 | ShowMarginChartMonth | Monthly | ![](https://img.shields.io/badge/130%2F142-failed-orange) | ![](https://img.shields.io/badge/130-success-brightgreen) | ![](https://img.shields.io/badge/retryable_12-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/24m_ago-brightgreen) | 30d | ![](https://img.shields.io/badge/warning-yellow) |
+| 16 | StockFinDetail | Monthly | ![](https://img.shields.io/badge/19%2F142-failed-orange) | ![](https://img.shields.io/badge/19-success-brightgreen) | ![](https://img.shields.io/badge/retryable_123-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/15h_19m_ago-blue) | 30d | ![](https://img.shields.io/badge/warning-yellow) |
+| 17 | ShowWeeklyK_ChartFlow | Weekly | ![](https://img.shields.io/badge/19%2F142-failed-orange) | ![](https://img.shields.io/badge/19-success-brightgreen) | ![](https://img.shields.io/badge/retryable_123-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 7d | ![](https://img.shields.io/badge/warning-yellow) |
+| 18 | ShowDailyK_ChartFlow | Daily | ![](https://img.shields.io/badge/12%2F142-failed-orange) | ![](https://img.shields.io/badge/12-success-brightgreen) | ![](https://img.shields.io/badge/retryable_130-failed-orange) | ![](https://img.shields.io/badge/24m_ago-brightgreen) | ![](https://img.shields.io/badge/24m_ago-brightgreen) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 1d | ![](https://img.shields.io/badge/warning-yellow) |
+| 19 | Dividenschedule | Weekly | ![](https://img.shields.io/badge/1%2F142-failed-orange) | ![](https://img.shields.io/badge/1-success-brightgreen) | ![](https://img.shields.io/badge/retryable_141-failed-orange) | ![](https://img.shields.io/badge/2h_52m_ago-blue) | ![](https://img.shields.io/badge/2h_52m_ago-blue) / ![](https://img.shields.io/badge/2h_52m_ago-blue) | 7d | ![](https://img.shields.io/badge/warning-yellow) |
 <!-- FINMIND_STATUS_END -->
 
 # Python-Actions.FindMind

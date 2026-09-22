@@ -17,6 +17,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "skills" / "skill-finmind-fetch" / "scripts"))
 from token_env import get_finmind_tokens, order_tokens
+sys.path.insert(0, str(ROOT / "scripts"))
+import status_common
+from download_log import now_cst, result_row, write_results
 
 TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5")
 TOKEN_ORDER = []
@@ -112,6 +115,15 @@ def main():
             if run(command, index, f"type{type_id}/{code}"):
                 ok += 1
     print(f"Completed fetch commands: {ok}", flush=True)
+
+    process_time = now_cst()
+    financial_root = ROOT / "financial"
+    for type_id in status_common.ACTIVE_TYPES:
+        present = status_common.output_stock_codes(financial_root, type_id)
+        rows = [result_row(f"{status_common.ACTIVE_TYPES[type_id]}_{code}.csv", code in present, process_time)
+                for code, _ in target]
+        write_results(financial_root / f"type{type_id}" / "download_results.csv", rows)
+    print("Wrote download_results.csv logs for active types", flush=True)
 
 
 if __name__ == "__main__":

@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
-"""Update README status from locally fetched CSV outputs."""
+"""Shared type/stock metadata used by the daily fetch and status scripts."""
 from __future__ import annotations
-import argparse
 import csv
 import re
-from datetime import datetime
 from pathlib import Path
 
+# type_id -> (GoodInfo folder name, FinMind dataset, adapter mode)
 TYPES = {
     "1": ("DividendDetail", "TaiwanStockDividend", "direct"),
     "4": ("StockBzPerformance", "TaiwanStockFinancialStatements", "partial"),
@@ -26,7 +24,46 @@ TYPES = {
     "18": ("ShowDailyK_ChartFlow", "TaiwanStockPER", "direct"),
     "19": ("Dividenschedule", "TaiwanStockDividend", "direct"),
 }
+
+# type_id -> refresh cadence, mirrors Python-Actions.GoodInfo's TYPE_PERIODS.
+TYPE_PERIODS = {
+    "1": "Daily",
+    "4": "Weekly",
+    "5": "Daily",
+    "6": "Weekly",
+    "7": "Weekly",
+    "8": "Weekly",
+    "9": "Weekly",
+    "10": "Weekly",
+    "11": "Weekly",
+    "12": "Monthly",
+    "13": "Daily",
+    "14": "Weekly",
+    "15": "Monthly",
+    "16": "Monthly",
+    "17": "Weekly",
+    "18": "Daily",
+    "19": "Weekly",
+}
+
+# type_id -> (output filename stem, fetch actually implemented)
+ACTIVE_TYPES = {
+    "1": "raw_dividends",
+    "5": "raw_revenue",
+    "8": "raw_weekly_flow",
+    "11": "raw_weekly_trading_data",
+    "12": "raw_monthly_flow",
+    "13": "raw_margin_daily",
+    "14": "raw_margin_weekly",
+    "15": "raw_margin_monthly",
+    "16": "raw_fin_ratio_quarter",
+    "17": "raw_weekly_k_chart_flow",
+    "18": "raw_daily_k_chart_flow",
+    "19": "raw_dividend_schedule",
+}
+
 STOCK_CODE = re.compile(r"(?:^|[_-])([0-9]{4})(?:\.[^.]+)?$")
+
 
 def load_stocks(path: Path) -> list[str]:
     with path.open(encoding="utf-8-sig", newline="") as handle:
@@ -39,6 +76,7 @@ def load_stocks(path: Path) -> list[str]:
                 result.append(code)
                 seen.add(code)
     return result
+
 
 def output_stock_codes(data_root: Path, type_id: str) -> set[str]:
     directory = data_root / f"type{type_id}"
@@ -59,52 +97,3 @@ def output_stock_codes(data_root: Path, type_id: str) -> set[str]:
         except (OSError, UnicodeError):
             continue
     return codes
-
-def badge(text: str, color: str) -> str:
-    return f'![](https://img.shields.io/badge/{text.replace(" ", "%20")}-{color})'
-
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--stock-list", default="data/StockID_TWSE_TPEX.csv")
-    parser.add_argument("--data-root", default="financial")
-    parser.add_argument("--readme", default="README.md")
-    args = parser.parse_args()
-    stocks = set(load_stocks(Path(args.stock_list)))
-    total = len(stocks)
-    rows = []
-    for type_id, (folder, dataset, mode) in TYPES.items():
-        count = len(output_stock_codes(Path(args.data_root), type_id) & stocks)
-        completion = f"{count}/{total}"
-        if count == total and total:
-            status, color, note = "ready", "brightgreen", "CSV 已涵蓋全部觀察名單"
-        elif count:
-            status, color, note = "partial", "orange", "CSV 尚未涵蓋全部觀察名單"
-        elif mode == "permission":
-            status, color, note = "permission", "red", "FinMind tier 不足或尚未取得資料"
-        else:
-            status, color, note = "not run", "lightgrey", "尚無成功產生的 CSV"
-        rows.append(f"| {type_id} | {folder} | {dataset} | {completion} | FinMind API → CSV | {mode} | {badge(status, color)} | {note} |")
-    table = "\n".join(["| Type | GoodInfo type | FinMind dataset | Completion | API | Adapter | Status | Note |", "| -- | -- | -- | --: | -- | -- | -- | -- |", *rows])
-    block = f"""<!-- FINMIND_STATUS_START -->
-## Status
-
-Update time: {datetime.now().astimezone().strftime('%Y-%m-%d %H:%M:%S %Z')}
-
-Watchlist completion is counted from successfully generated local CSV files: `{total}` stocks total.
-
-{table}
-<!-- FINMIND_STATUS_END -->"""
-    path = Path(args.readme)
-    content = path.read_text(encoding="utf-8")
-    start, end = "<!-- FINMIND_STATUS_START -->", "<!-- FINMIND_STATUS_END -->"
-    if start in content and end in content:
-        begin = content.index(start)
-        finish = content.index(end, begin) + len(end)
-        content = content[:begin] + block + content[finish:]
-    else:
-        content = block + "\n\n" + content
-    path.write_text(content, encoding="utf-8")
-    print(f"Updated {path} from {args.data_root}; watchlist={total}")
-
-if __name__ == "__main__":
-    main()

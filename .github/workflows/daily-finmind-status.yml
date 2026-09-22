@@ -30,7 +30,7 @@ jobs:
       - name: Fetch FinMind CSV data
         run: python scripts/fetch_daily_finmind.py --stock-list data/StockID_TWSE_TPEX.csv
       - name: Update README status
-        run: python scripts/update_daily_status.py --stock-list data/StockID_TWSE_TPEX.csv
+        run: python scripts/download_results_counts.py --stock-list data/StockID_TWSE_TPEX.csv --update-readme
       - name: Commit status
         run: |
           git config user.name "github-actions[bot]"
