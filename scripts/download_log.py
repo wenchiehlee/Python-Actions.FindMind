@@ -28,13 +28,13 @@ def write_results(log_path: Path, results: list[dict]) -> None:
             writer.writerow({name: row.get(name, "") for name in FIELDNAMES})
 
 
-def result_row(filename: str, success: bool, process_time: str, error_reason: str = "") -> dict:
+def result_row(filename: str, success: bool, process_time: str, status: str | None = None, error_reason: str = "") -> dict:
     return {
         "filename": filename,
         "last_update_time": process_time if success else "",
         "success": "true" if success else "false",
         "process_time": process_time,
         "retry_count": 0,
-        "status": "success" if success else "retryable_failed",
+        "status": status or ("success" if success else "retryable_failed"),
         "error_reason": error_reason,
     }

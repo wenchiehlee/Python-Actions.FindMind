@@ -24,6 +24,33 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import status_common
 from download_log import now_cst, result_row, write_results
 
+# The exact "no data" SystemExit message each script raises when the FinMind
+# API genuinely has nothing for that stock (as opposed to a failed request).
+NO_DATA_MESSAGES = {
+    "1": "No dividend data available",
+    "5": "No revenue data available",
+    "8": "No price data available",
+    "12": "No price data available",
+    "17": "No price data available",
+    "18": "No price data available",
+    "11": "No weekly trading data available",
+    "19": "No dividend schedule data available",
+    "14": "No daily data available for Type 14",
+    "15": "No daily data available for Type 15",
+}
+
+
+def classify_status(type_id: str, success: bool, output_text: str) -> str:
+    if success:
+        return "success"
+    text = (output_text or "").lower()
+    if "402" in text or "reach the upper limit" in text:
+        return "rate_limited"
+    no_data_message = NO_DATA_MESSAGES.get(type_id)
+    if no_data_message and no_data_message.lower() in text:
+        return "no_data"
+    return "retryable_failed"
+
 TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5", "FINDMIND_GMAIL_TOKEN6")
 TOKEN_ORDER = []
 MIN_QUOTA_HEADROOM = 20  # skip a token's round-robin slot once it's this close to its hourly 402 cutoff
@@ -58,15 +85,18 @@ def token_env(index: int):
     return env
 
 
-def run(args, token_index: int, label: str, preserve_pool: bool = False) -> bool:
+def run(args, token_index: int, label: str, preserve_pool: bool = False) -> tuple[bool, str]:
     command = [PYTHON, *map(str, args)]
     print(f"[{label}] {Path(command[1]).name if len(command) > 1 else label}", flush=True)
     env = os.environ.copy() if preserve_pool else token_env(token_index)
-    completed = subprocess.run(command, cwd=ROOT, env=env)
+    completed = subprocess.run(command, cwd=ROOT, env=env, capture_output=True, text=True)
+    output_text = completed.stdout + completed.stderr
+    if output_text:
+        print(output_text, end="" if output_text.endswith("\n") else "\n", flush=True)
     if completed.returncode:
         print(f"[{label}] failed with exit code {completed.returncode}", flush=True)
-        return False
-    return True
+        return False, output_text
+    return True, output_text
 
 
 def main():
@@ -111,11 +141,16 @@ def main():
     if price_cache_dir.exists():
         shutil.rmtree(price_cache_dir)
 
+    # Rows collected per type as stocks are processed, so the download_results.csv
+    # status reflects what actually happened in *this* run instead of just
+    # whether a (possibly stale, from a previous day) output file exists.
+    type_rows: dict[str, list] = {t: [] for t in status_common.ACTIVE_TYPES}
+
     # One combined Type 13 request loop; Type 14/15 reuse this file locally.
     type13 = ROOT / "financial" / "type13" / "raw_margin_daily.csv"
     if run([SCRIPTS / "fetch_to_csv.py", "--stock-list", args.stock_list,
             "--start-date", args.start_date, "--end-date", end,
-            "--output-csv", type13], 0, "type13", preserve_pool=True):
+            "--output-csv", type13], 0, "type13", preserve_pool=True)[0]:
         ok += 1
 
     jobs = [
@@ -129,6 +164,7 @@ def main():
         ("16", "fetch_type16.py", "raw_fin_ratio_quarter", "2020-01-01"),
         ("19", "fetch_type19.py", "raw_dividend_schedule", "2018-01-01"),
     ]
+    process_time = now_cst()
     for type_id, script, stem, start in jobs:
         refresh_token_order(f"type{type_id}")
         for index, (code, name) in enumerate(target):
@@ -139,8 +175,11 @@ def main():
                 command += ["--price-cache-dir", price_cache_dir]
             if type_id in {"8", "12", "17", "18"}:
                 command[1:1] = ["--type", type_id]
-            if run(command, index, f"type{type_id}/{code}"):
+            success, output_text = run(command, index, f"type{type_id}/{code}")
+            if success:
                 ok += 1
+            status = classify_status(type_id, success, output_text)
+            type_rows[type_id].append(result_row(f"{stem}_{code}.csv", success, process_time, status=status))
 
     for type_id, script, stem in (("14", "fetch_type14.py", "raw_margin_weekly"),
                                   ("15", "fetch_type15.py", "raw_margin_monthly")):
@@ -150,17 +189,22 @@ def main():
             command = [SCRIPTS / script, "--stock-id", code, "--company-name", name,
                        "--daily-csv", type13, "--start-date", args.start_date,
                        "--end-date", end, "--output", output]
-            if run(command, index, f"type{type_id}/{code}"):
+            success, output_text = run(command, index, f"type{type_id}/{code}")
+            if success:
                 ok += 1
+            status = classify_status(type_id, success, output_text)
+            type_rows[type_id].append(result_row(f"{stem}_{code}.csv", success, process_time, status=status))
     print(f"Completed fetch commands: {ok}", flush=True)
     shutil.rmtree(price_cache_dir, ignore_errors=True)
 
-    process_time = now_cst()
     financial_root = ROOT / "financial"
-    for type_id in status_common.ACTIVE_TYPES:
-        present = status_common.output_stock_codes(financial_root, type_id)
-        rows = [result_row(f"{status_common.ACTIVE_TYPES[type_id]}_{code}.csv", code in present, process_time)
-                for code, _ in target]
+    for type_id, rows in type_rows.items():
+        if not rows:
+            # Type 13 is a single combined request, not looped per stock;
+            # fall back to scanning its output for per-stock coverage.
+            present = status_common.output_stock_codes(financial_root, type_id)
+            rows = [result_row(f"{status_common.ACTIVE_TYPES[type_id]}_{code}.csv", code in present, process_time)
+                    for code, _ in target]
         write_results(financial_root / f"type{type_id}" / "download_results.csv", rows)
     print("Wrote download_results.csv logs for active types", flush=True)
 

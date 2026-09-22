@@ -102,7 +102,7 @@ def analyze_csv(csv_path: Path) -> Dict:
     current_time = get_taipei_time()
     stats = {
         "total": 0, "success": 0, "failed": 0,
-        "retryable_failed": 0, "rate_limited": 0, "not_processed": 0,
+        "retryable_failed": 0, "rate_limited": 0, "not_processed": 0, "no_data": 0,
         "updated_from_now": "N/A", "oldest": "N/A", "lag": "N/A", "latest": "N/A",
         "error": None,
     }
@@ -114,7 +114,7 @@ def analyze_csv(csv_path: Path) -> Dict:
     if not rows:
         return stats
 
-    status_counts = {"retryable_failed": 0, "rate_limited": 0, "not_processed": 0}
+    status_counts = {"retryable_failed": 0, "rate_limited": 0, "not_processed": 0, "no_data": 0}
     for row in rows:
         status = normalize_status(row)
         if status in ("success", ""):
@@ -165,6 +165,7 @@ def scan_all_folders(data_root: Path) -> List[Dict]:
             "RetryableFailed": csv_stats.get("retryable_failed", 0),
             "RateLimited": csv_stats.get("rate_limited", 0),
             "NotProcessed": csv_stats.get("not_processed", 0),
+            "NoData": csv_stats.get("no_data", 0),
             "Updated": csv_stats["updated_from_now"],
             "Lag": csv_stats["lag"],
             "error": csv_stats.get("error"),
@@ -194,7 +195,7 @@ def get_stale_after_days(period: str) -> str:
 
 def get_status(result: Dict, expected_rows: int) -> str:
     total = result["Total"]
-    success = result["Success"]
+    accepted = result["Success"] + result["NoData"]
     period = TYPE_PERIODS.get(result["No"], "Manual")
     stale_after = get_stale_after_days(period)
     actionable_failures = result["RetryableFailed"] + result["RateLimited"] + result["NotProcessed"]
@@ -207,7 +208,7 @@ def get_status(result: Dict, expected_rows: int) -> str:
         return "stale"
     if actionable_failures:
         return "warning"
-    if success >= expected_rows:
+    if accepted >= expected_rows:
         return "ready"
     return "partial"
 
@@ -219,18 +220,24 @@ def format_table(results: List[Dict], expected_rows: int) -> str:
     for r in results:
         period = TYPE_PERIODS.get(r["No"], "Manual")
         success_count = r["Success"]
+        no_data_count = r["NoData"]
+        accepted_count = success_count + no_data_count
         total_count = r["Total"]
 
         if total_count == 0:
             progress_color = "inactive-lightgrey"
-        elif success_count >= expected_rows:
+        elif accepted_count >= expected_rows:
             progress_color = "success-brightgreen"
         elif total_count >= expected_rows:
             progress_color = "failed-orange"
         else:
             progress_color = "yellow"
-        progress = make_badge(f"{success_count}/{expected_rows}", progress_color)
-        downloaded = make_badge(str(success_count), "success-brightgreen") if success_count else ""
+        progress = make_badge(f"{accepted_count}/{expected_rows}", progress_color)
+        downloaded_badges = [
+            make_badge(str(success_count), "success-brightgreen") if success_count else "",
+            make_badge(f"no_data_{no_data_count}", "inactive-lightgrey") if no_data_count else "",
+        ]
+        downloaded = " ".join(b for b in downloaded_badges if b)
 
         failure_badges = [
             make_badge(f"retryable_{r['RetryableFailed']}", "failed-orange") if r["RetryableFailed"] else "",
