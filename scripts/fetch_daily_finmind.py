@@ -71,9 +71,17 @@ def main():
         raise SystemExit("No stocks found")
     global TOKEN_ORDER
     configured = get_finmind_tokens()
-    TOKEN_ORDER, details = order_tokens(configured)
-    for slot, ((_, state), _) in enumerate(zip(details, TOKEN_ORDER), start=1):
-        print(f"token-slot={slot} quota-check={state}", flush=True)
+
+    def refresh_token_order(label: str):
+        # Re-checked before each type so a token that ran dry earlier in this
+        # run sorts to the back instead of staying pinned to its start-of-run slot.
+        ordered, details = order_tokens(configured)
+        TOKEN_ORDER[:] = ordered
+        for slot, ((_, state), _) in enumerate(zip(details, TOKEN_ORDER), start=1):
+            print(f"[{label}] token-slot={slot} quota-check={state}", flush=True)
+
+    TOKEN_ORDER = []
+    refresh_token_order("startup")
     print(f"Fetching {len(target)} stocks with quota-aware token rotation", flush=True)
     ok = 0
 
@@ -96,6 +104,7 @@ def main():
         ("19", "fetch_type19.py", "raw_dividend_schedule", "2018-01-01"),
     ]
     for type_id, script, stem, start in jobs:
+        refresh_token_order(f"type{type_id}")
         for index, (code, name) in enumerate(target):
             output = ROOT / "financial" / f"type{type_id}" / f"{stem}_{code}.csv"
             command = [SCRIPTS / script, "--stock-id", code, "--company-name", name,
@@ -107,6 +116,7 @@ def main():
 
     for type_id, script, stem in (("14", "fetch_type14.py", "raw_margin_weekly"),
                                   ("15", "fetch_type15.py", "raw_margin_monthly")):
+        refresh_token_order(f"type{type_id}")
         for index, (code, name) in enumerate(target):
             output = ROOT / "financial" / f"type{type_id}" / f"{stem}_{code}.csv"
             command = [SCRIPTS / script, "--stock-id", code, "--company-name", name,
