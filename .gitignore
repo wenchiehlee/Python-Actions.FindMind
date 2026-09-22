@@ -6,5 +6,5 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 *.env~
-data/
+data/StockID_TWSE_TPEX.csv
 financial/.price_cache/

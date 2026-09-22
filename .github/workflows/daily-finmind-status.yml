@@ -42,10 +42,12 @@ jobs:
           python scripts/fetch_daily_finmind.py --stock-list data/StockID_TWSE_TPEX.csv $TYPES_ARG
       - name: Update README status
         run: python scripts/download_results_counts.py --stock-list data/StockID_TWSE_TPEX.csv --update-readme
+      - name: Build stage1_raw combined CSVs
+        run: python scripts/build_stage1_raw.py
       - name: Commit status
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md financial/
+          git add README.md financial/ data/stage1_raw/
           git diff --cached --quiet || git commit -m "chore: update daily FinMind status"
           git push
