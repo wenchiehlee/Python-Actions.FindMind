@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import status_common
 from download_log import now_cst, result_row, write_results
 
-TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5")
+TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5", "FINDMIND_GMAIL_TOKEN6")
 TOKEN_ORDER = []
 PYTHON = sys.executable
 SCRIPTS = ROOT / "skills" / "skill-finmind-fetch" / "scripts"
