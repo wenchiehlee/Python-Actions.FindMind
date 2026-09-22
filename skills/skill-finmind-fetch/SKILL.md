@@ -209,3 +209,25 @@ python skills/skill-finmind-fetch/scripts/fetch_type6.py \
 - Type 16：`python skills/skill-finmind-fetch/scripts/compare_type16.py <finmind.csv> <analyzer/raw_fin_ratio_quarter.csv> --stock-id 2330`
 
 驗證器以數值比較 CSV，會分開報告來源缺少的欄位；不會把缺少的 FinMind 欄位填成假資料。
+
+## 全 type 通用驗證：compare_stage1_raw.py
+
+每個 `data/stage1_raw/<stem>.csv` 的欄位結構（stock_code、company_name、期別欄位、資料欄、6 個固定 metadata 欄）跟 `Python-Actions.GoodInfo.Analyzer` 的同名檔案完全一致，所以可以用同一支腳本比對任何一個 type，不用每個 type 各寫一支：
+
+```bash
+# 單一 type
+python skills/skill-finmind-fetch/scripts/compare_stage1_raw.py --type 1
+
+# 全部 active type 一次跑完
+python skills/skill-finmind-fetch/scripts/compare_stage1_raw.py
+
+# 指定 reference 路徑（預設抓 ../Python-Actions.GoodInfo.Analyzer/data/stage1_raw）
+python skills/skill-finmind-fetch/scripts/compare_stage1_raw.py --type 1 --reference-root /path/to/Analyzer/data/stage1_raw
+```
+
+輸出內容：
+- 只存在 reference、我們這邊完全沒有的股票（缺股）
+- 只存在其中一邊的 (股票, 期別) 資料列（缺期別）
+- 逐欄位比對：數值誤差超過 `--tolerance`（預設 1%）的筆數、我方缺值筆數、reference 缺值筆數，並各列出幾個範例
+
+metadata 欄位（file_type/source_file/download_success/download_timestamp/process_timestamp/stage1_process_timestamp）一定會因來源、執行時間不同而不同，不列入比對。

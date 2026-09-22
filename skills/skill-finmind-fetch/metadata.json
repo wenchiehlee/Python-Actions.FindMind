@@ -2,7 +2,7 @@
   "name": "skill-finmind-fetch",
   "description": "Fetch FinMind Taiwan stock margin/price data and quarterly financial-ratio data, exporting GoodInfo Analyzer-compatible CSVs.",
   "category": "financial-data",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "maintainer": "wenchiehlee",
   "source": "https://github.com/wenchiehlee/Python-Actions.FindMind",
   "updated_at": "2026-09-22",
@@ -31,7 +31,8 @@
     "scripts/fetch_type4.py",
     "scripts/fetch_type6.py",
     "scripts/fetch_type7.py",
-    "scripts/fetch_type9.py"
+    "scripts/fetch_type9.py",
+    "scripts/compare_stage1_raw.py"
   ],
   "deployments": [
     {
