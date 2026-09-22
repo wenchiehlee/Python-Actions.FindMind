@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import csv
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -85,6 +86,12 @@ def main():
     print(f"Fetching {len(target)} stocks with quota-aware token rotation", flush=True)
     ok = 0
 
+    # Types 1, 5, 8, 11, 12, 17, and 18 all fetch TaiwanStockPrice for the same
+    # stock; sharing one cache per run avoids re-requesting it up to 7 times.
+    price_cache_dir = ROOT / "financial" / ".price_cache"
+    if price_cache_dir.exists():
+        shutil.rmtree(price_cache_dir)
+
     # One combined Type 13 request loop; Type 14/15 reuse this file locally.
     type13 = ROOT / "financial" / "type13" / "raw_margin_daily.csv"
     if run([SCRIPTS / "fetch_to_csv.py", "--stock-list", args.stock_list,
@@ -109,6 +116,8 @@ def main():
             output = ROOT / "financial" / f"type{type_id}" / f"{stem}_{code}.csv"
             command = [SCRIPTS / script, "--stock-id", code, "--company-name", name,
                        "--start-date", start, "--end-date", end, "--output", output]
+            if type_id in {"1", "5", "8", "12", "17", "18", "11"}:
+                command += ["--price-cache-dir", price_cache_dir]
             if type_id in {"8", "12", "17", "18"}:
                 command[1:1] = ["--type", type_id]
             if run(command, index, f"type{type_id}/{code}"):
@@ -125,6 +134,7 @@ def main():
             if run(command, index, f"type{type_id}/{code}"):
                 ok += 1
     print(f"Completed fetch commands: {ok}", flush=True)
+    shutil.rmtree(price_cache_dir, ignore_errors=True)
 
     process_time = now_cst()
     financial_root = ROOT / "financial"

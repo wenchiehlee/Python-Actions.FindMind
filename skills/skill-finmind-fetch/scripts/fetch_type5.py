@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
 from fetch_to_csv import fetch_data
+from price_cache import cached_price
 from token_env import TokenRotator
 load_dotenv()
 
@@ -44,9 +45,9 @@ def build_rows(stock_id, company_name, revenue, prices):
     return pd.DataFrame(rows,columns=COLUMNS)
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('--stock-id',default='2330'); p.add_argument('--company-name',default='台積電'); p.add_argument('--start-date',default='2021-01-01'); p.add_argument('--end-date',default=(datetime.now()+timedelta(hours=8)).strftime('%Y-%m-%d')); p.add_argument('--output',default='financial/type5/raw_revenue_2330.csv'); p.add_argument('--token',default=None); a=p.parse_args(); rot=TokenRotator(a.token)
+    p=argparse.ArgumentParser(); p.add_argument('--stock-id',default='2330'); p.add_argument('--company-name',default='台積電'); p.add_argument('--start-date',default='2021-01-01'); p.add_argument('--end-date',default=(datetime.now()+timedelta(hours=8)).strftime('%Y-%m-%d')); p.add_argument('--output',default='financial/type5/raw_revenue_2330.csv'); p.add_argument('--token',default=None); p.add_argument('--price-cache-dir',default=None); a=p.parse_args(); rot=TokenRotator(a.token)
     rev=fetch_data('TaiwanStockMonthRevenue',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot)
-    px=fetch_data('TaiwanStockPrice',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot)
+    px=cached_price(a.stock_id,a.start_date,a.end_date,rot,a.price_cache_dir,fetch_data)
     out=build_rows(a.stock_id,a.company_name,rev.to_dict('records'),px.to_dict('records'))
     if out.empty: raise SystemExit('No revenue data available')
     Path(a.output).parent.mkdir(parents=True,exist_ok=True); out.to_csv(a.output,index=False,encoding='utf-8-sig'); print(f'Wrote {len(out)} monthly revenue rows to {a.output}')

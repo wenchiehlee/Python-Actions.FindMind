@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
 from fetch_to_csv import fetch_data
+from price_cache import cached_price
 from token_env import TokenRotator
 load_dotenv()
 
@@ -48,8 +49,8 @@ def build(stock_id,name,prices,pers,financials,frequency,kind):
  ]]
 
 def main():
- p=argparse.ArgumentParser(); p.add_argument('--type',type=int,choices=[8,12,17,18],required=True); p.add_argument('--stock-id',default='2330'); p.add_argument('--company-name',default='台積電'); p.add_argument('--start-date',default='2021-01-01'); p.add_argument('--end-date',default=(datetime.now()+timedelta(hours=8)).strftime('%Y-%m-%d')); p.add_argument('--output'); p.add_argument('--token',default=None); a=p.parse_args(); rot=TokenRotator(a.token); freq='daily' if a.type==18 else 'monthly' if a.type==12 else 'weekly'; kind={8:'ShowK_ChartFlow',12:'ShowMonthlyK_ChartFlow',17:'ShowWeeklyK_ChartFlow',18:'ShowDailyK_ChartFlow'}[a.type]
- prices=fetch_data('TaiwanStockPrice',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot); pers=fetch_data('TaiwanStockPER',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot); fin=fetch_data('TaiwanStockFinancialStatements',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot)
+ p=argparse.ArgumentParser(); p.add_argument('--type',type=int,choices=[8,12,17,18],required=True); p.add_argument('--stock-id',default='2330'); p.add_argument('--company-name',default='台積電'); p.add_argument('--start-date',default='2021-01-01'); p.add_argument('--end-date',default=(datetime.now()+timedelta(hours=8)).strftime('%Y-%m-%d')); p.add_argument('--output'); p.add_argument('--token',default=None); p.add_argument('--price-cache-dir',default=None); a=p.parse_args(); rot=TokenRotator(a.token); freq='daily' if a.type==18 else 'monthly' if a.type==12 else 'weekly'; kind={8:'ShowK_ChartFlow',12:'ShowMonthlyK_ChartFlow',17:'ShowWeeklyK_ChartFlow',18:'ShowDailyK_ChartFlow'}[a.type]
+ prices=cached_price(a.stock_id,a.start_date,a.end_date,rot,a.price_cache_dir,fetch_data); pers=fetch_data('TaiwanStockPER',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot); fin=fetch_data('TaiwanStockFinancialStatements',data_id=a.stock_id,start_date=a.start_date,end_date=a.end_date,token=rot)
  out=build(a.stock_id,a.company_name,prices.to_dict('records'),pers.to_dict('records'),fin.to_dict('records'),freq,kind)
  if out.empty:raise SystemExit('No price data available')
  if not a.output:a.output=f'financial/type{a.type}/raw_'+('monthly_flow' if a.type==12 else 'daily_k_chart_flow' if a.type==18 else 'weekly_k_chart_flow')+f'_{a.stock_id}.csv'
