@@ -205,11 +205,13 @@ def process_stock_data(stock_code, price_df, margin_df, company_name):
     - price_df columns: date, stock_id, Trading_Volume, Trading_money, open, max, min, close, spread, Trading_turnover
     - margin_df columns: date, stock_id, MarginPurchaseBuy, MarginPurchaseCashRepayment, MarginPurchaseLimit, MarginPurchaseTodayBalance, MarginPurchaseYesterdayBalance, ShortSaleCashRepayment, ShortSaleLimit, ShortSaleSell, ShortSaleTodayBalance, ShortSaleYesterdayBalance, ShortSaleBuy, OffsetLoanAndShort
     """
-    if price_df.empty or margin_df.empty:
+    if price_df.empty:
         return pd.DataFrame()
-        
-    # Merge price and margin
-    m_df = price_df.merge(margin_df, on="date", how="left")
+
+    # Some stocks (e.g. not yet eligible for margin trading) have price data
+    # but no margin data at all; GoodInfo still reports them with blank
+    # margin columns rather than omitting them, so match that here.
+    m_df = price_df.merge(margin_df, on="date", how="left") if not margin_df.empty else price_df.copy()
     
     rows = []
     now_cst = datetime.now() + timedelta(hours=8)
@@ -469,7 +471,7 @@ def main():
             price_df = fetch_data("TaiwanStockPrice", data_id=code, start_date=start_str, end_date=end_date, token=token)
             margin_df = fetch_data("TaiwanStockMarginPurchaseShortSale", data_id=code, start_date=start_str, end_date=end_date, token=token)
             
-            if not price_df.empty and not margin_df.empty:
+            if not price_df.empty:
                 df_stk = process_stock_data(code, price_df, margin_df, company_name=name)
                 if not df_stk.empty:
                     logger.info(f"Processed {len(df_stk)} rows for Stock {code}")
