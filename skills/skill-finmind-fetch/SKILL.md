@@ -163,6 +163,43 @@ python skills/skill-finmind-fetch/scripts/fetch_type16.py \
 
 用 `compare_type16.py` 可對照 Analyzer 的 GoodInfo CSV。Type 13 與 Type 16 共用同一個 skill，但使用不同 script、dataset 與輸出 schema，不保留第二份實作。
 
+## Type 4、7：年度／季度營運績效 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type4.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type4/raw_performance_2330.csv
+
+python skills/skill-finmind-fetch/scripts/fetch_type7.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type7/raw_performance1_2330.csv
+```
+
+兩者都使用 FinMind `TaiwanStockFinancialStatements`（營收/毛利/營業利益/稅前淨利/稅後淨利/EPS，單季值直接加總成年度或原樣輸出季度）、`TaiwanStockBalanceSheet`（股本/淨值/資產，取當期末餘額）與 `TaiwanStockPrice`。GoodInfo 專有的「財報_評分」沒有 FinMind 對應欄位，留空。
+
+## Type 9：季度股價 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type9.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type9/raw_stock_his_quar_2330.csv
+```
+
+純粹從 FinMind `TaiwanStockPrice` 依季度聚合開盤/收盤/漲跌，不需要財務報表資料。
+
+## Type 6：股權分散表 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type6.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type6/raw_equity_distribution_2330.csv
+```
+
+使用 FinMind `TaiwanStockShareholding`（每週資料，取每年最後一筆作為年度快照）。FinMind 只提供僑外資合計持股比例，GoodInfo 的政府機構/金融機構/證券投信/本國法人/本國自然人等細項沒有對應資料來源，留空，不臆測。
 
 ## Parity 驗證
 

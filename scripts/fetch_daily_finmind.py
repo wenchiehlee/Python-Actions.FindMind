@@ -28,8 +28,12 @@ from download_log import now_cst, result_row, write_results
 # API genuinely has nothing for that stock (as opposed to a failed request).
 NO_DATA_MESSAGES = {
     "1": "No dividend data available",
+    "4": "No performance data available",
     "5": "No revenue data available",
+    "6": "No shareholding data available",
+    "7": "No performance data available",
     "8": "No price data available",
+    "9": "No price data available",
     "12": "No price data available",
     "17": "No price data available",
     "18": "No price data available",
@@ -179,7 +183,12 @@ def main():
         ("11", "fetch_type11.py", "raw_weekly_trading_data", "2021-01-01"),
         ("16", "fetch_type16.py", "raw_fin_ratio_quarter", "2020-01-01"),
         ("19", "fetch_type19.py", "raw_dividend_schedule", "2018-01-01"),
+        ("4", "fetch_type4.py", "raw_performance", "2018-01-01"),
+        ("7", "fetch_type7.py", "raw_performance1", "2018-01-01"),
+        ("9", "fetch_type9.py", "raw_stock_his_quar", "2018-01-01"),
+        ("6", "fetch_type6.py", "raw_equity_distribution", "2018-01-01"),
     ]
+    price_cache_types = {"1", "5", "8", "12", "17", "18", "11", "4", "7", "9", "6"}
     process_time = now_cst()
     for type_id, script, stem, start in jobs:
         if type_id not in selected_types:
@@ -189,7 +198,7 @@ def main():
             output = ROOT / "financial" / f"type{type_id}" / f"{stem}_{code}.csv"
             command = [SCRIPTS / script, "--stock-id", code, "--company-name", name,
                        "--start-date", start, "--end-date", end, "--output", output]
-            if type_id in {"1", "5", "8", "12", "17", "18", "11"}:
+            if type_id in price_cache_types:
                 command += ["--price-cache-dir", price_cache_dir]
             if type_id in {"8", "12", "17", "18"}:
                 command[1:1] = ["--type", type_id]

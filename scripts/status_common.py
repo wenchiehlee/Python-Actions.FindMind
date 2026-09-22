@@ -12,7 +12,7 @@ TYPES = {
     "6": ("EquityDistribution", "TaiwanStockShareholding", "partial"),
     "7": ("StockBzPerformance1", "TaiwanStockFinancialStatements", "partial"),
     "8": ("ShowK_ChartFlow", "TaiwanStockPER", "direct"),
-    "9": ("StockHisAnaQuar", "TaiwanStockFinancialStatements", "partial"),
+    "9": ("StockHisAnaQuar", "TaiwanStockPrice", "direct"),
     "10": ("EquityDistributionClassHis", "TaiwanStockHoldingSharesPer", "permission"),
     "11": ("WeeklyTradingData", "TaiwanStockInstitutionalInvestorsBuySellWide", "partial"),
     "12": ("ShowMonthlyK_ChartFlow", "TaiwanStockPER", "direct"),
@@ -49,8 +49,12 @@ TYPE_PERIODS = {
 # type_id -> (output filename stem, fetch actually implemented)
 ACTIVE_TYPES = {
     "1": "raw_dividends",
+    "4": "raw_performance",
     "5": "raw_revenue",
+    "6": "raw_equity_distribution",
+    "7": "raw_performance1",
     "8": "raw_weekly_flow",
+    "9": "raw_stock_his_quar",
     "11": "raw_weekly_trading_data",
     "12": "raw_monthly_flow",
     "13": "raw_margin_daily",
