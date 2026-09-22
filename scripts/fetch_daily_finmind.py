@@ -24,6 +24,7 @@ from download_log import now_cst, result_row, write_results
 
 TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5", "FINDMIND_GMAIL_TOKEN6")
 TOKEN_ORDER = []
+MIN_QUOTA_HEADROOM = 20  # skip a token's round-robin slot once it's this close to its hourly 402 cutoff
 PYTHON = sys.executable
 SCRIPTS = ROOT / "skills" / "skill-finmind-fetch" / "scripts"
 
@@ -77,9 +78,19 @@ def main():
         # Re-checked before each type so a token that ran dry earlier in this
         # run sorts to the back instead of staying pinned to its start-of-run slot.
         ordered, details = order_tokens(configured)
-        TOKEN_ORDER[:] = ordered
-        for slot, (remaining, state) in enumerate(details, start=1):
+        healthy = [(tok, remaining, state) for tok, (remaining, state) in zip(ordered, details)
+                   if remaining < 0 or remaining >= MIN_QUOTA_HEADROOM]
+        # A quota-check failure reports remaining=-1; keep those tokens in the
+        # pool since we can't tell if they're actually low, only that the
+        # user_info lookup itself failed. Only drop tokens confirmed low.
+        if not healthy:
+            healthy = [(tok, remaining, state) for tok, (remaining, state) in zip(ordered, details)]
+        TOKEN_ORDER[:] = [tok for tok, _, _ in healthy]
+        for slot, (_, remaining, state) in enumerate(healthy, start=1):
             print(f"[{label}] token-slot={slot} remaining={remaining} quota-check={state}", flush=True)
+        skipped = len(ordered) - len(healthy)
+        if skipped:
+            print(f"[{label}] skipped {skipped} token(s) with <{MIN_QUOTA_HEADROOM} quota remaining", flush=True)
 
     TOKEN_ORDER = []
     refresh_token_order("startup")
