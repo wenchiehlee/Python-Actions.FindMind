@@ -49,6 +49,63 @@ python scripts/fetch_to_csv.py --stocks "0000,2330,0050" --start-date "2026-07-0
 - `--debug-limit`：除大盤外，限制只下載前 N 檔個股，供測試使用。
 
 
+## Type 1：股利政策 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type1.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type1/raw_dividends_2330.csv
+```
+
+Type 1 使用 FinMind `TaiwanStockDividend`；GoodInfo 特有的填息天數與多種歷史殖利率欄位，若來源沒有提供則保留空值。
+
+## Type 5：每月營收 CSV
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type5.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type5/raw_revenue_2330.csv
+```
+
+Type 5 使用 FinMind `TaiwanStockMonthRevenue` 搭配 `TaiwanStockPrice`，輸出月營收、月增/年增、年度累計與月內價格欄位。
+
+## Type 8、12、17、18：K 線 / PER 資金流向 CSV
+
+四個類型共用 `fetch_k_chart_flow.py`，差異只在頻率與目標 PER 倍數：
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_k_chart_flow.py --type 17 \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type17/raw_weekly_k_chart_flow_2330.csv
+```
+
+`--type` 可使用 `8`（週）、`12`（月）、`17`（週）、`18`（日）。資料使用 FinMind `TaiwanStockPrice`、`TaiwanStockPER` 與可用的季度 EPS；來源缺少的欄位保留空值。
+
+## Type 11：每週交易資料（含法人）
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type11.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type11/raw_weekly_trading_data_2330.csv
+```
+
+Type 11 使用 FinMind 每日價格、三大法人寬表與融資融券資料聚合；來源沒有的持股比例欄位保留空值。
+
+## Type 19：除權息日程
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type19.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2018-01-01 --end-date 2026-12-31 \
+  --output financial/type19/raw_dividend_schedule_2330.csv
+```
+
+Type 19 使用 FinMind `TaiwanStockDividend`；填息/填權完成日與參考價若來源沒有提供則保留空值。
+
 ## Type 14：每週融資融券 CSV
 
 Type 14 優先重用 Type 13 每日 CSV 聚合，不需重新下載同一批每日資料：
@@ -71,6 +128,28 @@ python skills/skill-finmind-fetch/scripts/fetch_type14.py \
 
 用 `compare_type14.py` 可與 Analyzer 的 `raw_margin_weekly.csv` 做欄位及數值比對。
 
+## Type 15：每月融資融券 CSV
+
+Type 15 優先重用 Type 13 每日 CSV 聚合，並將張數轉為千張：
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type15.py \
+  --stock-id 2330 --company-name 台積電 \
+  --daily-csv /path/to/raw_margin_daily.csv \
+  --output financial/type15/raw_margin_monthly_2330.csv
+```
+
+若沒有 Type 13 CSV，省略 `--daily-csv`，腳本會使用 FinMind 每日 API：
+
+```bash
+python skills/skill-finmind-fetch/scripts/fetch_type15.py \
+  --stock-id 2330 --company-name 台積電 \
+  --start-date 2021-01-01 --end-date 2026-12-31 \
+  --output financial/type15/raw_margin_monthly_2330.csv
+```
+
+用 `compare_type15.py` 可與 Analyzer 的 `raw_margin_monthly.csv` 做欄位及數值比對。
+
 ## Type 16：季度財務比率 CSV
 
 同一個 skill 也提供季度財務比率 adapter，使用 FinMind 的綜合損益、資產負債表與現金流量表，輸出與 GoodInfo Analyzer 的 `raw_fin_ratio_quarter.csv` 相同的 164 欄 schema：
@@ -89,6 +168,7 @@ python skills/skill-finmind-fetch/scripts/fetch_type16.py \
 
 - Type 13：`python skills/skill-finmind-fetch/scripts/compare_type13.py <finmind.csv> <analyzer/raw_margin_daily.csv> --stock-id 2330`
 - Type 14：`python skills/skill-finmind-fetch/scripts/compare_type14.py --candidate <finmind.csv> --reference <analyzer/raw_margin_weekly.csv> --stock-id 2330`
+- Type 15：`python skills/skill-finmind-fetch/scripts/compare_type15.py --candidate <finmind.csv> --reference <analyzer/raw_margin_monthly.csv> --stock-id 2330`
 - Type 16：`python skills/skill-finmind-fetch/scripts/compare_type16.py <finmind.csv> <analyzer/raw_fin_ratio_quarter.csv> --stock-id 2330`
 
 驗證器以數值比較 CSV，會分開報告來源缺少的欄位；不會把缺少的 FinMind 欄位填成假資料。
