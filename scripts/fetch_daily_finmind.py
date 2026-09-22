@@ -199,12 +199,22 @@ def main():
 
     financial_root = ROOT / "financial"
     for type_id, rows in type_rows.items():
+        stem = status_common.ACTIVE_TYPES[type_id]
         if not rows:
             # Type 13 is a single combined request, not looped per stock;
             # fall back to scanning its output for per-stock coverage.
             present = status_common.output_stock_codes(financial_root, type_id)
-            rows = [result_row(f"{status_common.ACTIVE_TYPES[type_id]}_{code}.csv", code in present, process_time)
+            rows = [result_row(f"{stem}_{code}.csv", code in present, process_time)
                     for code, _ in target]
+            # Unlike every other type, Type 13's combined fetch does cover the
+            # market index (0000) with real data.
+            rows.append(result_row(f"{stem}_0000.csv", "0000" in present, process_time))
+        else:
+            # These per-stock adapters never attempt the market index (0000) --
+            # dividends, revenue, and similar per-company metrics don't apply
+            # to it -- so it's never in `target`. Log it explicitly as no_data
+            # instead of letting it silently disappear from the total.
+            rows.append(result_row(f"{stem}_0000.csv", False, process_time, status="no_data"))
         write_results(financial_root / f"type{type_id}" / "download_results.csv", rows)
     print("Wrote download_results.csv logs for active types", flush=True)
 
