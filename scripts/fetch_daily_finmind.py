@@ -104,11 +104,21 @@ def main():
     parser.add_argument("--stock-list", required=True)
     parser.add_argument("--start-date", default="2021-01-01")
     parser.add_argument("--end-date", default=None)
+    parser.add_argument("--types", default=None,
+                         help="Comma-separated type IDs to run (e.g. '1,5,8'); default runs every active type")
     args = parser.parse_args()
     end = args.end_date or __import__("datetime").date.today().isoformat()
     target = list(stocks(Path(args.stock_list)))
     if not target:
         raise SystemExit("No stocks found")
+    if args.types:
+        selected_types = {t.strip() for t in args.types.split(",") if t.strip()}
+        unknown = selected_types - set(status_common.ACTIVE_TYPES)
+        if unknown:
+            raise SystemExit(f"Unknown type id(s): {', '.join(sorted(unknown))}")
+    else:
+        selected_types = set(status_common.ACTIVE_TYPES)
+    print(f"Selected types: {', '.join(sorted(selected_types, key=int))}", flush=True)
     global TOKEN_ORDER
     configured = get_finmind_tokens()
 
@@ -143,15 +153,21 @@ def main():
 
     # Rows collected per type as stocks are processed, so the download_results.csv
     # status reflects what actually happened in *this* run instead of just
-    # whether a (possibly stale, from a previous day) output file exists.
-    type_rows: dict[str, list] = {t: [] for t in status_common.ACTIVE_TYPES}
+    # whether a (possibly stale, from a previous day) output file exists. Only
+    # the selected types are tracked, so an unselected type's existing log is
+    # left untouched rather than overwritten with a cruder fallback.
+    type_rows: dict[str, list] = {t: [] for t in selected_types}
 
     # One combined Type 13 request loop; Type 14/15 reuse this file locally.
+    # The path is always defined even when Type 13 itself isn't selected, so
+    # a Type 14/15-only run still reuses whatever raw_margin_daily.csv is
+    # already on disk.
     type13 = ROOT / "financial" / "type13" / "raw_margin_daily.csv"
-    if run([SCRIPTS / "fetch_to_csv.py", "--stock-list", args.stock_list,
-            "--start-date", args.start_date, "--end-date", end,
-            "--output-csv", type13], 0, "type13", preserve_pool=True)[0]:
-        ok += 1
+    if "13" in selected_types:
+        if run([SCRIPTS / "fetch_to_csv.py", "--stock-list", args.stock_list,
+                "--start-date", args.start_date, "--end-date", end,
+                "--output-csv", type13], 0, "type13", preserve_pool=True)[0]:
+            ok += 1
 
     jobs = [
         ("1", "fetch_type1.py", "raw_dividends", "2018-01-01"),
@@ -166,6 +182,8 @@ def main():
     ]
     process_time = now_cst()
     for type_id, script, stem, start in jobs:
+        if type_id not in selected_types:
+            continue
         refresh_token_order(f"type{type_id}")
         for index, (code, name) in enumerate(target):
             output = ROOT / "financial" / f"type{type_id}" / f"{stem}_{code}.csv"
@@ -183,6 +201,8 @@ def main():
 
     for type_id, script, stem in (("14", "fetch_type14.py", "raw_margin_weekly"),
                                   ("15", "fetch_type15.py", "raw_margin_monthly")):
+        if type_id not in selected_types:
+            continue
         refresh_token_order(f"type{type_id}")
         for index, (code, name) in enumerate(target):
             output = ROOT / "financial" / f"type{type_id}" / f"{stem}_{code}.csv"

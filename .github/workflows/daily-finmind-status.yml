@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "30 1 * * *"
   workflow_dispatch:
+    inputs:
+      types:
+        description: "Comma-separated type IDs to run (e.g. '1,5,8'); leave empty to run every active type"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -29,7 +34,12 @@ jobs:
       - name: Download observation list
         run: python scripts/get_watchlist.py --output data/StockID_TWSE_TPEX.csv
       - name: Fetch FinMind CSV data
-        run: python scripts/fetch_daily_finmind.py --stock-list data/StockID_TWSE_TPEX.csv
+        run: |
+          TYPES_ARG=""
+          if [ -n "${{ github.event.inputs.types }}" ]; then
+            TYPES_ARG="--types ${{ github.event.inputs.types }}"
+          fi
+          python scripts/fetch_daily_finmind.py --stock-list data/StockID_TWSE_TPEX.csv $TYPES_ARG
       - name: Update README status
         run: python scripts/download_results_counts.py --stock-list data/StockID_TWSE_TPEX.csv --update-readme
       - name: Commit status
