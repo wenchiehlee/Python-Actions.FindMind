@@ -21,14 +21,16 @@ def get_finmind_tokens(explicit=None):
     return tokens
 
 def token_quota(token):
-    """Return remaining quota and safe state; never expose account metadata."""
+    """Return remaining quota and a state reflecting that quota; never expose account metadata."""
     try:
         payload = requests.get(QUOTA_URL, headers={"Authorization": f"Bearer {token}"}, timeout=10).json()
         limit = int(payload.get("api_request_limit", 0) or 0)
         used = int(payload.get("user_count", 0) or 0)
         if limit <= 0:
             return -1, "quota-unavailable"
-        return max(limit - used, 0), "ok"
+        remaining = max(limit - used, 0)
+        state = "exhausted" if remaining <= 0 else "ok"
+        return remaining, state
     except (requests.RequestException, ValueError, TypeError):
         return -1, "quota-check-failed"
 

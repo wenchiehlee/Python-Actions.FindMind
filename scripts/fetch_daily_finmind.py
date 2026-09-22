@@ -78,8 +78,8 @@ def main():
         # run sorts to the back instead of staying pinned to its start-of-run slot.
         ordered, details = order_tokens(configured)
         TOKEN_ORDER[:] = ordered
-        for slot, ((_, state), _) in enumerate(zip(details, TOKEN_ORDER), start=1):
-            print(f"[{label}] token-slot={slot} quota-check={state}", flush=True)
+        for slot, (remaining, state) in enumerate(details, start=1):
+            print(f"[{label}] token-slot={slot} remaining={remaining} quota-check={state}", flush=True)
 
     TOKEN_ORDER = []
     refresh_token_order("startup")
