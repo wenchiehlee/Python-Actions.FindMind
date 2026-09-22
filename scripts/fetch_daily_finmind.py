@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Fetch all currently implemented FinMind types for the observation list.
 
-The workflow supplies the three token secrets as environment variables.  Each
-stock subprocess is assigned one token so separate processes do not all restart
-rotation at token zero.  Type 13 is fetched once as a combined CSV; Types 14
-and 15 are derived locally from that file.
+The workflow supplies the token secrets as environment variables. Each stock
+subprocess is handed the full pool of currently-healthy tokens, rotated so
+its round-robin-assigned token comes first; the child's own TokenRotator can
+then retire and fall back to another token if its primary 402s mid-call,
+instead of failing outright. Type 13 is fetched once as a combined CSV;
+Types 14 and 15 are derived locally from that file.
 """
 from __future__ import annotations
 import argparse
@@ -40,13 +42,19 @@ def stocks(path: Path):
 
 
 def token_env(index: int):
-    values = TOKEN_ORDER or [os.environ.get(name, "") for name in TOKEN_NAMES]
-    selected = values[index % len(values)] if any(values) else ""
+    values = [v for v in (TOKEN_ORDER or [os.environ.get(name, "") for name in TOKEN_NAMES]) if v]
     env = os.environ.copy()
-    # The child receives one token only; this makes round-robin assignment
-    # effective while keeping token values out of command-line arguments.
-    for name in TOKEN_NAMES:
-        env[name] = selected
+    if not values:
+        for name in TOKEN_NAMES:
+            env[name] = ""
+        return env
+    # Rotate so this stock's round-robin-assigned token is offered first, but
+    # pass the rest of the healthy pool along too so the child's TokenRotator
+    # has somewhere to fall back to if the primary 402s mid-call.
+    primary = index % len(values)
+    rotated = values[primary:] + values[:primary]
+    for slot, name in enumerate(TOKEN_NAMES):
+        env[name] = rotated[slot] if slot < len(rotated) else ""
     return env
 
 

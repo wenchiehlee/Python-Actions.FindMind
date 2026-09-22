@@ -64,7 +64,9 @@ def fetch_data(dataset, data_id=None, start_date=None, end_date=None, token=None
         res = r.json()
         if r.ok and res.get("status") == 200:
             return pd.DataFrame(res.get("data", []))
-        if isinstance(token, TokenRotator) and "token is illegal" in str(res.get("msg", "")).strip().lower():
+        msg = str(res.get("msg", "")).strip().lower()
+        quota_exhausted = res.get("status") == 402 or "reach the upper limit" in msg
+        if isinstance(token, TokenRotator) and ("token is illegal" in msg or quota_exhausted):
             token.retire(request_token)
             if token.count:
                 return fetch_data(dataset, data_id, start_date, end_date, token)
