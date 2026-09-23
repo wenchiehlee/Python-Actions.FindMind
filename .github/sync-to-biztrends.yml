@@ -1,0 +1,36 @@
+group:
+  - files:
+      - source: data/stage1_raw/raw_daily_k_chart_flow.csv
+        dest: data/Python-Actions.FinMind/raw_daily_k_chart_flow.csv
+      - source: data/stage1_raw/raw_dividend_schedule.csv
+        dest: data/Python-Actions.FinMind/raw_dividend_schedule.csv
+      - source: data/stage1_raw/raw_dividends.csv
+        dest: data/Python-Actions.FinMind/raw_dividends.csv
+      - source: data/stage1_raw/raw_equity_distribution.csv
+        dest: data/Python-Actions.FinMind/raw_equity_distribution.csv
+      - source: data/stage1_raw/raw_fin_ratio_quarter.csv
+        dest: data/Python-Actions.FinMind/raw_fin_ratio_quarter.csv
+      - source: data/stage1_raw/raw_margin_daily.csv
+        dest: data/Python-Actions.FinMind/raw_margin_daily.csv
+      - source: data/stage1_raw/raw_margin_monthly.csv
+        dest: data/Python-Actions.FinMind/raw_margin_monthly.csv
+      - source: data/stage1_raw/raw_margin_weekly.csv
+        dest: data/Python-Actions.FinMind/raw_margin_weekly.csv
+      - source: data/stage1_raw/raw_monthly_flow.csv
+        dest: data/Python-Actions.FinMind/raw_monthly_flow.csv
+      - source: data/stage1_raw/raw_performance.csv
+        dest: data/Python-Actions.FinMind/raw_performance.csv
+      - source: data/stage1_raw/raw_performance1.csv
+        dest: data/Python-Actions.FinMind/raw_performance1.csv
+      - source: data/stage1_raw/raw_revenue.csv
+        dest: data/Python-Actions.FinMind/raw_revenue.csv
+      - source: data/stage1_raw/raw_stock_his_quar.csv
+        dest: data/Python-Actions.FinMind/raw_stock_his_quar.csv
+      - source: data/stage1_raw/raw_weekly_flow.csv
+        dest: data/Python-Actions.FinMind/raw_weekly_flow.csv
+      - source: data/stage1_raw/raw_weekly_k_chart_flow.csv
+        dest: data/Python-Actions.FinMind/raw_weekly_k_chart_flow.csv
+      - source: data/stage1_raw/raw_weekly_trading_data.csv
+        dest: data/Python-Actions.FinMind/raw_weekly_trading_data.csv
+    repos: |
+        wenchiehlee-money/biztrends.TW
