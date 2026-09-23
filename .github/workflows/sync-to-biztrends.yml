@@ -9,6 +9,14 @@ on:
       - "data/stage1_raw/**"
       - ".github/sync-to-biztrends.yml"
       - ".github/workflows/sync-to-biztrends.yml"
+  schedule:
+    # daily-finmind-status.yml commits with the default GITHUB_TOKEN, which per
+    # GitHub's own limitation never fires other workflows' `on: push` (avoids
+    # infinite loops) -- so the push trigger above never actually runs in
+    # practice. This schedule is the real trigger: run a few hours after the
+    # latest daily-finmind-status.yml cron (30 1 * * *) has had time to finish
+    # (it's taken anywhere from ~5 to ~40 minutes in recent runs).
+    - cron: "30 4 * * *"
 
 concurrency:
   group: sync-biztrends
