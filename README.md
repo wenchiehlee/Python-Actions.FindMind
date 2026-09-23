@@ -26,7 +26,7 @@ Time units: `y/M/d/h/m`; `M` = month, `m` = minute. Completion is counted from F
 | 19 | Dividenschedule | Weekly | ![](https://img.shields.io/badge/142%2F142-success-brightgreen) | ![](https://img.shields.io/badge/138-success-brightgreen) ![](https://img.shields.io/badge/no_data_4-inactive-lightgrey) |  | ![](https://img.shields.io/badge/7h_10m_ago-blue) | ![](https://img.shields.io/badge/7h_10m_ago-blue) / ![](https://img.shields.io/badge/7h_10m_ago-blue) | 7d | ![](https://img.shields.io/badge/ready-success-brightgreen) |
 <!-- FINMIND_STATUS_END -->
 
-# Python-Actions.FindMind
+# Python-Actions.FinMind
 
 FinMind-based data fetchers for the GoodInfo Analyzer-compatible pipeline.
 
