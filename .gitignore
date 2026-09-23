@@ -8,3 +8,12 @@ __pycache__/
 *.env~
 data/StockID_TWSE_TPEX.csv
 financial/.price_cache/
+
+# Local run outputs / scratch data
+output*.log
+StockID_TWSE_TPEX.csv
+StockID_TWSE_TPEX_focus.csv
+auction_data.csv
+cleaned_auction_data.csv
+holidays.csv
+PER_PBR/

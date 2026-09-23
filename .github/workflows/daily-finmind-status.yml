@@ -19,13 +19,12 @@ jobs:
   status:
     runs-on: ubuntu-latest
     env:
-      FINDMIND_GMAIL_TOKEN: ${{ secrets.FINDMIND_GMAIL_TOKEN }}
-      FINDMIND_GMAIL_TOKEN1: ${{ secrets.FINDMIND_GMAIL_TOKEN1 }}
-      FINDMIND_GMAIL_TOKEN2: ${{ secrets.FINDMIND_GMAIL_TOKEN2 }}
-      FINDMIND_GMAIL_TOKEN3: ${{ secrets.FINDMIND_GMAIL_TOKEN3 }}
-      FINDMIND_GMAIL_TOKEN4: ${{ secrets.FINDMIND_GMAIL_TOKEN4 }}
-      FINDMIND_GMAIL_TOKEN5: ${{ secrets.FINDMIND_GMAIL_TOKEN5 }}
-      FINDMIND_GMAIL_TOKEN6: ${{ secrets.FINDMIND_GMAIL_TOKEN6 }}
+      FINMIND_TOKEN1: ${{ secrets.FINMIND_TOKEN1 }}
+      FINMIND_TOKEN2: ${{ secrets.FINMIND_TOKEN2 }}
+      FINMIND_TOKEN3: ${{ secrets.FINMIND_TOKEN3 }}
+      FINMIND_TOKEN4: ${{ secrets.FINMIND_TOKEN4 }}
+      FINMIND_TOKEN5: ${{ secrets.FINMIND_TOKEN5 }}
+      FINMIND_TOKEN6: ${{ secrets.FINMIND_TOKEN6 }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -34,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
       - name: Download observation list
-        run: python scripts/get_watchlist.py --output data/StockID_TWSE_TPEX.csv
+        run: python Get觀察名單.py
       - name: Fetch FinMind CSV data
         run: |
           TYPES_ARG=""
@@ -47,9 +46,9 @@ jobs:
           elif [ "${{ github.event.schedule }}" = "30 1 * * *" ]; then
             TYPES_ARG="--types 1,5,13,18"
           fi
-          python scripts/fetch_daily_finmind.py --stock-list data/StockID_TWSE_TPEX.csv $TYPES_ARG
+          python scripts/fetch_daily_finmind.py --stock-list StockID_TWSE_TPEX.csv $TYPES_ARG
       - name: Update README status
-        run: python scripts/download_results_counts.py --stock-list data/StockID_TWSE_TPEX.csv --update-readme
+        run: python scripts/download_results_counts.py --stock-list StockID_TWSE_TPEX.csv --update-readme
       - name: Build stage1_raw combined CSVs
         run: python scripts/build_stage1_raw.py
       - name: Commit status

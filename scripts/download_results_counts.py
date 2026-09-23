@@ -289,7 +289,7 @@ Time units: `y/M/d/h/m`; `M` = month, `m` = minute. Completion is counted from F
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--stock-list", default="data/StockID_TWSE_TPEX.csv")
+    parser.add_argument("--stock-list", default="StockID_TWSE_TPEX.csv")
     parser.add_argument("--data-root", default="financial")
     parser.add_argument("--readme", default="README.md")
     parser.add_argument("--update-readme", action="store_true")

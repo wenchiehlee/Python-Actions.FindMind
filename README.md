@@ -46,7 +46,7 @@ FinMind-based data fetchers for the GoodInfo Analyzer-compatible pipeline.
 
 ## Credentials
 
-Copy `.env.example` to `.env` and set one or more of `FINMIND_TOKEN`, `FINMIND_API_TOKEN`, `FINDMIND_GMAIL_TOKEN`, `FINDMIND_GMAIL_TOKEN1`, and `FINDMIND_GMAIL_TOKEN2`. Non-empty tokens rotate per request. The `.env` file is ignored and must not be committed.
+Copy `.env.example` to `.env` and set one or more of `FINMIND_TOKEN`, `FINMIND_API_TOKEN`, `FINMIND_TOKEN1`, and `FINMIND_TOKEN2`. Non-empty tokens rotate per request. The `.env` file is ignored and must not be committed.
 
 ## Type 16 example
 

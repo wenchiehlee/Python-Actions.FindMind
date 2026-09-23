@@ -55,7 +55,7 @@ def classify_status(type_id: str, success: bool, output_text: str) -> str:
         return "no_data"
     return "retryable_failed"
 
-TOKEN_NAMES = ("FINDMIND_GMAIL_TOKEN1", "FINDMIND_GMAIL_TOKEN2", "FINDMIND_GMAIL_TOKEN3", "FINDMIND_GMAIL_TOKEN4", "FINDMIND_GMAIL_TOKEN5", "FINDMIND_GMAIL_TOKEN6")
+TOKEN_NAMES = ("FINMIND_TOKEN1", "FINMIND_TOKEN2", "FINMIND_TOKEN3", "FINMIND_TOKEN4", "FINMIND_TOKEN5", "FINMIND_TOKEN6")
 TOKEN_ORDER = []
 MIN_QUOTA_HEADROOM = 20  # skip a token's round-robin slot once it's this close to its hourly 402 cutoff
 PYTHON = sys.executable
